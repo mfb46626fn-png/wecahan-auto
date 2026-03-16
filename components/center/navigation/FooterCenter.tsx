@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link';
 import { ContentContainer } from '../../shared/layout/ContentContainer';
 import { getCenterLocale } from '../../../lib/site/get-center-locale';
 
@@ -12,7 +13,7 @@ function mergeClasses(...classes: Array<string | false | null | undefined>) {
 
 const translations = {
     tr: {
-        description: "Operasyonel netlik ve sistem disiplini ile hizmet işletmelerinizi otonom yapılara dönüştürüyoruz. Sürdürülebilir büyüme için mantık odaklı çözümler.",
+        description: "İşletmeler için net, sürdürülebilir ve düşük sürtünmeli operasyon yapıları tasarlıyoruz. Sistemsel disiplin ve süreç mantığı ile ölçeklenebilir bir gelecek.",
         sections: {
             navigation: {
                 title: "Navigasyon",
@@ -32,7 +33,7 @@ const translations = {
         copyrightLabel: "WeCaHan Auto. Tüm hakları saklıdır."
     },
     en: {
-        description: "We transform service businesses into autonomous structures through operational clarity and system discipline. Logic-led solutions for sustainable growth.",
+        description: "We design clear, sustainable, and low-friction operational structures for businesses. A scalable future through systematic discipline and process logic.",
         sections: {
             navigation: {
                 title: "Navigation",
@@ -61,63 +62,69 @@ export async function FooterCenter({ className }: FooterCenterProps) {
     return (
         <footer
             className={mergeClasses(
-                'w-full border-t border-slate-200 bg-white py-12 md:py-16',
+                'w-full border-t border-slate-100 bg-white py-16 md:py-24',
                 className,
             )}
         >
             <ContentContainer size="xl">
-                <div className="grid gap-8 md:grid-cols-4 lg:gap-12">
-                    {/* Brand & Mission Area */}
+                <div className="grid gap-12 md:grid-cols-4 lg:gap-16">
+                    {/* Brand Area */}
                     <div className="md:col-span-2">
-                        <div className="flex items-center gap-2 mb-4">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white font-bold text-xs shadow-sm">
+                        <div className="flex items-center gap-2 mb-6">
+                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white font-black text-xs">
                                 W
                             </div>
                             <span className="text-xl font-bold tracking-tight text-slate-900">
-                                WeCaHan <span className="text-indigo-600">Auto</span>
+                                WeCaHan <span className="text-slate-400 font-medium">Auto</span>
                             </span>
                         </div>
-                        <p className="max-w-xs text-sm leading-relaxed text-slate-500">
+                        <p className="max-w-xs text-sm leading-relaxed text-slate-500 font-medium">
                             {t.description}
                         </p>
                     </div>
 
-                    {/* Navigation Area */}
+                    {/* Navigation */}
                     <div>
-                        <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-400">
+                        <h3 className="mb-6 text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
                             {t.sections.navigation.title}
                         </h3>
-                        <ul className="flex flex-col gap-3">
+                        <ul className="flex flex-col gap-4">
                             {t.sections.navigation.links.map((link, idx) => (
                                 <li key={idx}>
-                                    <a href={link.href} className="text-sm text-slate-600 transition-colors hover:text-indigo-600">
+                                    <Link 
+                                        href={link.href} 
+                                        className="text-sm font-semibold text-slate-600 transition-colors hover:text-black"
+                                    >
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Legal Area */}
+                    {/* Legal */}
                     <div>
-                        <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-400">
+                        <h3 className="mb-6 text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
                             {t.sections.legal.title}
                         </h3>
-                        <ul className="flex flex-col gap-3">
+                        <ul className="flex flex-col gap-4">
                             {t.sections.legal.links.map((link, idx) => (
                                 <li key={idx}>
-                                    <a href={link.href} className="text-sm text-slate-600 transition-colors hover:text-indigo-600">
+                                    <Link 
+                                        href={link.href} 
+                                        className="text-sm font-semibold text-slate-600 transition-colors hover:text-black"
+                                    >
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
                 </div>
 
-                {/* Bottom Bar: Copyright */}
-                <div className="mt-12 flex flex-col items-center justify-between border-t border-slate-100 pt-8 sm:flex-row gap-4">
-                    <p className="text-xs text-slate-400 font-medium">
+                {/* Copyright Line */}
+                <div className="mt-16 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-[11px] font-bold text-slate-300 uppercase tracking-widest">
                         &copy; {currentYear} {t.copyrightLabel}
                     </p>
                 </div>
