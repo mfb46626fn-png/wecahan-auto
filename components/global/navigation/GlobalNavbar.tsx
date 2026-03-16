@@ -16,6 +16,18 @@ function mergeClasses(...classes: Array<string | false | null | undefined>) {
 export function GlobalNavbar({ className }: GlobalNavbarProps) {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+    // Lock body scroll when menu is open
+    React.useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isMenuOpen]);
+
     const navLinks = [
         { href: "#", label: "Services" },
         { href: "#", label: "Accounting Firms" },

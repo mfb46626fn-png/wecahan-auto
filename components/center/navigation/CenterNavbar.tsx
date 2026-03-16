@@ -34,6 +34,18 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
     const [locale, setLocale] = React.useState<CenterLocale>('en');
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+    // Lock body scroll when menu is open
+    React.useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isMenuOpen]);
+
     React.useEffect(() => {
         const getInitialLocale = (): CenterLocale => {
             if (typeof document !== 'undefined') {
@@ -150,7 +162,7 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
 
                     {/* Mobile Menu Panel */}
                     <div className={mergeClasses(
-                        "fixed inset-0 top-20 bg-white z-40 transition-transform duration-300 ease-in-out md:hidden flex flex-col p-6 gap-8",
+                        "fixed inset-0 top-20 bg-white z-40 transition-transform duration-300 ease-in-out md:hidden flex flex-col p-6 gap-8 overflow-y-auto",
                         isMenuOpen ? "translate-x-0" : "translate-x-full"
                     )}>
                         <a href="/#what-we-automate" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-gray-900 border-b border-gray-50 pb-4">

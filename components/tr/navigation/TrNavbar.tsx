@@ -18,6 +18,18 @@ function mergeClasses(...classes: Array<string | false | null | undefined>) {
 export function TrNavbar({ className }: TrNavbarProps) {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+    // Lock body scroll when menu is open
+    React.useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isMenuOpen]);
+
     const navLinks = [
         { href: "/klinikler", label: "Klinikler" },
         { href: "/muhasebe-ofisleri", label: "Muhasebe" },
