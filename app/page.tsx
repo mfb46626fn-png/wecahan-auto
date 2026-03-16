@@ -22,11 +22,12 @@ import { CenterHomeSelectedUseCaseExamplesBlock } from "../components/center/blo
 import { CenterHomeContactBriefSectionBlock } from "../components/center/blocks/home/CenterHomeContactBriefSectionBlock";
 import { CenterSiteShell } from "../components/center/layout/CenterSiteShell";
 
-import { centerHomeContent } from "../content/center/home";
 import { globalHomeContent } from "../content/global/home";
 import { trHomeContent } from "../content/tr/home";
+import { CenterHomeContent } from "../content/center/home";
 import { detectSiteFamily } from "../lib/site/detect-site-family";
 import { getHostname } from "../lib/site/get-hostname";
+import { getCenterPageContent } from "../config/sites/center";
 
 export async function generateMetadata(): Promise<Metadata> {
     const hostname = await getHostname();
@@ -46,6 +47,8 @@ export async function generateMetadata(): Promise<Metadata> {
         };
     }
 
+    // Default to Center Site Family with locale-aware content
+    const centerHomeContent = await getCenterPageContent('home') as CenterHomeContent;
     return {
         title: centerHomeContent.seo.title,
         description: centerHomeContent.seo.description,
@@ -80,7 +83,9 @@ export default async function HomePage() {
         );
     }
 
-    // Default to Center Site Family
+    // Default to Center Site Family with locale-aware content
+    const centerHomeContent = await getCenterPageContent('home') as CenterHomeContent;
+
     return (
         <CenterSiteShell>
             <CenterHomeHeroBlock content={centerHomeContent.hero} />
