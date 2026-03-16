@@ -1,10 +1,4 @@
 import type { Metadata } from "next";
-import { CenterBriefFormBlock } from "../components/center/blocks/CenterBriefFormBlock";
-import { CenterFinalCtaBlock } from "../components/center/blocks/CenterFinalCtaBlock";
-import { HeroBlockCenter } from "../components/center/blocks/HeroBlockCenter";
-import { CenterServicesBlock } from "../components/center/blocks/CenterServicesBlock";
-import { CenterWorkflowBlock } from "../components/center/blocks/CenterWorkflowBlock";
-import { CenterSiteShell } from "../components/center/layout/CenterSiteShell";
 import { GlobalBriefFormBlock } from "../components/global/blocks/GlobalBriefFormBlock";
 import { GlobalFinalCtaBlock } from "../components/global/blocks/GlobalFinalCtaBlock";
 import { HeroBlockGlobal } from "../components/global/blocks/HeroBlockGlobal";
@@ -17,6 +11,17 @@ import { TRFinalCtaBlock } from "../components/tr/blocks/TRFinalCtaBlock";
 import { TRServicesBlock } from "../components/tr/blocks/TRServicesBlock";
 import { TRWorkflowBlock } from "../components/tr/blocks/TRWorkflowBlock";
 import { TrSiteShell } from "../components/tr/layout/TrSiteShell";
+
+// Center Home Blocks
+import { CenterHomeHeroBlock } from "../components/center/blocks/home/CenterHomeHeroBlock";
+import { CenterHomeWhatWeAutomateBlock } from "../components/center/blocks/home/CenterHomeWhatWeAutomateBlock";
+import { CenterHomeHowWeWorkBlock } from "../components/center/blocks/home/CenterHomeHowWeWorkBlock";
+import { CenterHomeExampleWorkflowScenariosBlock } from "../components/center/blocks/home/CenterHomeExampleWorkflowScenariosBlock";
+import { CenterHomeWhyThisStructureWorksBlock } from "../components/center/blocks/home/CenterHomeWhyThisStructureWorksBlock";
+import { CenterHomeSelectedUseCaseExamplesBlock } from "../components/center/blocks/home/CenterHomeSelectedUseCaseExamplesBlock";
+import { CenterHomeContactBriefSectionBlock } from "../components/center/blocks/home/CenterHomeContactBriefSectionBlock";
+import { CenterSiteShell } from "../components/center/layout/CenterSiteShell";
+
 import { centerHomeContent } from "../content/center/home";
 import { globalHomeContent } from "../content/global/home";
 import { trHomeContent } from "../content/tr/home";
@@ -75,13 +80,16 @@ export default async function HomePage() {
         );
     }
 
+    // Default to Center Site Family
     return (
         <CenterSiteShell>
-            <HeroBlockCenter content={centerHomeContent.hero} />
-            <CenterServicesBlock content={centerHomeContent.services} />
-            <CenterWorkflowBlock content={centerHomeContent.workflow} />
-            <CenterBriefFormBlock content={centerHomeContent.briefForm} />
-            <CenterFinalCtaBlock content={centerHomeContent.finalCta} />
+            <CenterHomeHeroBlock content={centerHomeContent.hero} />
+            <CenterHomeWhatWeAutomateBlock content={centerHomeContent.whatWeAutomate} />
+            <CenterHomeHowWeWorkBlock content={centerHomeContent.howWeWork} />
+            <CenterHomeExampleWorkflowScenariosBlock content={centerHomeContent.exampleWorkflows} />
+            <CenterHomeWhyThisStructureWorksBlock content={centerHomeContent.whyStructureWorks} />
+            <CenterHomeSelectedUseCaseExamplesBlock content={centerHomeContent.selectedUseCases} />
+            <CenterHomeContactBriefSectionBlock content={centerHomeContent.contactBrief} />
         </CenterSiteShell>
     );
 }

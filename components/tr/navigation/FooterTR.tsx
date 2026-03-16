@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link';
 import { ContentContainer } from '../../shared/layout/ContentContainer';
 
 type FooterTRProps = {
@@ -15,23 +16,23 @@ export function FooterTR({ className }: FooterTRProps) {
     return (
         <footer
             className={mergeClasses(
-                'w-full border-t border-gray-200 bg-white py-12 md:py-16',
+                'w-full border-t border-gray-100 bg-white py-12 md:py-20',
                 className,
             )}
         >
             <ContentContainer size="xl">
-                <div className="grid gap-8 md:grid-cols-4 lg:gap-12">
+                <div className="grid gap-12 md:grid-cols-4 lg:gap-16">
                     {/* Brand & Mission Area */}
                     <div className="md:col-span-2">
-                        <div className="flex items-center gap-2 mb-4">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white font-bold text-xs">
+                        <Link href="/" className="flex items-center gap-2 mb-6 group">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-black text-white font-bold text-sm shadow-xl shadow-black/10 group-hover:scale-105 transition-transform duration-500">
                                 W
                             </div>
-                            <span className="text-xl font-bold tracking-tight text-gray-900">
+                            <span className="text-2xl font-black tracking-tighter text-gray-900">
                                 WeCaHan
                             </span>
-                        </div>
-                        <p className="max-w-xs text-sm leading-relaxed text-gray-500">
+                        </Link>
+                        <p className="max-w-xs text-sm leading-relaxed text-gray-500 font-medium">
                             Sağlık ve finans profesyonelleri için operasyonel mükemmellik.
                             Klinik ve ofislerinizi kendi kendine yeten sistemlere dönüştürüyoruz.
                         </p>
@@ -39,63 +40,79 @@ export function FooterTR({ className }: FooterTRProps) {
 
                     {/* Navigation Links Area */}
                     <div>
-                        <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-900">
-                            Hizmetler
+                        <h3 className="mb-6 text-[11px] font-black uppercase tracking-[0.2em] text-gray-400">
+                            Çözümler
                         </h3>
-                        <ul className="flex flex-col gap-3">
+                        <ul className="flex flex-col gap-4">
                             <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
-                                    Klinik Otomasyonu
-                                </a>
+                                <Link href="/klinikler" className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900">
+                                    Klinikler
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
+                                <Link href="/muhasebe-ofisleri" className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900">
                                     Muhasebe Ofisleri
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
+                                <Link href="/ paketler" className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900">
+                                    Paketler
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/fiyatlandirma" className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900">
+                                    Fiyatlandırma
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/ornek-senaryolar" className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900">
                                     Örnek Senaryolar
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
-                                    Paketler & Fiyatlar
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Contact & Legal Area */}
+                    {/* Contact & Transition Area */}
                     <div>
-                        <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-900">
+                        <h3 className="mb-6 text-[11px] font-black uppercase tracking-[0.2em] text-gray-400">
                             İletişim
                         </h3>
-                        <ul className="flex flex-col gap-3">
+                        <ul className="flex flex-col gap-4">
                             <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
+                                <Link href="/iletisim" className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900">
+                                    Başvuru Formu
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/iletisim#form" className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900">
                                     Ücretsiz Analiz
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
-                                    Kullanım Şartları
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
-                                    Gizlilik Politikası
+                                <a 
+                                    href="https://wa.me/" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900"
+                                >
+                                    WhatsApp Destek
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                {/* Bottom Bar: Copyright */}
-                <div className="mt-12 flex flex-col items-center justify-between border-t border-gray-100 pt-8 sm:flex-row gap-4">
-                    <p className="text-sm text-gray-400">
+                {/* Bottom Bar: Copyright & Location */}
+                <div className="mt-20 flex flex-col items-center justify-between border-t border-gray-100 pt-10 sm:flex-row gap-6">
+                    <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">
                         &copy; {currentYear} WeCaHan Auto. Tüm hakları saklıdır.
                     </p>
+                    <div className="flex items-center gap-2">
+                        <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+                        <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">
+                            Türkiye Geneli Operasyon Analizi
+                        </span>
+                    </div>
                 </div>
             </ContentContainer>
         </footer>
