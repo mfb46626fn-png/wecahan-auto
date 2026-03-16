@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from 'react';
-import { Menu, X } from 'lucide-react';
 import { PrimaryButton } from '../../shared/ui/PrimaryButton';
 import { ContentContainer } from '../../shared/layout/ContentContainer';
 
@@ -32,7 +31,6 @@ function mergeClasses(...classes: Array<string | false | null | undefined>) {
 
 export function CenterNavbar({ className }: CenterNavbarProps) {
     const [locale, setLocale] = React.useState<CenterLocale>('en');
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     React.useEffect(() => {
         const getInitialLocale = (): CenterLocale => {
@@ -79,7 +77,7 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
             <ContentContainer size="xl">
                 <nav className="relative flex h-20 items-center justify-between">
                     {/* Brand */}
-                    <a href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80 relative z-10">
+                    <a href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80 z-10">
                         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white font-bold text-xs">
                             W
                         </div>
@@ -88,8 +86,8 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
                         </span>
                     </a>
 
-                    {/* Desktop Navigation Links - ABSOLUTELY CENTERED */}
-                    <div className="hidden absolute left-1/2 -translate-x-1/2 items-center gap-8 md:flex">
+                    {/* Desktop Navigation Links - Centered */}
+                    <div className="hidden items-center gap-8 md:flex absolute left-1/2 -translate-x-1/2">
                         <a href="/#what-we-automate" className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900">
                             {t.services}
                         </a>
@@ -101,16 +99,18 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
                         </a>
                     </div>
 
-                    {/* CTA Area & Hamburger */}
-                    <div className="flex items-center gap-4 md:gap-6 relative z-10">
-                        {/* Language Switch - Desktop */}
+                    {/* CTA Area */}
+                    <div className="flex items-center gap-6 z-10">
+                        {/* Language Switch */}
                         <div className="hidden items-center gap-2 md:flex">
                             <button 
                                 onClick={() => handleLanguageSwitch('tr')}
                                 className={mergeClasses(
                                     "text-xs tracking-wider transition-colors px-1",
-                                    locale === 'tr' ? "text-gray-900 font-black" : "text-gray-400 font-medium hover:text-gray-600"
+                                    locale === 'tr' ? "text-gray-900 font-bold" : "text-gray-400 font-medium hover:text-gray-600"
                                 )}
+                                aria-label="Türkçe"
+                                aria-pressed={locale === 'tr'}
                             >
                                 TR
                             </button>
@@ -119,118 +119,24 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
                                 onClick={() => handleLanguageSwitch('en')}
                                 className={mergeClasses(
                                     "text-xs tracking-wider transition-colors px-1",
-                                    locale === 'en' ? "text-gray-900 font-black" : "text-gray-400 font-medium hover:text-gray-600"
+                                    locale === 'en' ? "text-gray-900 font-bold" : "text-gray-400 font-medium hover:text-gray-600"
                                 )}
+                                aria-label="English"
+                                aria-pressed={locale === 'en'}
                             >
                                 EN
                             </button>
                         </div>
 
-                        <div className="hidden md:block">
-                            <PrimaryButton 
-                                className="!px-4 !py-2 !text-sm"
-                                onClick={() => window.location.href = '/contact'}
-                            >
-                                {t.cta}
-                            </PrimaryButton>
-                        </div>
-
-                        {/* Mobile Menu Toggle */}
-                        <button 
-                            className="p-2 md:hidden text-gray-600 hover:text-gray-900 transition-colors"
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            aria-label="Toggle menu"
+                        <PrimaryButton 
+                            className="!px-4 !py-2 !text-sm"
+                            onClick={() => window.location.href = '/contact'}
                         >
-                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
+                            {t.cta}
+                        </PrimaryButton>
                     </div>
                 </nav>
             </ContentContainer>
-
-            {/* Mobile Sidebar Overlay */}
-            <div className={mergeClasses(
-                "fixed inset-0 bg-white z-[60] transform transition-transform duration-300 ease-in-out md:hidden flex flex-col",
-                isMenuOpen ? "translate-x-0" : "translate-x-full"
-            )}>
-                <div className="flex h-20 items-center justify-between px-6 border-b border-gray-100">
-                    <div className="flex items-center gap-2">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white font-bold text-xs">
-                            W
-                        </div>
-                        <span className="text-xl font-bold tracking-tight text-gray-900">
-                            WeCaHan
-                        </span>
-                    </div>
-                    <button 
-                        className="p-2 text-gray-600"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        <X size={24} />
-                    </button>
-                </div>
-
-                <div className="flex-1 overflow-y-auto py-10 px-6">
-                    <nav className="flex flex-col gap-8">
-                        <a 
-                            href="/#what-we-automate" 
-                            className="text-2xl font-bold text-gray-900"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {t.services}
-                        </a>
-                        <a 
-                            href="/why-us" 
-                            className="text-2xl font-bold text-gray-900"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {t.whyUs}
-                        </a>
-                        <a 
-                            href="/contact" 
-                            className="text-2xl font-bold text-gray-900"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {t.contact}
-                        </a>
-                    </nav>
-
-                    <div className="mt-12 pt-12 border-t border-gray-100">
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">Language</p>
-                        <div className="flex gap-8">
-                            <button 
-                                onClick={() => handleLanguageSwitch('tr')}
-                                className={mergeClasses(
-                                    "text-lg font-bold transition-all",
-                                    locale === 'tr' ? "text-black scale-110" : "text-gray-300"
-                                )}
-                            >
-                                TR / Türkçe
-                            </button>
-                            <button 
-                                onClick={() => handleLanguageSwitch('en')}
-                                className={mergeClasses(
-                                    "text-lg font-bold transition-all",
-                                    locale === 'en' ? "text-black scale-110" : "text-gray-300"
-                                )}
-                            >
-                                EN / English
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="p-6 border-t border-gray-100">
-                    <PrimaryButton 
-                        className="w-full !py-4 !text-base"
-                        onClick={() => {
-                            setIsMenuOpen(false);
-                            window.location.href = '/contact';
-                        }}
-                    >
-                        {t.cta}
-                    </PrimaryButton>
-                </div>
-            </div>
         </header>
     );
 }
