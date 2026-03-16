@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from 'react';
 import { Menu, X } from 'lucide-react';
 import { PrimaryButton } from '../../shared/ui/PrimaryButton';
