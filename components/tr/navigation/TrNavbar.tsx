@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
 import { PrimaryButton } from '../../shared/ui/PrimaryButton';
 import { SecondaryButton } from '../../shared/ui/SecondaryButton';
 import { ContentContainer } from '../../shared/layout/ContentContainer';
@@ -13,6 +14,17 @@ function mergeClasses(...classes: Array<string | false | null | undefined>) {
 }
 
 export function TrNavbar({ className }: TrNavbarProps) {
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+    const navLinks = [
+        { href: "/klinikler", label: "Klinikler" },
+        { href: "/muhasebe-ofisleri", label: "Muhasebe" },
+        { href: "/paketler", label: "Paketler" },
+        { href: "/fiyatlandirma", label: "Fiyatlandırma" },
+        { href: "/ornek-senaryolar", label: "Senaryolar" },
+        { href: "/iletisim", label: "İletişim" },
+    ];
+
     return (
         <header
             className={mergeClasses(
@@ -34,24 +46,15 @@ export function TrNavbar({ className }: TrNavbarProps) {
 
                     {/* Desktop Navigation Links - Centered */}
                     <div className="hidden absolute left-1/2 -translate-x-1/2 items-center gap-4 lg:gap-6 md:flex whitespace-nowrap">
-                        <Link href="/klinikler" className="text-[13px] font-semibold text-gray-500 transition-colors hover:text-gray-900">
-                            Klinikler
-                        </Link>
-                        <Link href="/muhasebe-ofisleri" className="text-[13px] font-semibold text-gray-500 transition-colors hover:text-gray-900">
-                            Muhasebe
-                        </Link>
-                        <Link href="/paketler" className="text-[13px] font-semibold text-gray-500 transition-colors hover:text-gray-900">
-                            Paketler
-                        </Link>
-                        <Link href="/fiyatlandirma" className="text-[13px] font-semibold text-gray-500 transition-colors hover:text-gray-900">
-                            Fiyatlandırma
-                        </Link>
-                        <Link href="/ornek-senaryolar" className="text-[13px] font-semibold text-gray-500 transition-colors hover:text-gray-900">
-                            Senaryolar
-                        </Link>
-                        <Link href="/iletisim" className="text-[13px] font-semibold text-gray-500 transition-colors hover:text-gray-900">
-                            İletişim
-                        </Link>
+                        {navLinks.map((link) => (
+                            <Link 
+                                key={link.href}
+                                href={link.href} 
+                                className="text-[13px] font-semibold text-gray-500 transition-colors hover:text-gray-900"
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
                     </div>
 
                     {/* CTA Area */}
@@ -63,11 +66,51 @@ export function TrNavbar({ className }: TrNavbarProps) {
                                 </SecondaryButton>
                             </a>
                         </div>
-                        <Link href="/iletisim#form">
+                        <Link href="/iletisim#form" className="hidden sm:block">
                             <PrimaryButton className="!px-5 !py-2 !text-[12px] font-bold whitespace-nowrap uppercase tracking-tight shadow-lg shadow-black/5">
                                 Analiz Al
                             </PrimaryButton>
                         </Link>
+
+                        {/* Mobile Toggle Button */}
+                        <button 
+                            className="md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors focus:outline-none"
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            aria-expanded={isMenuOpen}
+                            aria-label="Toggle menu"
+                        >
+                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
+                    </div>
+
+                    {/* Mobile Menu Panel */}
+                    <div className={mergeClasses(
+                        "fixed inset-0 top-20 bg-white z-40 transition-transform duration-300 ease-in-out md:hidden flex flex-col p-6 gap-8 overflow-y-auto",
+                        isMenuOpen ? "translate-x-0" : "translate-x-full"
+                    )}>
+                        {navLinks.map((link) => (
+                            <Link 
+                                key={link.href}
+                                href={link.href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="text-2xl font-bold text-gray-900 border-b border-gray-50 pb-4"
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+
+                        <div className="mt-auto space-y-4 pb-8">
+                            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="block w-full">
+                                <SecondaryButton className="w-full py-4 text-base font-bold bg-white border-gray-100 uppercase tracking-tight">
+                                    WhatsApp
+                                </SecondaryButton>
+                            </a>
+                            <Link href="/iletisim#form" onClick={() => setIsMenuOpen(false)} className="block w-full">
+                                <PrimaryButton className="w-full py-4 text-base font-bold uppercase tracking-tight shadow-lg shadow-black/5">
+                                    Analiz Al
+                                </PrimaryButton>
+                            </Link>
+                        </div>
                     </div>
                 </nav>
             </ContentContainer>
