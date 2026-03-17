@@ -44,22 +44,22 @@ export function TRPackagesHeroBlock() {
                                 {hero.eyebrow}
                             </SectionEyebrow>
                         )}
-                        
+
                         <SectionTitle size="lg" className="mb-6 max-w-2xl">
                             {hero.title}
                         </SectionTitle>
-                        
+
                         <SectionDescription maxWidth="lg" className="mb-10 text-neutral-600">
                             {hero.description}
                         </SectionDescription>
-                        
+
                         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                             <a href={primaryCta.href} className="w-full sm:w-auto">
                                 <PrimaryButton fullWidth className="!px-10 !py-4 text-base">
                                     {primaryCta.label}
                                 </PrimaryButton>
                             </a>
-                            
+
                             <a href={secondaryCta.href} className="w-full sm:w-auto">
                                 <SecondaryButton fullWidth className="!px-10 !py-4 text-base">
                                     {secondaryCta.label}
@@ -83,11 +83,11 @@ export function TRPackagesHeroBlock() {
 
                     <div className="relative">
                         <div className="absolute -inset-4 rounded-[2.5rem] bg-neutral-100/50 blur-2xl" aria-hidden="true" />
-                        
+
                         <div className="relative space-y-4">
                             <div className="grid gap-4">
                                 {serviceModelOverview.items.map((item, index) => (
-                                    <CardBase 
+                                    <CardBase
                                         key={index}
                                         className="group p-5 border-neutral-100 bg-white transition-all duration-300 hover:border-black hover:shadow-xl hover:shadow-neutral-100"
                                     >
@@ -146,7 +146,7 @@ export function TRPackagesServiceModelOverviewBlock() {
 
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {serviceModelOverview.items.map((item, index) => (
-                        <CardBase 
+                        <CardBase
                             key={index}
                             size="md"
                             className="bg-white border-neutral-100 hover:border-black hover:shadow-xl transition-all duration-300 flex flex-col h-full"
@@ -216,7 +216,7 @@ export function TRPackagesAutomationAnalysisBlock() {
 
                 <div className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
                     {sections.map((section, sectionIdx) => (
-                        <CardBase 
+                        <CardBase
                             key={sectionIdx}
                             size="lg"
                             className="bg-neutral-50/50 border-neutral-100 p-8 md:p-10 flex flex-col h-full"
@@ -225,17 +225,16 @@ export function TRPackagesAutomationAnalysisBlock() {
                                 <span className={`w-2 h-2 rounded-full ${section.dotColor}`} />
                                 {section.title}
                             </h4>
-                            
+
                             <ul className="space-y-5 flex-grow">
                                 {section.items.map((item, itemIdx) => (
                                     <li key={itemIdx} className="flex items-start gap-4">
                                         <span className="flex-shrink-0 mt-1.5 h-1 w-1 rounded-full bg-neutral-300" />
-                                        <BodyText 
-                                            className={`text-sm leading-relaxed ${
-                                                section.isNegative 
-                                                    ? 'text-neutral-500 line-through decoration-neutral-300' 
+                                        <BodyText
+                                            className={`text-sm leading-relaxed ${section.isNegative
+                                                    ? 'text-neutral-500 line-through decoration-neutral-300'
                                                     : 'text-neutral-600'
-                                            }`}
+                                                }`}
                                         >
                                             {item}
                                         </BodyText>
@@ -279,16 +278,15 @@ export function TRPackagesSetupPackagesBlock() {
                 <div className="grid gap-8 lg:grid-cols-3 lg:items-stretch">
                     {setupPackages.packages.map((pkg, index) => {
                         const isRecommended = index === 1; // Orta Seviye Kurulum
-                        
+
                         return (
-                            <CardBase 
-                                key={index} 
-                                size="lg" 
-                                className={`flex flex-col h-full transition-all duration-300 hover:shadow-2xl hover:shadow-neutral-100 ${
-                                    isRecommended 
-                                        ? 'border-black ring-1 ring-black relative z-10' 
+                            <CardBase
+                                key={index}
+                                size="lg"
+                                className={`flex flex-col h-full transition-all duration-300 hover:shadow-2xl hover:shadow-neutral-100 ${isRecommended
+                                        ? 'border-black ring-1 ring-black relative z-10'
                                         : 'border-neutral-100 bg-neutral-50/50'
-                                }`}
+                                    }`}
                             >
                                 {isRecommended && (
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -413,16 +411,15 @@ export function TRPackagesMaintenancePackagesBlock() {
                 <div className="grid gap-8 lg:grid-cols-3 lg:items-stretch">
                     {maintenancePackages.packages.map((pkg, index) => {
                         const isRecommended = index === 1; // Standart Bakım
-                        
+
                         return (
-                            <CardBase 
-                                key={index} 
-                                size="lg" 
-                                className={`flex flex-col h-full bg-white transition-all duration-300 hover:shadow-2xl hover:shadow-neutral-100 ${
-                                    isRecommended 
-                                        ? 'border-black ring-1 ring-black relative z-10' 
+                            <CardBase
+                                key={index}
+                                size="lg"
+                                className={`flex flex-col h-full bg-white transition-all duration-300 hover:shadow-2xl hover:shadow-neutral-100 ${isRecommended
+                                        ? 'border-black ring-1 ring-black relative z-10'
                                         : 'border-neutral-100 shadow-sm'
-                                }`}
+                                    }`}
                             >
                                 {isRecommended && (
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -499,7 +496,7 @@ export function TRPackagesMaintenancePackagesBlock() {
                 <div className="mt-16 md:mt-24 text-center">
                     <div className="max-w-2xl mx-auto p-8 rounded-[2rem] bg-white border border-neutral-100 shadow-sm">
                         <p className="text-sm text-neutral-500 leading-relaxed italic">
-                            <span className="font-bold text-neutral-900 not-italic uppercase tracking-widest text-[10px] mr-2">Önemli Not:</span> 
+                            <span className="font-bold text-neutral-900 not-italic uppercase tracking-widest text-[10px] mr-2">Önemli Not:</span>
                             {maintenancePackages.note}
                         </p>
                     </div>
@@ -535,8 +532,8 @@ export function TRPackagesAdditionalDevelopmentBlock() {
                 />
 
                 <div className="max-w-4xl mx-auto">
-                    <CardBase 
-                        size="lg" 
+                    <CardBase
+                        size="lg"
                         className="border-neutral-100 bg-neutral-50/30 overflow-hidden"
                     >
                         <div className="p-8 md:p-12">
@@ -575,7 +572,7 @@ export function TRPackagesAdditionalDevelopmentBlock() {
                             <div className="mt-12 pt-10 border-t border-neutral-100">
                                 <div className="p-6 rounded-2xl bg-white border border-neutral-100 shadow-sm">
                                     <p className="text-xs font-semibold text-neutral-500 leading-relaxed italic">
-                                        <span className="font-bold text-neutral-900 not-italic uppercase tracking-widest text-[10px] mr-2">Neden Ayrı?</span> 
+                                        <span className="font-bold text-neutral-900 not-italic uppercase tracking-widest text-[10px] mr-2">Neden Ayrı?</span>
                                         {additionalDevelopment.whySeparate}
                                     </p>
                                 </div>
@@ -605,8 +602,8 @@ export function TRPackagesIncludedScopeBlock() {
                     className="mb-12 md:mb-16"
                 />
 
-                <CardBase 
-                    size="lg" 
+                <CardBase
+                    size="lg"
                     className="max-w-4xl mx-auto border-neutral-100 bg-white"
                 >
                     <div className="p-8 md:p-12">
@@ -672,8 +669,8 @@ export function TRPackagesNotIncludedBlock() {
                     className="mb-12 md:mb-16"
                 />
 
-                <CardBase 
-                    size="lg" 
+                <CardBase
+                    size="lg"
                     className="max-w-4xl mx-auto border-neutral-100 bg-neutral-50/20"
                 >
                     <div className="p-8 md:p-12">
@@ -736,8 +733,8 @@ export function TRPackagesDeliverablesAndClientContributionBlock() {
                 />
 
                 <div className="grid gap-8 lg:grid-cols-2 lg:max-w-5xl lg:mx-auto">
-                    <CardBase 
-                        size="lg" 
+                    <CardBase
+                        size="lg"
                         className="flex flex-col h-full bg-white border-neutral-100 shadow-sm"
                     >
                         <div className="flex items-center gap-3 mb-8">
@@ -767,8 +764,8 @@ export function TRPackagesDeliverablesAndClientContributionBlock() {
                         </div>
                     </CardBase>
 
-                    <CardBase 
-                        size="lg" 
+                    <CardBase
+                        size="lg"
                         className="flex flex-col h-full bg-white border-neutral-100 shadow-sm"
                     >
                         <div className="flex items-center gap-3 mb-8">
@@ -821,8 +818,8 @@ export function TRPackagesFitCheckBlock() {
                 />
 
                 <div className="grid gap-8 lg:grid-cols-2 lg:max-w-5xl lg:mx-auto">
-                    <CardBase 
-                        size="lg" 
+                    <CardBase
+                        size="lg"
                         className="flex flex-col h-full bg-white border-neutral-100 shadow-sm"
                     >
                         <div className="flex items-center gap-3 mb-8">
@@ -852,8 +849,8 @@ export function TRPackagesFitCheckBlock() {
                         </div>
                     </CardBase>
 
-                    <CardBase 
-                        size="lg" 
+                    <CardBase
+                        size="lg"
                         className="flex flex-col h-full bg-white border-neutral-100 shadow-sm"
                     >
                         <div className="flex items-center gap-3 mb-8">
@@ -911,8 +908,8 @@ export function TRPackagesContactCtaBlock() {
     return (
         <SectionWrapper className="bg-white">
             <ContentContainer className="py-16 md:py-24">
-                <CardBase 
-                    size="lg" 
+                <CardBase
+                    size="lg"
                     className="flex flex-col items-center text-center p-10 md:p-20 bg-neutral-900 border-neutral-800 text-white overflow-hidden relative shadow-2xl shadow-neutral-200 rounded-[2.5rem]"
                 >
                     <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none" />
@@ -933,7 +930,7 @@ export function TRPackagesContactCtaBlock() {
                                     {resolveCtaLabel(contactCta.primaryCta)}
                                 </PrimaryButton>
                             </a>
-                            
+
                             <a href={resolveCtaHref(contactCta.secondaryCta)} className="w-full sm:w-auto">
                                 <SecondaryButton className="w-full sm:w-auto !px-12 !py-4 !border-neutral-700 !bg-transparent !text-white hover:!bg-neutral-800 transition-all hover:scale-105 active:scale-95">
                                     {resolveCtaLabel(contactCta.secondaryCta)}

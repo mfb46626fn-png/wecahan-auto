@@ -26,7 +26,8 @@ const translations = {
             legal: {
                 title: "Kurumsal",
                 links: [
-                    { label: "Gizlilik Politikası", href: "#" }
+                    { label: "Gizlilik Politikası", href: "/privacy" },
+                    { label: "Kullanım Şartları", href: "/terms" }
                 ]
             }
         },
@@ -46,7 +47,8 @@ const translations = {
             legal: {
                 title: "Corporate",
                 links: [
-                    { label: "Privacy Policy", href: "#" }
+                    { label: "Privacy Policy", href: "/privacy" },
+                    { label: "Terms of Service", href: "/terms" }
                 ]
             }
         },

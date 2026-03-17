@@ -6,9 +6,9 @@ type SectionWrapperProps = React.ComponentPropsWithoutRef<'section'> & {
 
 
 const spacingMap: Record<NonNullable<SectionWrapperProps['size']>, string> = {
-    sm: 'py-12 md:py-16',
-    md: 'py-16 md:py-24',
-    lg: 'py-24 md:py-32',
+    sm: 'py-8 md:py-12',
+    md: 'py-12 md:py-20',
+    lg: 'py-20 md:py-28',
 };
 
 function mergeClasses(...classes: Array<string | false | null | undefined>) {

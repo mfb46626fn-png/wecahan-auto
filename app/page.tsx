@@ -1,10 +1,4 @@
 import type { Metadata } from "next";
-import { GlobalBriefFormBlock } from "../components/global/blocks/home/GlobalBriefFormBlock";
-import { GlobalFinalCtaBlock } from "../components/global/blocks/home/GlobalFinalCtaBlock";
-import { HeroBlockGlobal } from "../components/global/blocks/home/HeroBlockGlobal";
-import { GlobalServicesBlock } from "../components/global/blocks/home/GlobalServicesBlock";
-import { GlobalWorkflowBlock } from "../components/global/blocks/home/GlobalWorkflowBlock";
-import { GlobalSiteShell } from "../components/global/layout/GlobalSiteShell";
 import { 
     HeroBlockTR,
     TRServicesBlock,
@@ -13,16 +7,27 @@ import {
     TRFinalCtaBlock 
 } from "../components/tr/blocks/home/TRHomeBlocks";
 
+import { 
+    HeroBlockGlobal,
+    GlobalServicesBlock,
+    GlobalWorkflowBlock,
+    GlobalBriefFormBlock,
+    GlobalFinalCtaBlock
+} from "../components/global/blocks/home/GlobalHomeBlocks";
+
 import { TrSiteShell } from "../components/tr/layout/TrSiteShell";
+import { GlobalSiteShell } from "../components/global/layout/GlobalSiteShell";
 
 // Center Home Blocks
-import { CenterHomeHeroBlock } from "../components/center/blocks/home/CenterHomeHeroBlock";
-import { CenterHomeWhatWeAutomateBlock } from "../components/center/blocks/home/CenterHomeWhatWeAutomateBlock";
-import { CenterHomeHowWeWorkBlock } from "../components/center/blocks/home/CenterHomeHowWeWorkBlock";
-import { CenterHomeExampleWorkflowScenariosBlock } from "../components/center/blocks/home/CenterHomeExampleWorkflowScenariosBlock";
-import { CenterHomeWhyThisStructureWorksBlock } from "../components/center/blocks/home/CenterHomeWhyThisStructureWorksBlock";
-import { CenterHomeSelectedUseCaseExamplesBlock } from "../components/center/blocks/home/CenterHomeSelectedUseCaseExamplesBlock";
-import { CenterHomeContactBriefSectionBlock } from "../components/center/blocks/home/CenterHomeContactBriefSectionBlock";
+import { 
+    CenterHomeHeroBlock,
+    CenterHomeWhatWeAutomateBlock,
+    CenterHomeHowWeWorkBlock,
+    CenterHomeExampleWorkflowScenariosBlock,
+    CenterHomeWhyThisStructureWorksBlock,
+    CenterHomeSelectedUseCaseExamplesBlock,
+    CenterHomeContactBriefSectionBlock 
+} from "../components/center/blocks/home/CenterHomeBlocks";
 import { CenterSiteShell } from "../components/center/layout/CenterSiteShell";
 
 import { globalHomeContent } from "../content/global/home";

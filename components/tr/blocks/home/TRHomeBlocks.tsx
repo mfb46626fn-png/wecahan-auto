@@ -56,7 +56,7 @@ export function HeroBlockTR({ content, className }: HeroBlockTrProps) {
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="flex flex-col items-center text-center py-16 md:py-24 lg:py-32">
+            <ContentContainer className="flex flex-col items-center text-center py-12 md:py-16 lg:py-20">
                 {eyebrow && (
                     <SectionEyebrow className="mb-4">
                         {eyebrow}
@@ -123,7 +123,7 @@ export function TRServicesBlock({ content, className }: TRServicesBlockProps) {
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-8 md:py-12">
                 <SectionHeader
                     align="center"
                     eyebrow={eyebrow}
@@ -177,7 +177,7 @@ export function TRWorkflowBlock({ content, className }: TRWorkflowBlockProps) {
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-16 md:py-24 bg-neutral-50 rounded-2xl md:rounded-3xl border border-neutral-200/60">
+            <ContentContainer className="py-12 md:py-16 bg-neutral-50 rounded-2xl md:rounded-3xl border border-neutral-200/60">
                 <SectionHeader
                     align="center"
                     eyebrow={eyebrow}
@@ -539,7 +539,7 @@ export function TRFinalCtaBlock({ content, className }: TRFinalCtaBlockProps) {
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-12 md:py-20">
+            <ContentContainer className="py-8 md:py-12">
                 <CardBase className="flex flex-col items-center text-center p-8 md:p-12 bg-neutral-100 border-neutral-200">
                     <SectionTitle
                         size="lg"

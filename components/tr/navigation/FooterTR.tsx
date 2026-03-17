@@ -23,7 +23,7 @@ export function FooterTR({ className }: FooterTRProps) {
             <ContentContainer size="xl">
                 <div className="grid gap-12 md:grid-cols-4 lg:gap-16">
                     {/* Brand & Mission Area */}
-                    <div className="md:col-span-2">
+                    <div className="md:col-span-1">
                         <Link href="/" className="flex items-center gap-2 mb-6 group">
                             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-black text-white font-bold text-sm shadow-xl shadow-black/10 group-hover:scale-105 transition-transform duration-500">
                                 W
@@ -97,6 +97,25 @@ export function FooterTR({ className }: FooterTRProps) {
                                 >
                                     WhatsApp Destek
                                 </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Legal Area */}
+                    <div>
+                        <h3 className="mb-6 text-[11px] font-black uppercase tracking-[0.2em] text-gray-400">
+                            Kurumsal
+                        </h3>
+                        <ul className="flex flex-col gap-4">
+                            <li>
+                                <Link href="/privacy" className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900">
+                                    Gizlilik Politikası
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/terms" className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900">
+                                    Kullanım Şartları
+                                </Link>
                             </li>
                         </ul>
                     </div>
