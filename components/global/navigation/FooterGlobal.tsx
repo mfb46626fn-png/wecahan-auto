@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ContentContainer } from '../../shared/layout/ContentContainer';
+import Link from 'next/link';
 
 type FooterGlobalProps = {
     className?: string;
@@ -15,86 +16,90 @@ export function FooterGlobal({ className }: FooterGlobalProps) {
     return (
         <footer
             className={mergeClasses(
-                'w-full border-t border-gray-200 bg-white py-12 md:py-16',
+                'w-full border-t border-gray-100 bg-white py-16 md:py-24',
                 className,
             )}
         >
             <ContentContainer size="xl">
-                <div className="grid gap-8 md:grid-cols-4 lg:gap-12">
+                <div className="grid gap-12 md:grid-cols-4 lg:gap-16">
                     {/* Brand & Mission Area */}
                     <div className="md:col-span-2">
-                        <div className="flex items-center gap-2 mb-4">
+                        <Link href="/" className="flex items-center gap-2 mb-6">
                             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white font-bold text-xs">
                                 W
                             </div>
                             <span className="text-xl font-bold tracking-tight text-gray-900">
                                 WeCaHan Auto
                             </span>
-                        </div>
-                        <p className="max-w-xs text-sm leading-relaxed text-gray-500">
-                            Autonomous operational systems for modern healthcare and financial practices.
-                            We build self-sustaining infrastructures.
+                        </Link>
+                        <p className="max-w-sm text-base leading-relaxed text-gray-500">
+                            Operational automation for accounting firms. We reduce admin drag through structured workflow systems, scoped implementation, and ongoing system refinement.
                         </p>
                     </div>
 
-                    {/* Navigation Links Area */}
+                    {/* Solutions & Navigation Area */}
                     <div>
-                        <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-900">
+                        <h3 className="mb-6 text-xs font-black uppercase tracking-[0.2em] text-gray-900">
                             Solutions
                         </h3>
-                        <ul className="flex flex-col gap-3">
+                        <ul className="flex flex-col gap-4">
                             <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
-                                    Clinic Automation
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
+                                <Link href="/accounting-firms" className="text-sm font-medium text-gray-500 transition-colors hover:text-gray-900">
                                     Accounting Firms
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
-                                    Operational Services
-                                </a>
+                                <Link href="/services" className="text-sm font-medium text-gray-500 transition-colors hover:text-gray-900">
+                                    Our Services
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
+                                <Link href="/use-cases" className="text-sm font-medium text-gray-500 transition-colors hover:text-gray-900">
                                     Use Cases
-                                </a>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/pricing" className="text-sm font-medium text-gray-500 transition-colors hover:text-gray-900">
+                                    Investment Model
+                                </Link>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Contact & Legal Area */}
+                    {/* Next Steps & Support Area */}
                     <div>
-                        <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-900">
-                            Company
+                        <h3 className="mb-6 text-xs font-black uppercase tracking-[0.2em] text-gray-900">
+                            Establish Context
                         </h3>
-                        <ul className="flex flex-col gap-3">
+                        <ul className="flex flex-col gap-4">
                             <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
-                                    Contact
-                                </a>
+                                <Link href="/book-a-call" className="text-sm font-bold text-neutral-900 border-b-2 border-neutral-100 pb-1 transition-colors hover:border-neutral-900">
+                                    Book Discovery Call
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
-                                    Book a Call
-                                </a>
+                                <Link href="/contact" className="text-sm font-medium text-gray-500 transition-colors hover:text-gray-900">
+                                    Direct Inquiry
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-gray-900">
+                                <Link href="/privacy" className="text-sm font-medium text-gray-500 transition-colors hover:text-gray-900">
                                     Privacy Policy
-                                </a>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/terms" className="text-sm font-medium text-gray-500 transition-colors hover:text-gray-900">
+                                    Terms of Service
+                                </Link>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 {/* Bottom Bar: Copyright */}
-                <div className="mt-12 flex flex-col items-center justify-between border-t border-gray-100 pt-8 sm:flex-row gap-4">
-                    <p className="text-sm text-gray-400">
-                        &copy; {currentYear} WeCaHan Auto. All rights reserved.
+                <div className="mt-16 flex flex-col items-center justify-between border-t border-gray-50 pt-10 sm:flex-row gap-6">
+                    <p className="text-sm font-medium text-gray-400">
+                        &copy; {currentYear} WeCaHan Auto. Operational clarity for forward-thinking firms.
                     </p>
                 </div>
             </ContentContainer>
