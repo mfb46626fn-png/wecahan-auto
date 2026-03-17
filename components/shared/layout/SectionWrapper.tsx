@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-type SectionWrapperProps = React.PropsWithChildren<{
-    className?: string;
+type SectionWrapperProps = React.ComponentPropsWithoutRef<'section'> & {
     size?: 'sm' | 'md' | 'lg';
-}>;
+};
+
 
 const spacingMap: Record<NonNullable<SectionWrapperProps['size']>, string> = {
     sm: 'py-12 md:py-16',
@@ -19,15 +19,18 @@ export function SectionWrapper({
     children,
     className,
     size = 'md',
+    ...props
 }: SectionWrapperProps) {
     return (
         <section
+            {...props}
             className={mergeClasses(
                 'mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8',
                 spacingMap[size],
                 className,
             )}
         >
+
             {children}
         </section>
     );

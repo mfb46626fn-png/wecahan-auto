@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { GlobalBriefFormBlock } from "../components/global/blocks/GlobalBriefFormBlock";
-import { GlobalFinalCtaBlock } from "../components/global/blocks/GlobalFinalCtaBlock";
-import { HeroBlockGlobal } from "../components/global/blocks/HeroBlockGlobal";
-import { GlobalServicesBlock } from "../components/global/blocks/GlobalServicesBlock";
-import { GlobalWorkflowBlock } from "../components/global/blocks/GlobalWorkflowBlock";
+import { GlobalBriefFormBlock } from "../components/global/blocks/home/GlobalBriefFormBlock";
+import { GlobalFinalCtaBlock } from "../components/global/blocks/home/GlobalFinalCtaBlock";
+import { HeroBlockGlobal } from "../components/global/blocks/home/HeroBlockGlobal";
+import { GlobalServicesBlock } from "../components/global/blocks/home/GlobalServicesBlock";
+import { GlobalWorkflowBlock } from "../components/global/blocks/home/GlobalWorkflowBlock";
 import { GlobalSiteShell } from "../components/global/layout/GlobalSiteShell";
-import { HeroBlockTR } from "../components/tr/blocks/HeroBlockTR";
-import { TRBriefFormBlock } from "../components/tr/blocks/TRBriefFormBlock";
-import { TRFinalCtaBlock } from "../components/tr/blocks/TRFinalCtaBlock";
-import { TRServicesBlock } from "../components/tr/blocks/TRServicesBlock";
-import { TRWorkflowBlock } from "../components/tr/blocks/TRWorkflowBlock";
+import { 
+    HeroBlockTR,
+    TRServicesBlock,
+    TRWorkflowBlock,
+    TRBriefFormBlock,
+    TRFinalCtaBlock 
+} from "../components/tr/blocks/home/TRHomeBlocks";
+
 import { TrSiteShell } from "../components/tr/layout/TrSiteShell";
 
 // Center Home Blocks
