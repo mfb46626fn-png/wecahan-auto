@@ -160,53 +160,90 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
                         </button>
                     </div>
 
-                    {/* Mobile Menu Panel */}
+                    {/* Mobile Menu Panel - Fullscreen Drawer */}
                     <div className={mergeClasses(
-                        "fixed inset-0 top-20 bg-white z-40 transition-transform duration-300 ease-in-out md:hidden flex flex-col p-6 gap-8 overflow-y-auto",
+                        "fixed inset-0 bg-white z-[60] transition-transform duration-300 ease-in-out md:hidden flex flex-col h-[100dvh]",
                         isMenuOpen ? "translate-x-0" : "translate-x-full"
                     )}>
-                        <a href="/#what-we-automate" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-gray-900 border-b border-gray-50 pb-4">
-                            {t.services}
-                        </a>
-                        <a href="/why-us" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-gray-900 border-b border-gray-50 pb-4">
-                            {t.whyUs}
-                        </a>
-                        <a href="/contact" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-gray-900 border-b border-gray-50 pb-4">
-                            {t.contact}
-                        </a>
-
-                        {/* Language Switch - Mobile */}
-                        <div className="flex items-center gap-4 mt-auto pb-8">
+                        {/* Drawer Header */}
+                        <div className="flex h-20 items-center justify-between px-6 border-b border-gray-50">
+                            <a href="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2">
+                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white font-bold text-xs">
+                                    W
+                                </div>
+                                <span className="text-xl font-bold tracking-tight text-gray-900">
+                                    WeCaHan
+                                </span>
+                            </a>
                             <button 
-                                onClick={() => handleLanguageSwitch('tr')}
-                                className={mergeClasses(
-                                    "text-sm tracking-widest transition-colors",
-                                    locale === 'tr' ? "text-gray-900 font-bold underline underline-offset-8 decoration-2" : "text-gray-400 font-medium"
-                                )}
+                                className="p-2 text-gray-600 hover:text-gray-900 transition-colors focus:outline-none"
+                                onClick={() => setIsMenuOpen(false)}
+                                aria-label="Close menu"
                             >
-                                TÜRKÇE
-                            </button>
-                            <span className="text-gray-200">|</span>
-                            <button 
-                                onClick={() => handleLanguageSwitch('en')}
-                                className={mergeClasses(
-                                    "text-sm tracking-widest transition-colors",
-                                    locale === 'en' ? "text-gray-900 font-bold underline underline-offset-8 decoration-2" : "text-gray-400 font-medium"
-                                )}
-                            >
-                                ENGLISH
+                                <X size={24} />
                             </button>
                         </div>
 
-                        <PrimaryButton 
-                            className="w-full py-4 text-base font-bold"
-                            onClick={() => {
-                                setIsMenuOpen(false);
-                                window.location.href = '/contact';
-                            }}
-                        >
-                            {t.cta}
-                        </PrimaryButton>
+                        {/* Drawer Body - Scrollable */}
+                        <div className="flex-1 overflow-y-auto px-6 py-10 flex flex-col gap-8">
+                            <a 
+                                href="/#what-we-automate" 
+                                onClick={() => setIsMenuOpen(false)} 
+                                className="text-3xl font-bold text-gray-900 tracking-tight"
+                            >
+                                {t.services}
+                            </a>
+                            <a 
+                                href="/why-us" 
+                                onClick={() => setIsMenuOpen(false)} 
+                                className="text-3xl font-bold text-gray-900 tracking-tight"
+                            >
+                                {t.whyUs}
+                            </a>
+                            <a 
+                                href="/contact" 
+                                onClick={() => setIsMenuOpen(false)} 
+                                className="text-3xl font-bold text-gray-900 tracking-tight"
+                            >
+                                {t.contact}
+                            </a>
+                        </div>
+
+                        {/* Drawer Footer - Sticky at bottom */}
+                        <div className="mt-auto p-6 bg-gray-50/50 border-t border-gray-100 flex flex-col gap-6">
+                            {/* Language Switch */}
+                            <div className="flex items-center gap-4">
+                                <button 
+                                    onClick={() => handleLanguageSwitch('tr')}
+                                    className={mergeClasses(
+                                        "text-sm tracking-widest transition-colors",
+                                        locale === 'tr' ? "text-gray-900 font-bold underline underline-offset-8 decoration-2" : "text-gray-400 font-medium"
+                                    )}
+                                >
+                                    TÜRKÇE
+                                </button>
+                                <span className="text-gray-200">|</span>
+                                <button 
+                                    onClick={() => handleLanguageSwitch('en')}
+                                    className={mergeClasses(
+                                        "text-sm tracking-widest transition-colors",
+                                        locale === 'en' ? "text-gray-900 font-bold underline underline-offset-8 decoration-2" : "text-gray-400 font-medium"
+                                    )}
+                                >
+                                    ENGLISH
+                                </button>
+                            </div>
+
+                            <PrimaryButton 
+                                className="w-full py-4 text-base font-bold shadow-xl shadow-black/5"
+                                onClick={() => {
+                                    setIsMenuOpen(false);
+                                    window.location.href = '/contact';
+                                }}
+                            >
+                                {t.cta}
+                            </PrimaryButton>
+                        </div>
                     </div>
                 </nav>
             </ContentContainer>
