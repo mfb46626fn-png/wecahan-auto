@@ -60,12 +60,7 @@ export function FooterGlobal({ className }: FooterGlobalProps) {
                             </li>
                             <li>
                                 <Link href="/pricing" className="text-[13px] font-bold text-neutral-600 transition-colors hover:text-neutral-900">
-                                    Pricing Model
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/why-us" className="text-[13px] font-bold text-neutral-600 transition-colors hover:text-neutral-900">
-                                    Why Us
+                                    Pricing
                                 </Link>
                             </li>
                         </ul>
@@ -90,7 +85,12 @@ export function FooterGlobal({ className }: FooterGlobalProps) {
                                 </li>
                                 <li>
                                     <Link href="/book-a-call" className="text-[13px] font-bold text-neutral-600 transition-colors hover:text-neutral-900">
-                                        Book a Call
+                                        Book a Discovery Call
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/why-us" className="text-[13px] font-bold text-neutral-600 transition-colors hover:text-neutral-900">
+                                        Why Us
                                     </Link>
                                 </li>
                             </ul>
