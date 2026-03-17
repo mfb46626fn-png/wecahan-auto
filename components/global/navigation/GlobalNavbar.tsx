@@ -38,6 +38,11 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
         { href: "/contact", label: "Contact" },
     ];
 
+    const ctaConfig = {
+        label: "Book a Discovery Call",
+        href: "/book-a-call"
+    };
+
     return (
         <header
             className={mergeClasses(
@@ -56,14 +61,14 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
                             WeCaHan
                         </span>
                     </Link>
-
-                    {/* Desktop Navigation Links - Centered like TR */}
-                    <div className="hidden absolute left-1/2 -translate-x-1/2 items-center gap-4 lg:gap-6 md:flex whitespace-nowrap">
+...
+                    {/* Desktop Navigation Links - Centered Like TR */}
+                    <div className="hidden absolute left-1/2 -translate-x-1/2 items-center gap-4 lg:gap-8 md:flex whitespace-nowrap">
                         {navLinks.map((link, idx) => (
                             <Link 
                                 key={idx}
                                 href={link.href} 
-                                className="text-[13px] font-semibold text-gray-500 transition-colors hover:text-gray-900"
+                                className="text-[13px] font-bold text-neutral-500 transition-colors hover:text-neutral-900"
                             >
                                 {link.label}
                             </Link>
@@ -72,30 +77,30 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
 
                     {/* CTA Area */}
                     <div className="flex items-center gap-3 relative z-10">
-                        <Link href="/book-a-call" className="hidden sm:block">
-                            <PrimaryButton className="!px-5 !py-2 !text-[12px] font-bold whitespace-nowrap uppercase tracking-tight shadow-lg shadow-black/5">
-                                Book a Discovery Call
+                        <Link href={ctaConfig.href} className="hidden sm:block">
+                            <PrimaryButton className="!px-5 !py-2 !text-[11px] font-bold whitespace-nowrap uppercase tracking-widest shadow-lg shadow-black/5">
+                                {ctaConfig.label}
                             </PrimaryButton>
                         </Link>
 
                         {/* Mobile Toggle Button */}
                         <button 
-                            className="md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors focus:outline-none"
+                            className="md:hidden p-2 text-neutral-600 hover:text-neutral-900 transition-colors focus:outline-none"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-expanded={isMenuOpen}
                             aria-label="Toggle menu"
                         >
-                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
                         </button>
                     </div>
 
                     {/* Mobile Menu Panel - Fullscreen Drawer */}
                     <div className={mergeClasses(
-                        "fixed inset-0 bg-white z-[60] transition-transform duration-300 ease-in-out md:hidden flex flex-col h-[100dvh]",
+                        "fixed inset-0 bg-white z-[60] transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) md:hidden flex flex-col h-[100dvh]",
                         isMenuOpen ? "translate-x-0" : "translate-x-full"
                     )}>
                         {/* Drawer Header */}
-                        <div className="flex h-20 items-center justify-between px-6 border-b border-gray-50">
+                        <div className="flex h-20 items-center justify-between px-6 border-b border-neutral-50">
                             <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
                                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white font-bold text-xs">
                                     W
@@ -105,7 +110,7 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
                                 </span>
                             </Link>
                             <button 
-                                className="p-2 text-gray-600 hover:text-gray-900 transition-colors focus:outline-none"
+                                className="p-2 text-neutral-600 hover:text-neutral-900 transition-colors focus:outline-none"
                                 onClick={() => setIsMenuOpen(false)}
                                 aria-label="Close menu"
                             >
@@ -114,13 +119,13 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
                         </div>
 
                         {/* Drawer Body - Scrollable */}
-                        <div className="flex-1 overflow-y-auto px-6 py-10 flex flex-col gap-6">
+                        <div className="flex-1 overflow-y-auto px-6 py-12 flex flex-col gap-2">
                             {navLinks.map((link, idx) => (
                                 <Link 
                                     key={idx}
                                     href={link.href}
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="text-2xl font-bold text-gray-900 border-b border-gray-50 pb-4 tracking-tight"
+                                    className="text-2xl font-bold text-neutral-900 py-3 border-b border-neutral-50 tracking-tight transition-colors hover:text-neutral-500"
                                 >
                                     {link.label}
                                 </Link>
@@ -128,12 +133,12 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
                         </div>
 
                         {/* Drawer Footer - Sticky at bottom */}
-                        <div className="mt-auto p-6 bg-gray-50/50 border-t border-gray-100 flex flex-col gap-4">
-                            <Link href="/book-a-call" onClick={() => setIsMenuOpen(false)}>
+                        <div className="mt-auto p-6 bg-neutral-50 border-t border-neutral-100 flex flex-col gap-4">
+                            <Link href={ctaConfig.href} onClick={() => setIsMenuOpen(false)}>
                                 <PrimaryButton 
-                                    className="w-full py-4 text-base font-bold uppercase tracking-tight shadow-xl shadow-black/5"
+                                    className="w-full py-4 text-xs font-bold uppercase tracking-widest shadow-xl shadow-black/5"
                                 >
-                                    Book a Discovery Call
+                                    {ctaConfig.label}
                                 </PrimaryButton>
                             </Link>
                         </div>
