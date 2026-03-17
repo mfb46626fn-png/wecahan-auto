@@ -34,8 +34,8 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-24 md:py-36">
-                <CardBase className="relative overflow-hidden flex flex-col p-8 md:p-16 lg:p-20 bg-neutral-900 border-none shadow-2xl rounded-[3rem]">
+            <ContentContainer className="py-20 md:py-32">
+                <CardBase className="relative overflow-hidden flex flex-col p-10 md:p-16 bg-neutral-900 border-none shadow-2xl rounded-[2.5rem]">
                     {/* Background Decorative Element */}
                     <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-neutral-800/50 blur-3xl" />
                     
@@ -47,7 +47,7 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
                             >
                                 {title}
                             </SectionTitle>
-
+                            
                             <SectionDescription
                                 maxWidth="lg"
                                 className="mb-0 text-neutral-400 max-w-xl leading-relaxed text-lg"
@@ -61,7 +61,7 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
                                         <div key={i} className="h-10 w-10 rounded-full border-2 border-neutral-900 bg-neutral-800" />
                                     ))}
                                 </div>
-                                <p className="text-sm font-medium text-neutral-500 uppercase tracking-widest">
+                                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-500">
                                     Trusted by Forward-Thinking Firms
                                 </p>
                             </div>
@@ -78,7 +78,7 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
                                         <PhoneCall size={20} />
                                     </div>
                                     <div>
-                                        <h4 className="text-sm font-bold text-neutral-900 uppercase tracking-wide">
+                                        <h4 className="text-[13px] font-bold text-neutral-900">
                                             {resolveCtaLabel(primaryCta)}
                                         </h4>
                                         <p className="text-xs text-neutral-500 mt-0.5">Structured 15-min consultation</p>
@@ -98,7 +98,7 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
                                             <FileText size={20} />
                                         </div>
                                         <div>
-                                            <h4 className="text-sm font-bold text-neutral-300 uppercase tracking-wide">
+                                            <h4 className="text-[13px] font-bold text-neutral-300">
                                                 {resolveCtaLabel(secondaryCta)}
                                             </h4>
                                             <p className="text-xs text-neutral-500 mt-0.5">Submit your operational pain points</p>
@@ -112,12 +112,13 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
 
                     {helperText && (
                         <div className="mt-12 pt-8 border-t border-neutral-800/50 relative z-10">
-                            <p className="text-xs font-bold text-neutral-600 uppercase tracking-[0.2em]">
+                            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-600">
                                 {helperText}
                             </p>
                         </div>
                     )}
                 </CardBase>
+
             </ContentContainer>
         </SectionWrapper>
     );
