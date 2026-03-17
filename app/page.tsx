@@ -74,11 +74,27 @@ export default async function HomePage() {
     if (siteFamily === "global") {
         return (
             <GlobalSiteShell>
-                <HeroBlockGlobal content={globalHomeContent.hero} />
-                <GlobalServicesBlock content={globalHomeContent.services} />
-                <GlobalWorkflowBlock content={globalHomeContent.workflow} />
-                <GlobalBriefFormBlock content={globalHomeContent.briefForm} />
-                <GlobalFinalCtaBlock content={globalHomeContent.finalCta} />
+                <HeroBlockGlobal 
+                    content={globalHomeContent.hero} 
+                />
+                
+                <GlobalServicesBlock 
+                    content={globalHomeContent.services} 
+                    frictionsContent={globalHomeContent.frictions}
+                />
+                
+                <GlobalWorkflowBlock 
+                    content={globalHomeContent.workflow} 
+                    benefitsContent={globalHomeContent.benefits}
+                />
+                
+                <GlobalBriefFormBlock 
+                    content={globalHomeContent.briefForm} 
+                />
+                
+                <GlobalFinalCtaBlock 
+                    content={globalHomeContent.finalCta} 
+                />
             </GlobalSiteShell>
         );
     }
