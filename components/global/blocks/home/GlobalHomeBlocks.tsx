@@ -317,10 +317,10 @@ export function GlobalWorkflowBlock({ content, benefitsContent, className }: Glo
 
                     <div className="mt-12 md:mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                         {workflow.items.map((item, index) => (
-                            <div key={index} className="relative flex flex-col items-start md:items-center text-left md:text-center group">
+                            <div key={index} className="relative flex flex-col items-center text-center group">
                                 {/* Connector Line (Desktop Only) */}
                                 {index < workflow.items.length - 1 && (
-                                    <div className="hidden lg:block absolute top-10 left-[calc(50%+2.5rem)] w-[calc(100%-5rem)] h-px bg-neutral-200 z-0" />
+                                    <div className="hidden lg:block absolute top-10 left-[calc(50%+2.5rem)] w-[calc(100%-3rem)] h-px bg-neutral-200 z-0" />
                                 )}
                                 
                                 <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white border border-neutral-200 text-2xl font-black text-neutral-900 shadow-sm group-hover:border-neutral-900 group-hover:bg-neutral-900 group-hover:text-white transition-all duration-300">
