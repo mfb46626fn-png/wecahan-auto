@@ -505,15 +505,6 @@ export function GlobalAccountingFinalCtaBlock({ content, className }: { content:
                         <div>
                             <SectionTitle size="lg" className="mb-6 text-white max-w-2xl tracking-tight leading-[1.1]">{title}</SectionTitle>
                             <SectionDescription className="mb-0 text-neutral-300 max-w-xl leading-relaxed text-lg">{description}</SectionDescription>
-                            
-                            <div className="mt-10 flex items-center gap-6">
-                                <div className="flex -space-x-2">
-                                    {[1, 2, 3].map((i) => (
-                                        <div key={i} className="h-10 w-10 rounded-full border-2 border-neutral-900 bg-neutral-800" />
-                                    ))}
-                                </div>
-                                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-400">Trusted Operational Partners</p>
-                            </div>
                         </div>
 
                         <div className="flex flex-col gap-5 p-2 bg-neutral-800/30 rounded-[2rem] border border-neutral-700/30 backdrop-blur-sm">
