@@ -816,8 +816,8 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
                                         <p className="text-[11px] text-neutral-500 mt-1 font-semibold uppercase tracking-wider">Structured 15-min consultation</p>
                                     </div>
                                 </div>
-                                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-50 group-hover:bg-neutral-900 group-hover:text-white transition-all">
-                                    <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
+                                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-transparent group-hover:text-neutral-900 transition-all">
+                                    <ArrowRight size={18} className="text-neutral-300 group-hover:text-neutral-900 group-hover:translate-x-0.5 transition-all" />
                                 </div>
                             </Link>
 
