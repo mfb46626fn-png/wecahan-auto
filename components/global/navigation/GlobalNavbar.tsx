@@ -30,7 +30,6 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
     }, [isMenuOpen]);
 
     const navLinks = [
-        { href: "/", label: "Home" },
         { href: "/accounting-firms", label: "Accounting Firms" },
         { href: "/services", label: "Services" },
         { href: "/pricing", label: "Pricing" },

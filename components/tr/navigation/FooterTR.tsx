@@ -55,7 +55,7 @@ export function FooterTR({ className }: FooterTRProps) {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/ paketler" className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900">
+                                <Link href="/paketler" className="text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900">
                                     Paketler
                                 </Link>
                             </li>

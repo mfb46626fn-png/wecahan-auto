@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { useState, useRef } from "react";
+import Link from 'next/link';
 import { SectionWrapper } from '../../../shared/layout/SectionWrapper';
 import { ContentContainer } from '../../../shared/layout/ContentContainer';
 import { SectionHeader } from '../../../shared/layout/SectionHeader';
@@ -94,15 +95,19 @@ export function HeroBlockGlobal({ content, className }: HeroBlockGlobalProps) {
                 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                     {primaryCta && (
-                        <PrimaryButton className="w-full sm:w-auto min-w-[200px] !px-8 !py-3 font-bold uppercase tracking-tight shadow-lg shadow-black/5">
-                            {resolveCtaLabel(primaryCta)}
-                        </PrimaryButton>
+                        <Link href="/book-a-call" className="w-full sm:w-auto">
+                            <PrimaryButton className="w-full min-w-[200px] !px-8 !py-3 font-bold uppercase tracking-tight shadow-lg shadow-black/5">
+                                {resolveCtaLabel(primaryCta)}
+                            </PrimaryButton>
+                        </Link>
                     )}
                     
                     {secondaryCta && (
-                        <SecondaryButton className="w-full sm:w-auto min-w-[200px] !px-8 !py-3 font-bold uppercase tracking-tight bg-white border-neutral-200">
-                            {resolveCtaLabel(secondaryCta)}
-                        </SecondaryButton>
+                        <Link href="/contact" className="w-full sm:w-auto">
+                            <SecondaryButton className="w-full min-w-[200px] !px-8 !py-3 font-bold uppercase tracking-tight bg-white border-neutral-200">
+                                {resolveCtaLabel(secondaryCta)}
+                            </SecondaryButton>
+                        </Link>
                     )}
                 </div>
 
@@ -773,10 +778,10 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
     return (
         <SectionWrapper className={className}>
             <ContentContainer className="py-16 md:py-24">
-                <CardBase className="relative overflow-hidden flex flex-col p-10 md:p-16 bg-neutral-900 border-none shadow-2xl rounded-[2.5rem]">
-                    <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-neutral-800/50 blur-3xl" />
+                <CardBase className="relative overflow-hidden flex flex-col p-10 md:p-16 bg-[#0A0A0A] border border-white/5 shadow-2xl rounded-[2.5rem]">
+                    <div className="absolute top-0 right-0 -mr-16 -mt-16 h-80 w-80 rounded-full bg-white/[0.02] blur-3xl" />
                     
-                    <div className="relative z-10 grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+                    <div className="relative z-10 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                         <div>
                             <SectionTitle
                                 size="lg"
@@ -795,7 +800,7 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
                             <div className="mt-10 flex items-center gap-6">
                                 <div className="flex -space-x-2">
                                     {[1, 2, 3].map((i) => (
-                                        <div key={i} className="h-10 w-10 rounded-full border-2 border-neutral-900 bg-neutral-800" />
+                                        <div key={i} className="h-10 w-10 rounded-full border-2 border-[#0A0A0A] bg-neutral-800" />
                                     ))}
                                 </div>
                                 <p className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-500">
@@ -804,50 +809,52 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-5 p-2 bg-neutral-800/30 rounded-[2rem] border border-neutral-700/30 backdrop-blur-sm">
-                            <a 
-                                href={resolveCtaHref(primaryCta)}
-                                className="group flex items-center justify-between p-6 rounded-2xl bg-white transition-all hover:bg-neutral-50"
+                        <div className="flex flex-col gap-4 p-3 bg-white/[0.03] rounded-[2.5rem] border border-white/5 backdrop-blur-xl">
+                            <Link 
+                                href="/book-a-call"
+                                className="group flex items-center justify-between p-6 rounded-3xl bg-white transition-all hover:scale-[1.02] active:scale-[0.98]"
                             >
                                 <div className="flex items-center gap-4">
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-neutral-900 text-white shadow-lg shadow-black/20">
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-900 text-white shadow-xl shadow-black/10">
                                         <PhoneCall size={20} />
                                     </div>
                                     <div>
                                         <h4 className="text-[13px] font-bold text-neutral-900">
                                             {resolveCtaLabel(primaryCta)}
                                         </h4>
-                                        <p className="text-xs text-neutral-500 mt-0.5">Structured 15-min consultation</p>
+                                        <p className="text-[11px] text-neutral-500 mt-0.5 font-medium">Structured 15-min consultation</p>
                                     </div>
                                 </div>
-                                <ArrowRight size={20} className="text-neutral-300 group-hover:text-neutral-900 group-hover:translate-x-1 transition-all" />
-                            </a>
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-50 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
+                                    <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+                                </div>
+                            </Link>
 
                             {secondaryCta && (
-                                <a 
-                                    href={resolveCtaHref(secondaryCta)}
-                                    className="group flex items-center justify-between p-6 rounded-2xl bg-transparent border border-neutral-700/50 transition-all hover:border-neutral-500 hover:bg-neutral-700/20"
+                                <Link 
+                                    href="/contact"
+                                    className="group flex items-center justify-between p-6 rounded-3xl bg-transparent border border-white/10 transition-all hover:bg-white/5 hover:border-white/20"
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-neutral-800 text-neutral-400 border border-neutral-700">
+                                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-neutral-400 border border-white/10 group-hover:border-white/20 transition-colors">
                                             <FileText size={20} />
                                         </div>
                                         <div>
-                                            <h4 className="text-[13px] font-bold text-neutral-300">
+                                            <h4 className="text-[13px] font-bold text-neutral-200">
                                                 {resolveCtaLabel(secondaryCta)}
                                             </h4>
-                                            <p className="text-xs text-neutral-500 mt-0.5">Submit your operational pain points</p>
+                                            <p className="text-[11px] text-neutral-500 mt-0.5 font-medium">Submit your operational pain points</p>
                                         </div>
                                     </div>
-                                    <ArrowRight size={20} className="text-neutral-600 group-hover:text-neutral-300 group-hover:translate-x-1 transition-all" />
-                                </a>
+                                    <ArrowRight size={18} className="text-neutral-600 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                                </Link>
                             )}
                         </div>
                     </div>
 
                     {helperText && (
-                        <div className="mt-12 pt-8 border-t border-neutral-800/50 relative z-10">
-                            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-600">
+                        <div className="mt-12 pt-8 border-t border-white/5 relative z-10">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-600">
                                 {helperText}
                             </p>
                         </div>
