@@ -93,10 +93,9 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
                         </button>
                     </div>
 
-                    {/* Mobile Menu Panel - Fullscreen Drawer */}
                     <div className={mergeClasses(
                         "fixed inset-0 bg-white z-[60] transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) md:hidden flex flex-col h-[100dvh]",
-                        isMenuOpen ? "translate-x-0" : "translate-x-full"
+                        isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 invisible"
                     )}>
                         {/* Drawer Header */}
                         <div className="flex h-20 items-center justify-between px-6 border-b border-neutral-50">
