@@ -142,8 +142,8 @@ export const globalAccountingFirmsContent: GlobalAccountingFirmsContent = {
         eyebrow: 'Accounting Sector',
         title: 'Leaner operational workflows for accounting firms',
         description: 'Reduce admin drag by automating client intake and recurring document follow-ups. We build the structured systems that allow your team to focus on high-value execution.',
-        primaryCta: 'Book a Discovery Call',
-        secondaryCta: 'Send Workflow Brief',
+        primaryCta: { label: 'Book a Discovery Call', href: '/book-a-call' },
+        secondaryCta: { label: 'Send Workflow Brief', href: '/contact' },
         helperText: 'Scoped service implementation, not a self-serve software.',
     },
     frictions: {
@@ -220,8 +220,8 @@ export const globalAccountingFirmsContent: GlobalAccountingFirmsContent = {
             'Managers needing better task visibility',
             'Firms looking to standardize repetitive workflows',
         ],
-        primaryCta: 'Book a Discovery Call',
-        secondaryCta: 'Send Workflow Brief',
+        primaryCta: { label: 'Book a Discovery Call', href: '/book-a-call' },
+        secondaryCta: { label: 'Send Workflow Brief', href: '/contact' },
     },
     solutionModules: {
         title: 'Integrated Operational Modules',
@@ -406,8 +406,8 @@ export const globalAccountingFirmsContent: GlobalAccountingFirmsContent = {
             'User count and team structure',
             'Selected maintenance intensity',
         ],
-        primaryCta: 'View PRICING Model',
-        secondaryCta: 'Send Workflow Brief',
+        primaryCta: { label: 'View PRICING Model', href: '/pricing' },
+        secondaryCta: { label: 'Send Workflow Brief', href: '/contact' },
     },
     fit: {
         title: 'Is This a Fit for Your Firm?',
@@ -428,8 +428,8 @@ export const globalAccountingFirmsContent: GlobalAccountingFirmsContent = {
     cta: {
         title: 'Let’s identify your operational bottlenecks',
         description: 'Every firm is different. A short discovery call or a workflow brief is the most sensible way to start your automation journey.',
-        primaryCta: 'Book a Discovery Call',
-        secondaryCta: 'Send Workflow Brief',
+        primaryCta: { label: 'Book a Discovery Call', href: '/book-a-call' },
+        secondaryCta: { label: 'Send Workflow Brief', href: '/contact' },
         helperText: 'Final scope and levels are defined after our review process.',
     },
 };
