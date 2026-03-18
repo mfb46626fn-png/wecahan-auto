@@ -90,20 +90,20 @@ export function CenterHomeHeroBlock({ content, className }: CenterHomeHeroBlockP
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="relative py-12 md:py-24 lg:py-32">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-50/30 rounded-full blur-[80px] md:blur-[120px] -z-10 pointer-events-none" />
+            <ContentContainer className="relative py-8 md:py-16 lg:py-20">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-50/10 rounded-full blur-[100px] md:blur-[120px] -z-10 pointer-events-none" />
                 
                 <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-                    <SectionEyebrow className="mb-4 md:mb-6 !text-indigo-500 font-bold tracking-[0.2em] uppercase">
+                    <SectionEyebrow className="mb-4">
                         {eyebrow}
                     </SectionEyebrow>
                     
-                    <SectionTitle size="lg" className="mb-6 md:mb-8 leading-[1.1] !text-slate-900 font-black tracking-tight text-3xl md:text-5xl lg:text-6xl">
+                    <SectionTitle size="lg" className="mb-6 max-w-4xl">
                         {title}
                     </SectionTitle>
                     
                     {description && (
-                        <SectionDescription maxWidth="lg" className="mb-12 !text-slate-500 font-medium leading-relaxed">
+                        <SectionDescription maxWidth="lg" className="mb-10 max-w-2xl text-slate-600">
                             {description}
                         </SectionDescription>
                     )}
@@ -111,7 +111,7 @@ export function CenterHomeHeroBlock({ content, className }: CenterHomeHeroBlockP
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                         {primary && (
                             <Link href={primary.href} className="w-full sm:w-auto">
-                                <PrimaryButton className="w-full sm:w-auto !px-10 !py-4 font-bold uppercase tracking-tight shadow-2xl shadow-slate-200">
+                                <PrimaryButton className="w-full sm:w-auto min-w-[200px] !px-8 !py-3">
                                     {primary.label}
                                 </PrimaryButton>
                             </Link>
@@ -119,7 +119,7 @@ export function CenterHomeHeroBlock({ content, className }: CenterHomeHeroBlockP
                         
                         {secondary && (
                             <Link href={secondary.href} className="w-full sm:w-auto">
-                                <SecondaryButton className="w-full sm:w-auto !px-10 !py-4 font-bold uppercase tracking-tight border-slate-200 text-slate-600 hover:bg-slate-50">
+                                <SecondaryButton className="w-full sm:w-auto min-w-[200px] !px-8 !py-3">
                                     {secondary.label}
                                 </SecondaryButton>
                             </Link>
@@ -184,7 +184,7 @@ export function CenterHomeWhatWeAutomateBlock({ content, className }: CenterHome
                                 <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-black transition-colors">
                                     {category.title}
                                 </h3>
-                                <BodyText className="text-slate-500 mb-8 leading-relaxed">
+                                <BodyText className="text-slate-500 mb-6 md:mb-8 leading-relaxed">
                                     {category.description}
                                 </BodyText>
                                 
