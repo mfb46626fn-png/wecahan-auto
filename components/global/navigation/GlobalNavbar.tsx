@@ -60,7 +60,7 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
                             WeCaHan
                         </span>
                     </Link>
-...
+
                     {/* Desktop Navigation Links - Centered Like TR */}
                     <div className="hidden absolute left-1/2 -translate-x-1/2 items-center gap-4 lg:gap-8 md:flex whitespace-nowrap">
                         {navLinks.map((link, idx) => (
