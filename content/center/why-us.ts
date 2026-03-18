@@ -8,6 +8,7 @@ interface SeoContent {
 }
 
 interface HeroContent {
+    eyebrow: string;
     title: string;
     description: string;
     trustStatement: string;
@@ -62,6 +63,10 @@ interface IdealFitContent {
     title: string;
     description: string;
     criteria: FitItem[];
+    labels: {
+        target: string;
+        nonTarget: string;
+    };
 }
 
 interface ContactBridgeContent {
@@ -89,6 +94,7 @@ export const centerWhyUsBilingualContent: Record<CenterLocale, WhyUsContent> = {
             description: 'Understanding our method-led approach to operational automation. Why we focus on sustainable systems over ad-hoc tools.',
         },
         hero: {
+            eyebrow: 'Structure over Chaos',
             title: 'Why we focus on operational structure',
             description: 'Automation is only as effective as the process it supports. We don\'t just add tools; we build the logic that makes your service business more predictable and manageable.',
             trustStatement: 'Method-led. Outcome-focused. Scope-honest.',
@@ -190,6 +196,10 @@ export const centerWhyUsBilingualContent: Record<CenterLocale, WhyUsContent> = {
                     reason: 'We build structured logic, not unpredictable "set and forget" magic.',
                 },
             ],
+            labels: {
+                target: 'Target',
+                nonTarget: 'Non-Target',
+            },
         },
         contactBridge: {
             title: 'Ready for a more structured process?',
@@ -204,6 +214,7 @@ export const centerWhyUsBilingualContent: Record<CenterLocale, WhyUsContent> = {
             description: 'Operasyonel otomasyona yönelik yöntem odaklı yaklaşımımızı anlayın. Neden geçici araçlar yerine sürdürülebilir sistemlere odaklanıyoruz?',
         },
         hero: {
+            eyebrow: 'Kaos Yerine Yapı',
             title: 'Neden operasyonel yapıya odaklanıyoruz?',
             description: 'Otomasyon, ancak desteklediği süreç kadar etkilidir. Sadece araç eklemiyoruz; hizmet işletmenizi daha öngörülebilir ve yönetilebilir kılan mantığı inşa ediyoruz.',
             trustStatement: 'Yöntem odaklı. Sonuç merkezli. Kapsam konusunda dürüst.',
@@ -305,6 +316,10 @@ export const centerWhyUsBilingualContent: Record<CenterLocale, WhyUsContent> = {
                     reason: 'Tahmin edilemez sihirli değnekler değil, yapılandırılmış mantık kuruyoruz.',
                 },
             ],
+            labels: {
+                target: 'Hedef',
+                nonTarget: 'Hedef Dışı',
+            },
         },
         contactBridge: {
             title: 'Daha yapılandırılmış bir sürece hazır mısınız?',

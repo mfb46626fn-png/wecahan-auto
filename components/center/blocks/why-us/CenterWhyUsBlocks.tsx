@@ -25,15 +25,15 @@ export function CenterWhyUsHeroBlock({ content, className }: CenterWhyUsHeroBloc
     const { title, description, trustStatement } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="relative py-24 md:py-32 lg:py-40">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-50/30 rounded-full blur-[120px] -z-10 pointer-events-none" />
+            <ContentContainer className="relative py-12 md:py-24 lg:py-32">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-50/30 rounded-full blur-[80px] md:blur-[120px] -z-10 pointer-events-none" />
                 
                 <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-                    <SectionEyebrow className="mb-6 !text-indigo-500 font-bold tracking-[0.2em] uppercase">
-                        Structure over Chaos
+                    <SectionEyebrow className="mb-4 md:mb-6 !text-indigo-500 font-bold tracking-[0.2em] uppercase">
+                        {content.eyebrow}
                     </SectionEyebrow>
                     
-                    <SectionTitle size="lg" className="mb-8 leading-[1.1] !text-slate-900 font-black tracking-tight">
+                    <SectionTitle size="lg" className="mb-6 md:mb-8 leading-[1.1] !text-slate-900 font-black tracking-tight text-3xl md:text-5xl lg:text-6xl">
                         {title}
                     </SectionTitle>
                     
@@ -66,16 +66,16 @@ export function CenterWhyUsOptimizationBlock({ content, className }: CenterWhyUs
     const { title, description, items } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title={title}
                     description={description}
                     align="center"
                     maxWidth="lg"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-16"
                 />
                 
-                <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid gap-4 md:gap-8 sm:grid-cols-2 lg:grid-cols-4">
                     {items.map((item, index) => (
                         <CardBase 
                             key={index}
@@ -120,16 +120,16 @@ export function CenterWhyUsMethodologyBlock({ content, className }: CenterWhyUsM
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32 bg-slate-50/50 rounded-[3rem] border border-slate-100">
+            <ContentContainer className="py-12 md:py-24 bg-slate-50/50 rounded-[2.5rem] md:rounded-[3rem] border border-slate-100">
                 <SectionHeader
                     title={title}
                     description={description}
                     align="center"
                     maxWidth="lg"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-16"
                 />
                 
-                <div className="grid gap-8 md:gap-4 lg:grid-cols-4 md:grid-cols-2 relative">
+                <div className="grid gap-4 md:gap-4 lg:grid-cols-4 md:grid-cols-2 relative px-2 md:px-0">
                     {pillars.map((pillar, index) => (
                         <div key={index} className="relative group">
                             <CardBase 
@@ -166,18 +166,18 @@ export function CenterWhyUsPhilosophyBlock({ content, className }: CenterWhyUsPh
     const { title, description, logicPoints } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <div className="max-w-4xl mx-auto bg-slate-900 rounded-[3rem] p-10 md:p-20 text-white overflow-hidden relative">
+            <ContentContainer className="py-12 md:py-24">
+                <div className="max-w-4xl mx-auto bg-slate-900 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 lg:p-20 text-white overflow-hidden relative">
                     {/* Visual Decor */}
                     <div className="absolute -top-24 -right-24 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px]" />
                     
                     <div className="relative z-10">
                         <SectionHeader
-                            title={<span className="text-white">{title}</span>}
+                            title={<span className="text-white text-2xl md:text-3xl lg:text-4xl">{title}</span>}
                             description={<span className="text-slate-400">{description}</span>}
                             align="left"
                             maxWidth="lg"
-                            className="mb-12"
+                            className="mb-8 md:mb-12"
                         />
                         
                         <div className="grid gap-4 sm:grid-cols-2">
@@ -221,15 +221,15 @@ export function CenterWhyUsTransparencyBlock({ content, className }: CenterWhyUs
                         <CardBase 
                             key={index}
                             size="lg"
-                            className="flex flex-col items-center text-center p-10 border-slate-100 hover:border-slate-200 rounded-[2.5rem] bg-slate-50/30"
+                            className="flex flex-col items-center text-center p-6 md:p-10 border-slate-100 hover:border-slate-200 rounded-[2rem] md:rounded-[2.5rem] bg-slate-50/30"
                         >
-                            <div className="mb-6 p-4 rounded-full bg-indigo-50 text-indigo-600">
+                            <div className="mb-4 md:mb-6 p-4 rounded-full bg-indigo-50 text-indigo-600">
                                 <ShieldCheck className="h-6 w-6" />
                             </div>
-                            <span className="text-[11px] font-black uppercase tracking-[0.2em] text-indigo-500 mb-4">
+                            <span className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] text-indigo-500 mb-3 md:mb-4">
                                 {point.label}
                             </span>
-                            <p className="text-lg font-bold text-slate-900 leading-tight">
+                            <p className="text-base md:text-lg font-bold text-slate-900 leading-tight">
                                 {point.value}
                             </p>
                         </CardBase>
@@ -281,7 +281,7 @@ export function CenterWhyUsIdealFitBlock({ content, className }: CenterWhyUsIdea
                                     <span className={`text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full ${
                                         item.isFit ? 'bg-emerald-500 text-white' : 'bg-slate-200 text-slate-500'
                                     }`}>
-                                        {item.isFit ? 'Target' : 'Non-Target'}
+                                        {item.isFit ? (content as any).labels?.target || 'Target' : (content as any).labels?.nonTarget || 'Non-Target'}
                                     </span>
                                 </div>
                             </div>
@@ -319,12 +319,12 @@ export function CenterWhyUsContactBridgeBlock({ content, className }: CenterWhyU
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <div className="max-w-4xl mx-auto bg-white border border-slate-100 shadow-2xl shadow-slate-200/60 rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden">
+            <ContentContainer className="py-12 md:py-24 px-4 md:px-0">
+                <div className="max-w-4xl mx-auto bg-white border border-slate-100 shadow-2xl shadow-slate-200/60 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 lg:p-20 text-center relative overflow-hidden">
                     {/* Background Pattern */}
                     <div className="absolute inset-0 opacity-[0.03] pointer-events-none -z-10 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:24px_24px]" />
                     
-                    <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 tracking-tight leading-tight">
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 md:mb-8 tracking-tight leading-tight">
                         {title}
                     </h2>
                     

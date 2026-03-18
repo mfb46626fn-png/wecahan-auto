@@ -75,7 +75,7 @@ export function GlobalAccountingHeroBlock({ content, className }: { content: any
                     </p>
                 )}
 
-                <div className="mt-20 lg:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-12 w-full max-w-5xl border-t border-neutral-100 pt-12">
+                <div className="mt-12 md:mt-20 lg:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-12 w-full max-w-5xl border-t border-neutral-100 pt-8 md:pt-12">
                     {outcomeItems.map((item, idx) => (
                         <div key={idx} className="flex items-center justify-center gap-3">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-50 border border-neutral-100 text-neutral-400">
@@ -97,11 +97,11 @@ export function GlobalAccountingFrictionsBlock({ content, className }: { content
     const { eyebrow, title, description, items } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/30 ${className}`}>
-            <ContentContainer className="py-20 md:py-28">
-                <SectionHeader eyebrow={eyebrow} title={title} description={description} align="center" className="mb-16 md:mb-24" />
+            <ContentContainer className="py-12 md:py-24">
+                <SectionHeader eyebrow={eyebrow} title={title} description={description} align="center" className="mb-10 md:mb-20 lg:mb-24" />
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {items.map((item: any, idx: number) => (
-                        <CardBase key={idx} className="p-8 border-neutral-100 bg-white hover:border-neutral-200 hover:shadow-xl hover:shadow-neutral-200/40 transition-all duration-500">
+                        <CardBase key={idx} className="p-6 md:p-8 border-neutral-100 bg-white hover:border-neutral-200 hover:shadow-xl hover:shadow-neutral-200/40 transition-all duration-500">
                             <div className="mb-6 flex items-center justify-between">
                                 <div className="text-[10px] font-black text-neutral-400 uppercase tracking-widest">
                                     Issue {String(idx + 1).padStart(2, '0')}
@@ -123,8 +123,8 @@ export function GlobalAccountingImprovementsBlock({ content, className }: { cont
     const { eyebrow, title, description, items } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-28">
-                <SectionHeader eyebrow={eyebrow} title={title} description={description} align="center" className="mb-16 md:mb-24" />
+            <ContentContainer className="py-12 md:py-24">
+                <SectionHeader eyebrow={eyebrow} title={title} description={description} align="center" className="mb-10 md:mb-20 lg:mb-24" />
                 <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {items.map((item: any, idx: number) => (
                         <div key={idx} className="flex flex-col gap-4">
@@ -146,8 +146,8 @@ export function GlobalAccountingFlagshipPackageBlock({ content, className }: { c
     const { title, description, scope, suitableFor, primaryCta, secondaryCta } = content;
     return (
         <SectionWrapper className={`bg-neutral-900 text-white ${className}`}>
-            <ContentContainer className="py-24 md:py-32">
-                <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+            <ContentContainer className="py-16 md:py-24 lg:py-32">
+                <div className="grid gap-10 md:gap-16 lg:grid-cols-2 lg:items-center">
                     <div>
                         <SectionEyebrow className="mb-4 text-neutral-500">Flagship Solution</SectionEyebrow>
                         <SectionTitle size="md" className="mb-6 text-white max-w-xl">{title}</SectionTitle>
@@ -179,7 +179,7 @@ export function GlobalAccountingFlagshipPackageBlock({ content, className }: { c
                         </div>
                     </div>
                     
-                    <CardBase className="p-8 md:p-12 bg-neutral-800 border-neutral-700/50 shadow-2xl rounded-[2.5rem]">
+                    <CardBase className="p-6 md:p-10 lg:p-12 bg-neutral-800 border-neutral-700/50 shadow-2xl rounded-[2.5rem]">
                         <div className="flex flex-col gap-6">
                             <div className="p-6 rounded-2xl bg-neutral-900 border border-neutral-700">
                                 <div className="flex items-center gap-4 mb-4">
@@ -217,11 +217,11 @@ export function GlobalAccountingSolutionModulesBlock({ content, className }: { c
     const { title, description, items } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-28">
-                <SectionHeader title={title} description={description} align="center" className="mb-16 md:mb-24" />
+            <ContentContainer className="py-12 md:py-24">
+                <SectionHeader title={title} description={description} align="center" className="mb-10 md:mb-20 lg:mb-24" />
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {items.map((item: any, idx: number) => (
-                        <CardBase key={idx} className="p-8 border-neutral-100 hover:shadow-lg transition-all">
+                        <CardBase key={idx} className="p-6 md:p-8 border-neutral-100 hover:shadow-lg transition-all">
                             <h3 className="text-[15px] font-bold text-neutral-900 mb-3 tracking-tight leading-tight">{item.title}</h3>
                             <BodyText className="text-[13px] text-neutral-500 mb-6 font-medium">{item.description}</BodyText>
                             <ul className="space-y-2 pt-6 border-t border-neutral-50">
@@ -251,11 +251,11 @@ export function GlobalAccountingSetupLevelsBlock({ content, className }: { conte
     const { title, description, items } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/50 ${className}`}>
-            <ContentContainer className="py-20 md:py-28">
-                <SectionHeader title={title} description={description} align="center" className="mb-16 md:mb-24" />
+            <ContentContainer className="py-12 md:py-24">
+                <SectionHeader title={title} description={description} align="center" className="mb-10 md:mb-20 lg:mb-24" />
                 <div className="grid gap-8 sm:grid-cols-3 max-w-5xl mx-auto">
                     {items.map((item: any, idx: number) => (
-                        <CardBase key={idx} className="flex flex-col p-8 bg-white border-neutral-100 rounded-[2rem]">
+                        <CardBase key={idx} className="flex flex-col p-6 md:p-8 bg-white border-neutral-100 rounded-[2rem]">
                             <div className="mb-6">
                                 <h3 className="text-xl font-bold text-neutral-900 tracking-tight mb-2">{item.title}</h3>
                                 <BodyText className="text-xs text-neutral-500 font-bold uppercase tracking-widest">{item.suitableFor}</BodyText>
@@ -282,11 +282,11 @@ export function GlobalAccountingMaintenanceLevelsBlock({ content, className }: {
     const { title, description, items } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-28">
-                <SectionHeader title={title} description={description} align="center" className="mb-16 md:mb-24" />
+            <ContentContainer className="py-12 md:py-24">
+                <SectionHeader title={title} description={description} align="center" className="mb-10 md:mb-20 lg:mb-24" />
                 <div className="grid gap-8 sm:grid-cols-3 max-w-6xl mx-auto">
                     {items.map((item: any, idx: number) => (
-                        <CardBase key={idx} className="flex flex-col p-8 border-neutral-100 rounded-[2rem]">
+                        <CardBase key={idx} className="flex flex-col p-6 md:p-8 border-neutral-100 rounded-[2rem]">
                             <h3 className="text-lg font-bold text-neutral-900 mb-2">{item.title}</h3>
                             <BodyText className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-400 mb-6">{item.bestFor}</BodyText>
                             <BodyText className="text-[13px] text-neutral-500 mb-8 font-medium italic">"{item.description}"</BodyText>
@@ -330,8 +330,8 @@ export function GlobalAccountingIncludedExcludedBlock({ content, className }: { 
     const { title, description, included, notIncluded } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/20 ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} description={description} align="center" className="mb-16 md:mb-24" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} description={description} align="center" className="mb-10 md:mb-20 lg:mb-24" />
                 <div className="grid gap-12 lg:grid-cols-2 lg:max-w-5xl lg:mx-auto">
                     <div>
                         <div className="flex items-center gap-4 mb-10">
@@ -377,8 +377,8 @@ export function GlobalAccountingExampleWorkflowBlock({ content, className }: { c
     const { title, description, items } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-24 md:py-32">
-                <SectionHeader title={title} description={description} align="center" className="mb-16 md:mb-24" />
+            <ContentContainer className="py-16 md:py-24 lg:py-32">
+                <SectionHeader title={title} description={description} align="center" className="mb-10 md:mb-20 lg:mb-24" />
                 <div className="grid gap-16 max-w-4xl mx-auto">
                     {items.map((item: any, idx: number) => (
                         <div key={idx} className="relative">
@@ -409,8 +409,8 @@ export function GlobalAccountingPricingLogicBlock({ content, className }: { cont
     const { title, description, factors, primaryCta, secondaryCta } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/30 ${className}`}>
-            <ContentContainer className="py-20 md:py-28">
-                <div className="grid gap-16 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+            <ContentContainer className="py-12 md:py-24">
+                <div className="grid gap-10 md:gap-16 lg:grid-cols-[1.2fr_1fr] lg:items-center">
                     <div>
                         <SectionEyebrow className="mb-4 text-neutral-400">Investment Model</SectionEyebrow>
                         <SectionTitle size="md" className="mb-6 tracking-tight">{title}</SectionTitle>
@@ -426,7 +426,7 @@ export function GlobalAccountingPricingLogicBlock({ content, className }: { cont
                         </div>
                     </div>
                     
-                    <CardBase className="p-8 md:p-10 bg-white border-neutral-100 shadow-sm rounded-[2rem]">
+                    <CardBase className="p-6 md:p-10 bg-white border-neutral-100 shadow-sm rounded-[2rem]">
                         <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-400 mb-8">What Affects the Scope</h4>
                         <div className="grid gap-6">
                             {factors.map((factor: string, idx: number) => (
@@ -451,10 +451,10 @@ export function GlobalAccountingFitBlock({ content, className }: { content: any,
     const { title, description, goodFit, notGoodFit } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} description={description} align="center" className="mb-16 md:mb-24" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} description={description} align="center" className="mb-10 md:mb-20 lg:mb-24" />
                 <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
-                    <CardBase className="flex flex-col p-10 bg-white border-neutral-100 rounded-[2.5rem] shadow-sm">
+                    <CardBase className="flex flex-col p-6 md:p-10 bg-white border-neutral-100 rounded-[2.5rem] shadow-sm">
                         <div className="flex items-center gap-4 mb-10">
                             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-neutral-900 text-white">
                                 <span className="font-bold text-sm">✓</span>
@@ -471,7 +471,7 @@ export function GlobalAccountingFitBlock({ content, className }: { content: any,
                         </ul>
                     </CardBase>
                     
-                    <CardBase className="flex flex-col p-10 bg-neutral-50/50 border-neutral-100 rounded-[2.5rem] shadow-sm">
+                    <CardBase className="flex flex-col p-6 md:p-10 bg-neutral-50/50 border-neutral-100 rounded-[2.5rem] shadow-sm">
                         <div className="flex items-center gap-4 mb-10">
                             <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-neutral-200 text-neutral-300">
                                 <span className="font-bold text-sm">×</span>
@@ -498,8 +498,8 @@ export function GlobalAccountingFinalCtaBlock({ content, className }: { content:
     const { title, description, primaryCta, secondaryCta, helperText } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <CardBase className="relative overflow-hidden flex flex-col p-10 md:p-16 bg-black border-none shadow-2xl rounded-[2.5rem]">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <CardBase className="relative overflow-hidden flex flex-col p-6 md:p-16 bg-black border-none shadow-2xl rounded-[2.5rem]">
                     <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-neutral-800/30 blur-3xl" />
                     <div className="relative z-10 grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:items-center">
                         <div>

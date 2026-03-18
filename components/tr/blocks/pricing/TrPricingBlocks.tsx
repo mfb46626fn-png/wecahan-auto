@@ -50,7 +50,7 @@ export function TRPricingHeroBlock() {
 
     return (
         <SectionWrapper className="overflow-hidden bg-neutral-50/50">
-            <ContentContainer className="py-16 md:py-24 lg:py-32">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
                 <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                     <div className="flex flex-col items-start text-left">
                         {hero.eyebrow && (
@@ -146,7 +146,7 @@ export function TRPricingModelOverviewBlock() {
                     title={pricingPhilosophy.title}
                     description={pricingPhilosophy.description}
                     align="center"
-                    className="mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -189,7 +189,7 @@ export function TRPricingAnalysisBlock() {
                     title={analysisPricing.title}
                     description="Otomasyon inşasına başlamadan önce mevcut süreçlerinizi analiz ediyor ve en verimli teknoloji haritasını çıkarıyoruz."
                     align="center"
-                    className="mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <CardBase size="lg" className="bg-white border-neutral-200 overflow-hidden shadow-sm max-w-5xl mx-auto">
@@ -295,13 +295,13 @@ export function TRPricingSetupPackagesBlock() {
     return (
         <div id="setup-packages">
             <SectionWrapper className="bg-white">
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     eyebrow="Adım 2"
                     title={setupPackages.title}
                     description={setupPackages.description}
                     align="center"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-20 lg:mb-24"
                 />
 
                 <div className="grid gap-8 lg:grid-cols-3 lg:items-stretch">
@@ -406,13 +406,13 @@ export function TRPricingMaintenancePlansBlock() {
     return (
         <div id="maintenance-plans">
             <SectionWrapper className="bg-neutral-50/50">
-                <ContentContainer className="py-16 md:py-24">
+                <ContentContainer className="py-12 md:py-24">
                     <SectionHeader
                         eyebrow="Adım 3"
                         title={maintenancePlans.title}
                         description={maintenancePlans.description}
                         align="center"
-                        className="mb-16 md:mb-24"
+                        className="mb-10 md:mb-20 lg:mb-24"
                     />
 
                     <div className="grid gap-8 lg:grid-cols-3 lg:items-stretch">
@@ -513,13 +513,13 @@ export function TRPricingIncludedScopeBlock() {
 
     return (
         <SectionWrapper id="included-scope" className="bg-white">
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title="Hizmet Kapsamı ve Sınırlar"
                     description="Fiyatlandırmanın neyi kapsayıp neyi kapsamadığını dürüstçe ortaya koyuyor, sisli satış alanlarını en baştan temizliyoruz."
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-8 lg:grid-cols-2 lg:max-w-5xl lg:mx-auto">
@@ -600,13 +600,13 @@ export function TRPricingWhatAffectsPriceBlock() {
 
     return (
         <SectionWrapper id="what-affects-price" className="bg-neutral-50/50">
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title={howPricingIsCalculated.title}
                     description={howPricingIsCalculated.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-6 sm:grid-cols-2 lg:max-w-4xl lg:mx-auto">
@@ -646,13 +646,13 @@ export function TRPricingAdditionalDevelopmentBlock() {
 
     return (
         <SectionWrapper className="bg-white">
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title={additionalDevLogic.title}
                     description="Bakım süreçlerinden bağımsız, sisteminize yeni yetenekler ve modüller eklemek istediğinizde uyguladığımız şeffaf fiyatlandırma mantığı."
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-20"
+                    className="mb-10 md:mb-16 lg:mb-20"
                 />
 
                 <div className="max-w-4xl mx-auto">
@@ -737,13 +737,13 @@ export function TRPricingWhoThisIsForBlock() {
 
     return (
         <SectionWrapper className="bg-white">
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title={whoThisIsFor.title}
                     description={whoThisIsFor.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-20"
+                    className="mb-10 md:mb-16 lg:mb-20"
                 />
 
                 <div className="grid gap-8 lg:grid-cols-3">
@@ -792,13 +792,13 @@ export function TRPricingFaqBlock() {
 
     return (
         <SectionWrapper className="bg-white">
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title={faq.title}
                     description="Fiyatlandırma, kapsam ve süreçler hakkında en çok merak edilen soruları şeffaf bir şekilde cevaplıyoruz."
                     align="center"
                     maxWidth="md"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="max-w-3xl mx-auto space-y-4">

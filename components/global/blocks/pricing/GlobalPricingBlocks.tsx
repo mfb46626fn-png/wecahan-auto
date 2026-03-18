@@ -44,7 +44,7 @@ export function GlobalPricingHeroBlock({ content, className }: { content: any, c
     const { eyebrow, title, description, primaryCta, secondaryCta, helperBullets } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="pt-24 pb-16 md:pt-32 md:pb-24">
+            <ContentContainer className="pt-16 pb-12 md:pt-32 md:pb-24 lg:pt-32 lg:pb-32">
                 <div className="max-w-4xl">
                     <SectionEyebrow className="mb-4 text-neutral-400">{eyebrow}</SectionEyebrow>
                     <SectionTitle size="lg" className="mb-8 tracking-tight leading-[1.1] max-w-3xl">
@@ -54,7 +54,7 @@ export function GlobalPricingHeroBlock({ content, className }: { content: any, c
                         {description}
                     </SectionDescription>
                     
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10 md:mb-12">
                         <Link href={resolveCtaHref(primaryCta)} className="w-full sm:w-auto">
                             <PrimaryButton className="w-full sm:w-auto min-w-[220px] !px-8 !py-4 font-bold uppercase tracking-tight shadow-xl shadow-black/5">
                                 {resolveCtaLabel(primaryCta)}
@@ -68,7 +68,7 @@ export function GlobalPricingHeroBlock({ content, className }: { content: any, c
                     </div>
 
                     {helperBullets && (
-                        <div className="flex flex-wrap gap-x-8 gap-y-4 pt-10 border-t border-neutral-100">
+                        <div className="flex flex-wrap gap-x-8 gap-y-4 pt-8 md:pt-10 border-t border-neutral-100">
                             {helperBullets.map((bullet: string, idx: number) => (
                                 <div key={idx} className="flex items-center gap-2">
                                     <div className="h-1 w-1 rounded-full bg-neutral-300" />
@@ -88,11 +88,11 @@ export function GlobalPricingModelOverviewBlock({ content, className }: { conten
     const { title, description, layers } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/50 ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} description={description} align="left" className="mb-20" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} description={description} align="left" className="mb-10 md:mb-16 lg:mb-20" />
                 <div className="grid gap-6 md:grid-cols-3">
                     {layers.map((layer: any, idx: number) => (
-                        <CardBase key={idx} className="p-8 bg-white border-neutral-100 shadow-sm rounded-3xl relative transition-transform hover:-translate-y-1">
+                        <CardBase key={idx} className="p-6 md:p-8 bg-white border-neutral-100 shadow-sm rounded-3xl relative transition-transform hover:-translate-y-1">
                             <div className="mb-8 h-12 w-12 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white">
                                 {idx === 0 && <Search size={22} />}
                                 {idx === 1 && <Settings size={22} />}
@@ -116,19 +116,19 @@ export function GlobalPricingAnalysisBlock({ content, className }: { content: an
     const { title, range, description, includes, excludes, factors, note } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <div className="grid gap-12 md:gap-16 lg:grid-cols-2 lg:items-center">
                     <div>
                         <SectionEyebrow className="mb-4 text-neutral-400">Layer 01</SectionEyebrow>
                         <SectionTitle size="md" className="mb-6 tracking-tight">{title}</SectionTitle>
-                        <div className="inline-block px-4 py-2 rounded-xl bg-neutral-900 text-white text-lg font-bold mb-8 tracking-tight">
+                        <div className="inline-block px-4 py-2 rounded-xl bg-neutral-900 text-white text-lg font-bold mb-6 md:mb-8 tracking-tight">
                             {range}
                         </div>
-                        <SectionDescription className="mb-10 text-neutral-600 leading-relaxed text-base">
+                        <SectionDescription className="mb-8 md:mb-10 text-neutral-600 leading-relaxed text-base">
                             {description}
                         </SectionDescription>
                         
-                        <div className="space-y-4 bg-neutral-50/50 p-8 rounded-3xl border border-neutral-100">
+                        <div className="space-y-4 bg-neutral-50/50 p-6 md:p-8 rounded-3xl border border-neutral-100">
                             <h4 className="text-[11px] font-black uppercase tracking-widest text-neutral-400 mb-4">Price Drivers</h4>
                             <div className="grid gap-3">
                                 {factors.map((factor: string, idx: number) => (
@@ -141,7 +141,7 @@ export function GlobalPricingAnalysisBlock({ content, className }: { content: an
                         </div>
                     </div>
                     
-                    <CardBase className="p-10 bg-white border-neutral-100 shadow-sm rounded-[3rem]">
+                    <CardBase className="p-6 md:p-10 bg-white border-neutral-100 shadow-sm rounded-[3rem]">
                         <div className="grid gap-12 sm:grid-cols-2">
                             <div>
                                 <h4 className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-6">What is included</h4>
@@ -181,11 +181,11 @@ export function GlobalPricingSetupBandsBlock({ content, className }: { content: 
     const { title, description, bands } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/20 ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} description={description} align="center" className="mb-20" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} description={description} align="center" className="mb-10 md:mb-16 lg:mb-20" />
                 <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
                     {bands.map((band: any, idx: number) => (
-                        <CardBase key={idx} className="flex flex-col p-8 bg-white border-neutral-100 rounded-[2.5rem] shadow-sm group hover:border-neutral-200 transition-all">
+                        <CardBase key={idx} className="flex flex-col p-6 md:p-8 bg-white border-neutral-100 rounded-[2.5rem] shadow-sm group hover:border-neutral-200 transition-all">
                             <div className="mb-8">
                                 <h3 className="text-xl font-bold text-neutral-900 tracking-tight mb-2">{band.title}</h3>
                                 <div className="text-2xl font-black text-neutral-900 tracking-tight mb-6">{band.range}</div>
@@ -221,11 +221,11 @@ export function GlobalPricingMaintenanceBandsBlock({ content, className }: { con
     const { title, description, bands, footerNote } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} description={description} align="center" className="mb-20" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} description={description} align="center" className="mb-10 md:mb-16 lg:mb-20" />
                 <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
                     {bands.map((band: any, idx: number) => (
-                        <CardBase key={idx} className="flex flex-col p-8 border-neutral-100 rounded-[2.5rem] hover:shadow-xl hover:shadow-black/5 transition-all">
+                        <CardBase key={idx} className="flex flex-col p-6 md:p-8 border-neutral-100 rounded-[2.5rem] hover:shadow-xl hover:shadow-black/5 transition-all">
                             <div className="mb-8">
                                 <h3 className="text-lg font-bold text-neutral-900 mb-1">{band.title}</h3>
                                 <div className="text-xl md:text-2xl font-black text-neutral-900 tracking-tight mb-4">{band.range} <span className="text-xs text-neutral-400 font-bold">/ MONTH</span></div>
@@ -268,26 +268,26 @@ export function GlobalPricingAdditionalDevelopmentBlock({ content, className }: 
     return (
         <SectionWrapper className={`bg-neutral-900 text-white overflow-hidden relative ${className}`}>
             <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-neutral-800/20 to-transparent pointer-events-none" />
-            <ContentContainer className="py-24 md:py-32 relative z-10">
-                <div className="grid gap-16 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+            <ContentContainer className="py-16 md:py-24 lg:py-32 relative z-10">
+                <div className="grid gap-10 md:gap-16 lg:grid-cols-[1.2fr_1fr] lg:items-center">
                     <div>
                         <SectionEyebrow className="mb-4 text-neutral-500">Service Boundary</SectionEyebrow>
                         <SectionTitle size="md" className="text-white mb-6 tracking-tight">{title}</SectionTitle>
-                        <div className="inline-block px-4 py-2 rounded-xl bg-white text-neutral-900 text-lg font-black mb-8">
+                        <div className="inline-block px-4 py-2 rounded-xl bg-white text-neutral-900 text-lg font-black mb-6 md:mb-8">
                             {range}
                         </div>
-                        <SectionDescription className="text-neutral-400 mb-10 max-w-xl text-base">
+                        <SectionDescription className="text-neutral-400 mb-8 md:mb-10 max-w-xl text-base">
                             {description}
                         </SectionDescription>
                         
-                        <div className="p-6 rounded-2xl bg-white/5 border border-white/10 max-w-lg">
+                        <div className="p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 max-w-lg">
                             <p className="text-[12px] font-semibold text-neutral-400 leading-relaxed italic">
                                 "{logicNote}"
                             </p>
                         </div>
                     </div>
                     
-                    <CardBase className="p-10 bg-neutral-800 border-neutral-700/50 rounded-[3rem]">
+                    <CardBase className="p-6 md:p-10 bg-neutral-800 border-neutral-700/50 rounded-[3rem]">
                         <div className="grid gap-12 sm:grid-cols-2">
                             <div>
                                 <h4 className="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-6">Eligible Items</h4>
@@ -324,11 +324,11 @@ export function GlobalPricingFactorsBlock({ content, className }: { content: any
     const { title, description, factors } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} description={description} align="center" className="mb-20" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} description={description} align="center" className="mb-10 md:mb-16 lg:mb-20" />
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {factors.map((factor: any, idx: number) => (
-                        <CardBase key={idx} className="p-8 border-neutral-100 hover:bg-neutral-50 transition-colors rounded-3xl group">
+                        <CardBase key={idx} className="p-6 md:p-8 border-neutral-100 hover:bg-neutral-50 transition-colors rounded-3xl group">
                             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-900 text-white mb-6 group-hover:scale-110 transition-transform">
                                 {idx === 0 && <Layers size={18} />}
                                 {idx === 1 && <Settings size={18} />}
@@ -352,11 +352,11 @@ export function GlobalPricingScopeComparisonsBlock({ content, className }: { con
     const { title, description, examples } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/50 ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} description={description} align="center" className="mb-20" />
-                <div className="grid gap-12 max-w-5xl mx-auto">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} description={description} align="center" className="mb-10 md:mb-16 lg:mb-20" />
+                <div className="grid gap-10 md:gap-20 max-w-5xl mx-auto">
                     {examples.map((example: any, idx: number) => (
-                        <div key={idx} className="relative grid md:grid-cols-[1.2fr_1fr] items-center gap-12 md:gap-24">
+                        <div key={idx} className="relative grid md:grid-cols-[1.2fr_1fr] items-center gap-10 md:gap-20">
                             <div className="relative">
                                 <span className="absolute -top-12 -left-4 text-6xl font-black text-neutral-100/50 -z-10">0{idx + 1}</span>
                                 <h3 className="text-2xl font-bold text-neutral-900 mb-6 tracking-tight">{example.title}</h3>
@@ -369,7 +369,7 @@ export function GlobalPricingScopeComparisonsBlock({ content, className }: { con
                                     ))}
                                 </ul>
                             </div>
-                            <div className="p-8 rounded-[2rem] bg-white border border-neutral-100 shadow-sm text-center">
+                            <div className="p-6 md:p-8 rounded-[2rem] bg-white border border-neutral-100 shadow-sm text-center">
                                 <h4 className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-4">Alignment</h4>
                                 <div className="text-lg font-black text-neutral-900 tracking-tight px-6 py-3 rounded-2xl bg-neutral-50 border border-neutral-100/50">
                                     {example.alignment}
@@ -388,11 +388,11 @@ export function GlobalPricingFaqBlock({ content, className }: { content: any, cl
     const { title, items } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} align="center" className="mb-20" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} align="center" className="mb-10 md:mb-16 lg:mb-20" />
                 <div className="grid gap-6 md:grid-cols-2 max-w-6xl mx-auto">
                     {items.map((item: any, idx: number) => (
-                        <CardBase key={idx} className="p-10 bg-white border-neutral-100 shadow-sm rounded-[2.5rem] flex flex-col h-full hover:shadow-xl hover:shadow-black/5 transition-all border-l-4 border-l-neutral-400">
+                        <CardBase key={idx} className="p-6 md:p-8 lg:p-10 bg-white border-neutral-100 shadow-sm rounded-[2.5rem] flex flex-col h-full hover:shadow-xl hover:shadow-black/5 transition-all border-l-4 border-l-neutral-400">
                             <h3 className="text-lg font-bold text-neutral-900 mb-4 tracking-tight leading-snug">
                                 {item.question}
                             </h3>
@@ -412,8 +412,8 @@ export function GlobalPricingFinalCtaBlock({ content, className }: { content: an
     const { title, description, primaryCta, secondaryCta, secondaryLinks, expectationNote } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <CardBase className="p-16 md:p-24 bg-neutral-900 rounded-[4rem] text-center max-w-5xl mx-auto border-none shadow-2xl relative overflow-hidden">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <CardBase className="p-10 md:p-20 lg:p-24 bg-neutral-900 rounded-[4rem] text-center max-w-5xl mx-auto border-none shadow-2xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none" />
                     <div className="relative z-10">
                         <SectionTitle size="md" className="text-white mb-6 tracking-tight max-w-2xl mx-auto leading-tight">{title}</SectionTitle>

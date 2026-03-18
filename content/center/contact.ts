@@ -8,6 +8,7 @@ interface SeoContent {
 }
 
 interface HeroContent {
+    eyebrow: string;
     title: string;
     description: string;
     trustPoint: string;
@@ -93,6 +94,7 @@ export const centerContactBilingualContent: Record<CenterLocale, ContactContent>
             description: 'Share a short brief about your operational friction. No pressure discovery for service business automation.',
         },
         hero: {
+            eyebrow: 'Discovery phase',
             title: 'Let’s start with context',
             description: 'The first step to operational clarity is a simple brief. We don\'t need pages of documentation; just a few lines about where your process currently stalls.',
             trustPoint: 'No-pressure review. Clear boundaries.',
@@ -186,6 +188,7 @@ export const centerContactBilingualContent: Record<CenterLocale, ContactContent>
             description: 'Operasyonel darboğazlarınız hakkında kısa bir özet paylaşın. Düşük baskılı, sistem odaklı ilk temas.',
         },
         hero: {
+            eyebrow: 'Keşif aşaması',
             title: 'Bağlamla başlayalım',
             description: 'Operasyonel netliğe giden ilk adım, basit bir özettir. Sayfalarca dokümana gerek yok; sürecinizin nerede tıkandığını birkaç satırla anlatmanız yeterli.',
             trustPoint: 'Baskısız inceleme. Net sınırlar.',

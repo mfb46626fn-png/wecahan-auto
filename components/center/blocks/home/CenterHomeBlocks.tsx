@@ -31,8 +31,9 @@ import {
     Zap, 
     CheckCircle2 
 } from 'lucide-react';
-import { centerInquiryOptions } from "../../../../lib/brief/inquiry-options";
-import { centerBriefPlaceholders } from "../../../../lib/brief/placeholders";
+import { centerInquiryOptionsBilingual } from "../../../../lib/brief/inquiry-options";
+import { centerBriefPlaceholdersBilingual } from "../../../../lib/brief/placeholders";
+import { getCenterLocale } from "../../../../lib/site/get-center-locale";
 
 /**
  * 1. CenterHomeHeroBlock
@@ -47,6 +48,19 @@ export interface CenterHomeHeroBlockProps {
         primaryCta: CtaConfig;
         secondaryCta?: CtaConfig;
         trustLine?: string;
+    };
+    labels?: {
+        phaseLabel?: string;
+        scenarioLabel?: string;
+        problemLabel?: string;
+        logicLabel?: string;
+        flowStepLabel?: string;
+        operationalDesignLabel?: string;
+        outcomeLabel?: string;
+        contextualProblemLabel?: string;
+        appliedLogicLabel?: string;
+        expectedOutcomeLabel?: string;
+        customLayoutsNote?: string;
     };
     className?: string;
 }
@@ -76,23 +90,17 @@ export function CenterHomeHeroBlock({ content, className }: CenterHomeHeroBlockP
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="relative py-16 md:py-20 lg:py-24">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-slate-100/50 rounded-full blur-[120px] -z-10 pointer-events-none" />
-
+            <ContentContainer className="relative py-12 md:py-24 lg:py-32">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-50/30 rounded-full blur-[80px] md:blur-[120px] -z-10 pointer-events-none" />
+                
                 <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-                    {eyebrow && (
-                        <div className="mb-6">
-                            <SectionEyebrow className="!text-slate-400 font-bold tracking-[0.2em] uppercase">
-                                {eyebrow}
-                            </SectionEyebrow>
-                        </div>
-                    )}
+                    <SectionEyebrow className="mb-4 md:mb-6 !text-indigo-500 font-bold tracking-[0.2em] uppercase">
+                        {eyebrow}
+                    </SectionEyebrow>
                     
-                    {title && (
-                        <SectionTitle size="lg" className="mb-8 leading-[1.1] !text-slate-900 font-black tracking-tight">
-                            {title}
-                        </SectionTitle>
-                    )}
+                    <SectionTitle size="lg" className="mb-6 md:mb-8 leading-[1.1] !text-slate-900 font-black tracking-tight text-3xl md:text-5xl lg:text-6xl">
+                        {title}
+                    </SectionTitle>
                     
                     {description && (
                         <SectionDescription maxWidth="lg" className="mb-12 !text-slate-500 font-medium leading-relaxed">
@@ -156,16 +164,16 @@ export function CenterHomeWhatWeAutomateBlock({ content, className }: CenterHome
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-12 md:py-20">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title={title}
                     description={description}
                     align="center"
                     maxWidth="lg"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-16"
                 />
-
-                <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                
+                <div className="grid gap-4 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {categories.map((category, index) => (
                         <CardBase 
                             key={index} 
@@ -222,18 +230,16 @@ export function CenterHomeHowWeWorkBlock({ content, className }: CenterHomeHowWe
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-12 md:py-20 bg-slate-50/40 rounded-[3rem]">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
                 <SectionHeader
                     title={title}
                     description={description}
                     align="center"
                     maxWidth="lg"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-16"
                 />
 
-                <div className="grid gap-8 md:gap-4 lg:grid-cols-4 md:grid-cols-2 relative">
-                    <div className="hidden lg:block absolute top-[45px] left-0 right-0 h-px bg-slate-200 -z-10" />
-
+                <div className="grid gap-4 md:gap-8 lg:grid-cols-3 max-w-6xl mx-auto">
                     {steps.map((item, index) => (
                         <div key={index} className="relative group">
                             <CardBase 
@@ -255,7 +261,7 @@ export function CenterHomeHowWeWorkBlock({ content, className }: CenterHomeHowWe
                                 <div className="mt-8 pt-6 border-t border-slate-50 flex items-center gap-2">
                                     <div className="h-1 w-1 rounded-full bg-slate-300" />
                                     <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">
-                                        Phase {item.step}
+                                        {(content as any).phaseLabel || "Phase"} {item.step}
                                     </span>
                                 </div>
                             </CardBase>
@@ -291,16 +297,16 @@ export function CenterHomeExampleWorkflowScenariosBlock({ content, className }: 
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-12 md:py-20">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title={title}
                     description={description}
                     align="center"
                     maxWidth="lg"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-16"
                 />
 
-                <div className="grid gap-12 lg:grid-cols-2 max-w-6xl mx-auto">
+                <div className="grid gap-6 md:gap-12 lg:grid-cols-2 max-w-6xl mx-auto">
                     {scenarios.map((scenario, index) => (
                         <CardBase 
                             key={index} 
@@ -315,7 +321,7 @@ export function CenterHomeExampleWorkflowScenariosBlock({ content, className }: 
                                 <div className="flex items-center gap-3 mb-6">
                                     <div className="h-1.5 w-1.5 rounded-full bg-slate-900" />
                                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
-                                        Scenario 0{index + 1}
+                                        {(content as any).scenarioLabel || "Scenario"} 0{index + 1}
                                     </span>
                                 </div>
 
@@ -325,13 +331,13 @@ export function CenterHomeExampleWorkflowScenariosBlock({ content, className }: 
 
                                 <div className="space-y-6 mb-12">
                                     <div>
-                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Problem</h4>
+                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">{(content as any).problemLabel || "Problem"}</h4>
                                         <p className="text-[13px] font-bold text-slate-500 italic leading-relaxed">
                                             "{scenario.problem}"
                                         </p>
                                     </div>
                                     <div>
-                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Automation Logic</h4>
+                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">{(content as any).logicLabel || "Automation Logic"}</h4>
                                         <p className="text-[14px] font-black text-slate-700 leading-snug">
                                             {scenario.logic}
                                         </p>
@@ -366,7 +372,7 @@ export function CenterHomeExampleWorkflowScenariosBlock({ content, className }: 
                                     ))}
                                 </div>
                                 <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-300">
-                                    Operational Flow Design
+                                    {(content as any).operationalDesignLabel || "Operational Flow Design"}
                                 </span>
                             </div>
                         </CardBase>
@@ -409,27 +415,27 @@ export function CenterHomeWhyThisStructureWorksBlock({ content, className }: Cen
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-12 md:py-20 bg-slate-900 rounded-[3rem] text-white">
+            <ContentContainer className="py-12 md:py-24 bg-slate-900 rounded-[2rem] md:rounded-[3rem] text-white">
                 <SectionHeader
-                    title={<span className="text-white">{title}</span>}
+                    title={<span className="text-white text-2xl md:text-3xl lg:text-4xl">{title}</span>}
                     description={<span className="text-slate-400">{description}</span>}
                     align="center"
                     maxWidth="lg"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-16"
                 />
 
-                <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:max-w-7xl lg:mx-auto">
+                <div className="grid gap-4 md:gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto px-2 md:px-0">
                     {benefits.map((benefit, index) => (
                         <CardBase 
                             key={index} 
                             size="lg" 
-                            className="flex flex-col h-full bg-slate-800/50 border-slate-700/50 hover:bg-slate-800 hover:border-slate-600 transition-all duration-500 rounded-[2rem] p-8 group"
+                            className="flex flex-col h-full bg-slate-800/50 border-slate-700/50 hover:bg-slate-800 hover:border-slate-600 transition-all duration-500 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 group"
                         >
-                            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-xl shadow-black/20 transition-transform group-hover:scale-110 group-hover:rotate-3">
+                            <div className="mb-4 md:mb-6 flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-2xl bg-white shadow-xl shadow-black/20 transition-transform group-hover:scale-110 group-hover:rotate-3">
                                 {getIcon(index)}
                             </div>
                             
-                            <h3 className="mb-4 text-lg font-bold text-white tracking-tight group-hover:text-slate-200 transition-colors">
+                            <h3 className="mb-3 md:mb-4 text-base md:text-lg font-bold text-white tracking-tight group-hover:text-slate-200 transition-colors">
                                 {benefit.title}
                             </h3>
                             
@@ -437,10 +443,10 @@ export function CenterHomeWhyThisStructureWorksBlock({ content, className }: Cen
                                 {benefit.description}
                             </BodyText>
 
-                            <div className="mt-auto pt-8 flex items-center gap-2">
+                            <div className="mt-auto pt-6 md:pt-8 flex items-center gap-2">
                                 <div className="h-1 w-1 rounded-full bg-slate-600 group-hover:bg-slate-400 transition-colors" />
                                 <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-600 group-hover:text-slate-400 transition-colors">
-                                    Operational Outcome
+                                    {(content as any).outcomeLabel || "Operational Outcome"}
                                 </span>
                             </div>
                         </CardBase>
@@ -505,17 +511,16 @@ export function CenterHomeSelectedUseCaseExamplesBlock({ content, className }: C
                                     <div className="absolute -left-[9px] top-0 p-1 bg-white rounded-full">
                                         <AlertCircle size={14} className="text-slate-300" />
                                     </div>
-                                    <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Contextual Problem</h4>
+                                    <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">{(content as any).contextualProblemLabel || "Contextual Problem"}</h4>
                                     <p className="text-[14px] font-bold text-slate-500 leading-relaxed italic">
                                         "{useCase.problem}"
                                     </p>
                                 </div>
-
                                 <div className="relative pl-6 border-l-2 border-slate-100 group-hover:border-slate-200 transition-colors">
                                     <div className="absolute -left-[9px] top-0 p-1 bg-white rounded-full">
                                         <Zap size={14} className="text-slate-300" />
                                     </div>
-                                    <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Applied Logic</h4>
+                                    <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">{(content as any).appliedLogicLabel || "Applied Logic"}</h4>
                                     <BodyText className="text-[14px] font-black text-slate-700 leading-snug">
                                         {useCase.logic}
                                     </BodyText>
@@ -524,7 +529,7 @@ export function CenterHomeSelectedUseCaseExamplesBlock({ content, className }: C
                                 <div className="mt-8 pt-8 border-t border-slate-100/50">
                                     <div className="flex items-center gap-2 mb-3">
                                         <CheckCircle2 size={16} className="text-slate-900" />
-                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-900">Expected Outcome</h4>
+                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-900">{(content as any).expectedOutcomeLabel || "Expected Outcome"}</h4>
                                     </div>
                                     <p className="text-[13px] font-bold text-slate-500 leading-relaxed">
                                         {useCase.expectedClarity}
@@ -539,7 +544,7 @@ export function CenterHomeSelectedUseCaseExamplesBlock({ content, className }: C
                     <div className="inline-flex items-center gap-3 px-6 py-3 bg-slate-50 rounded-full border border-slate-100">
                         <div className="h-1.5 w-1.5 rounded-full bg-slate-400 animate-pulse" />
                         <p className="text-[11px] font-black uppercase tracking-[0.15em] text-slate-400">
-                            Custom layouts available for unique operational workflows
+                            {(content as any).customLayoutsNote || "Custom layouts available for unique operational workflows"}
                         </p>
                     </div>
                 </div>
@@ -820,6 +825,16 @@ type BriefFormContent = {
     helperText?: string;
     privacyNote?: string;
     successMessage?: string;
+    labels: {
+        fullName: string;
+        workEmail: string;
+        company: string;
+        inquiryType: string;
+        message: string;
+    };
+    submitButtonLoading: string;
+    consentRequiredError: string;
+    genericError: string;
 };
 
 type CenterBriefFormBlockProps = {
@@ -852,6 +867,25 @@ export function CenterBriefFormBlock({
     const [submitError, setSubmitError] = useState("");
     const [submitSuccess, setSubmitSuccess] = useState("");
     const [fieldErrors, setFieldErrors] = useState<Partial<Record<keyof FormValues | "siteFamily", string>>>({});
+    const [locale, setLocale] = useState<"en" | "tr">("en");
+
+    React.useEffect(() => {
+        const detectLocale = (): "en" | "tr" => {
+            if (typeof document !== 'undefined') {
+                const cookieValue = document.cookie
+                    .split('; ')
+                    .find(row => row.startsWith('NEXT_LOCALE='))
+                    ?.split('=')[1];
+                if (cookieValue === 'tr' || cookieValue === 'en') return cookieValue as "en" | "tr";
+                if (navigator.language.startsWith('tr')) return 'tr';
+            }
+            return 'en';
+        };
+        setLocale(detectLocale());
+    }, []);
+
+    const placeholders = centerBriefPlaceholdersBilingual[locale];
+    const inquiryOptions = centerInquiryOptionsBilingual[locale];
 
     const fullNameRef = useRef<HTMLInputElement>(null);
     const workEmailRef = useRef<HTMLInputElement>(null);
@@ -896,7 +930,7 @@ export function CenterBriefFormBlock({
         setFieldErrors({});
 
         if (!values.consent) {
-            setSubmitError("You must agree before submitting this brief.");
+            setSubmitError(content.consentRequiredError || "You must agree before submitting this brief.");
             setIsSubmitting(false);
             consentRef.current?.focus();
             return;
@@ -976,7 +1010,7 @@ export function CenterBriefFormBlock({
             setFieldErrors({});
         } catch (error) {
             console.error("Submission error:", error);
-            setSubmitError("Something went wrong while sending your brief.");
+            setSubmitError(content.genericError || "Something went wrong while sending your brief.");
         } finally {
             setIsSubmitting(false);
         }
@@ -999,7 +1033,7 @@ export function CenterBriefFormBlock({
                     >
                         <div className="grid gap-5 sm:grid-cols-2">
                             <FormField 
-                                label="Full name" 
+                                label={content.labels.fullName} 
                                 error={fieldErrors.fullName}
                                 htmlFor="fullName"
                             >
@@ -1010,7 +1044,7 @@ export function CenterBriefFormBlock({
                                     onChange={(event) =>
                                         updateField("fullName", event.target.value)
                                     }
-                                    placeholder={centerBriefPlaceholders.fullName}
+                                    placeholder={placeholders.fullName}
                                     autoComplete="name"
                                     aria-invalid={!!fieldErrors.fullName}
                                     aria-describedby={fieldErrors.fullName ? "fullName-error" : undefined}
@@ -1018,7 +1052,7 @@ export function CenterBriefFormBlock({
                             </FormField>
 
                             <FormField 
-                                label="Work email" 
+                                label={content.labels.workEmail} 
                                 error={fieldErrors.workEmail}
                                 htmlFor="workEmail"
                             >
@@ -1030,7 +1064,7 @@ export function CenterBriefFormBlock({
                                     onChange={(event) =>
                                         updateField("workEmail", event.target.value)
                                     }
-                                    placeholder={centerBriefPlaceholders.workEmail}
+                                    placeholder={placeholders.workEmail}
                                     autoComplete="email"
                                     aria-invalid={!!fieldErrors.workEmail}
                                     aria-describedby={fieldErrors.workEmail ? "workEmail-error" : undefined}
@@ -1038,7 +1072,7 @@ export function CenterBriefFormBlock({
                             </FormField>
 
                             <FormField 
-                                label="Company"
+                                label={content.labels.company}
                                 error={fieldErrors.company}
                                 htmlFor="company"
                             >
@@ -1049,7 +1083,7 @@ export function CenterBriefFormBlock({
                                     onChange={(event) =>
                                         updateField("company", event.target.value)
                                     }
-                                    placeholder={centerBriefPlaceholders.company}
+                                    placeholder={placeholders.company}
                                     autoComplete="organization"
                                     aria-invalid={!!fieldErrors.company}
                                     aria-describedby={fieldErrors.company ? "company-error" : undefined}
@@ -1057,7 +1091,7 @@ export function CenterBriefFormBlock({
                             </FormField>
 
                             <FormField 
-                                label="Project type"
+                                label={content.labels.inquiryType}
                                 error={fieldErrors.inquiryType}
                                 htmlFor="inquiryType"
                             >
@@ -1072,9 +1106,9 @@ export function CenterBriefFormBlock({
                                     aria-describedby={fieldErrors.inquiryType ? "inquiryType-error" : undefined}
                                 >
                                     <option value="">
-                                        {centerBriefPlaceholders.inquiryTypePlaceholder}
+                                        {placeholders.inquiryTypePlaceholder}
                                     </option>
-                                    {centerInquiryOptions.map((option) => (
+                                    {inquiryOptions.map((option) => (
                                         <option key={option.value} value={option.value}>
                                             {option.label}
                                         </option>
@@ -1084,7 +1118,7 @@ export function CenterBriefFormBlock({
                         </div>
 
                         <FormField 
-                            label="Brief"
+                            label={content.labels.message}
                             error={fieldErrors.message}
                             htmlFor="message"
                         >
@@ -1093,7 +1127,7 @@ export function CenterBriefFormBlock({
                                 id="message"
                                 value={values.message}
                                 onChange={(event) => updateField("message", event.target.value)}
-                                placeholder={centerBriefPlaceholders.message}
+                                placeholder={placeholders.message}
                                 rows={6}
                                 aria-invalid={!!fieldErrors.message}
                                 aria-describedby={fieldErrors.message ? "message-error" : undefined}
@@ -1105,14 +1139,14 @@ export function CenterBriefFormBlock({
                             id="consent"
                             checked={values.consent}
                             onChange={(event) => updateField("consent", event.target.checked)}
-                            label={centerBriefPlaceholders.consentLabel}
+                            label={placeholders.consentLabel}
                             error={fieldErrors.consent}
                             aria-invalid={!!fieldErrors.consent}
                         />
 
                         <div className="space-y-3">
                             <PrimaryButton type="submit" disabled={isSubmitting}>
-                                {isSubmitting ? "Sending..." : content.submitLabel}
+                                {isSubmitting ? content.submitButtonLoading : content.submitLabel}
                             </PrimaryButton>
 
                             {content.helperText ? (

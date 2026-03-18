@@ -101,7 +101,7 @@ type SecondaryCtaContent = {
 export function GlobalContactHeroBlock({ content, className }: { content: HeroContent, className?: string }) {
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
                 <div className="mx-auto max-w-4xl text-center">
                     <SectionHeader 
                         eyebrow={content.eyebrow}
@@ -110,7 +110,7 @@ export function GlobalContactHeroBlock({ content, className }: { content: HeroCo
                         align="center"
                     />
                     
-                    <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                    <div className="mt-10 md:mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
                         <Link href={content.primaryCta.href} className="w-full sm:w-auto">
                             <PrimaryButton className="w-full sm:w-auto px-10">
                                 {content.primaryCta.label}
@@ -124,7 +124,7 @@ export function GlobalContactHeroBlock({ content, className }: { content: HeroCo
                         </Link>
                     </div>
 
-                    <div className="mt-12 flex flex-wrap justify-center gap-6 md:gap-10">
+                    <div className="mt-10 md:mt-12 flex flex-wrap justify-center gap-6 md:gap-10">
                         {content.helperBullets.map((bullet, idx) => (
                             <div key={idx} className="flex items-center gap-2 text-neutral-400">
                                 <CheckCircle2 size={16} />
@@ -147,8 +147,8 @@ export function GlobalContactPathsBlock({ content, className }: { content: Paths
     
     return (
         <SectionWrapper className={`bg-neutral-50/50 ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
-                <h2 className="mb-12 text-center text-sm font-black uppercase tracking-[0.3em] text-neutral-400">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <h2 className="mb-10 md:mb-12 text-center text-sm font-black uppercase tracking-[0.3em] text-neutral-400">
                     {content.title}
                 </h2>
                 <div className="grid gap-6 md:grid-cols-3">
@@ -159,7 +159,7 @@ export function GlobalContactPathsBlock({ content, className }: { content: Paths
                         return (
                             <CardBase 
                                 key={idx} 
-                                className={`flex flex-col p-8 md:p-10 ${isPrimary ? 'border-neutral-900 bg-white ring-1 ring-neutral-900' : 'bg-white'}`}
+                                className={`flex flex-col p-6 md:p-8 lg:p-10 ${isPrimary ? 'border-neutral-900 bg-white ring-1 ring-neutral-900' : 'bg-white'}`}
                             >
                                 <div className={`mb-8 flex h-12 w-12 items-center justify-center rounded-xl ${isPrimary ? 'bg-neutral-900 text-white' : 'bg-neutral-100 text-neutral-500'}`}>
                                     <Icon size={24} />
@@ -206,8 +206,8 @@ export function GlobalContactPathsBlock({ content, className }: { content: Paths
 export function GlobalContactBriefFormBlock({ content, children, className }: { content: BriefFormContent, children?: React.ReactNode, className?: string }) {
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <div className="grid gap-10 md:gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
                     <div className="space-y-10">
                         <SectionHeader 
                             title={content.title}
@@ -231,7 +231,7 @@ export function GlobalContactBriefFormBlock({ content, children, className }: { 
                             </div>
                         </div>
 
-                        <div className="rounded-2xl bg-neutral-50 p-6 md:p-8">
+                        <div className="rounded-2xl bg-neutral-50 p-5 md:p-8">
                             <div className="flex items-center gap-3 mb-4 text-neutral-900">
                                 <FileText size={20} />
                                 <span className="text-sm font-bold uppercase tracking-wider">Workflow Logic First</span>
@@ -246,7 +246,7 @@ export function GlobalContactBriefFormBlock({ content, children, className }: { 
                         {/* Shadow/Decorative element */}
                         <div className="absolute -inset-4 z-0 rounded-[2.5rem] bg-neutral-100/50 blur-xl md:-inset-8" />
                         
-                        <div className="relative z-10 w-full rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-2xl shadow-black/5 md:p-12">
+                        <div className="relative z-10 w-full rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-2xl shadow-black/5 md:p-10 lg:p-12">
                             {children ? (
                                 children
                             ) : (
@@ -272,8 +272,8 @@ export function GlobalContactBriefFormBlock({ content, children, className }: { 
 export function GlobalContactNextStepsBlock({ content, className }: { content: NextStepsContent, className?: string }) {
     return (
         <SectionWrapper className={`bg-neutral-900 text-white ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
-                <div className="mb-16 max-w-2xl">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <div className="mb-10 md:mb-16 max-w-2xl">
                     <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
                         {content.title}
                     </h2>
@@ -309,9 +309,9 @@ export function GlobalContactNextStepsBlock({ content, className }: { content: N
 export function GlobalContactVsCallBlock({ content, className }: { content: VsCallContent, className?: string }) {
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
                 <div className="mx-auto max-w-5xl">
-                    <div className="mb-16 text-center">
+                    <div className="mb-10 md:mb-16 text-center">
                         <h2 className="mb-4 text-3xl font-bold tracking-tight text-neutral-900">
                             {content.title}
                         </h2>
@@ -322,7 +322,7 @@ export function GlobalContactVsCallBlock({ content, className }: { content: VsCa
 
                     <div className="grid gap-12 md:grid-cols-2 md:items-center">
                         {/* Contact Column */}
-                        <div className="rounded-3xl border border-neutral-100 bg-neutral-50/50 p-8 md:p-12">
+                        <div className="rounded-3xl border border-neutral-100 bg-neutral-50/50 p-6 md:p-10 lg:p-12">
                             <h3 className="mb-8 text-xl font-bold tracking-tight text-neutral-900">
                                 {content.contactColumn.title}
                             </h3>
@@ -339,7 +339,7 @@ export function GlobalContactVsCallBlock({ content, className }: { content: VsCa
                         </div>
 
                         {/* Call Column */}
-                        <div className="rounded-3xl border border-neutral-900 bg-white p-8 shadow-2xl shadow-black/5 md:p-12">
+                        <div className="rounded-3xl border border-neutral-900 bg-white p-6 shadow-2xl shadow-black/5 md:p-10 lg:p-12">
                             <h3 className="mb-8 text-xl font-bold tracking-tight text-neutral-900">
                                 {content.callColumn.title}
                             </h3>
@@ -368,10 +368,10 @@ export function GlobalContactVsCallBlock({ content, className }: { content: VsCa
 export function GlobalContactFitReminderBlock({ content, className }: { content: FitReminderContent, className?: string }) {
     return (
         <SectionWrapper className={`bg-neutral-50/30 ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
                 <div className="grid gap-10 lg:grid-cols-2">
                     {/* Better Fit If */}
-                    <CardBase className="border-none bg-neutral-100/50 p-8 md:p-12">
+                    <CardBase className="border-none bg-neutral-100/50 p-6 md:p-10 lg:p-12">
                         <div className="mb-8 flex items-center gap-4">
                             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-900 text-white">
                                 <CheckCircle2 size={20} />
@@ -388,7 +388,7 @@ export function GlobalContactFitReminderBlock({ content, className }: { content:
                     </CardBase>
 
                     {/* Less Useful If */}
-                    <CardBase className="border-none bg-white p-8 md:p-12">
+                    <CardBase className="border-none bg-white p-6 md:p-10 lg:p-12">
                         <div className="mb-8 flex items-center gap-4">
                             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 text-neutral-400">
                                 <XCircle size={20} />
@@ -416,14 +416,14 @@ export function GlobalContactFitReminderBlock({ content, className }: { content:
 export function GlobalContactFaqBlock({ content, className }: { content: FaqContent, className?: string }) {
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
                 <div className="mx-auto max-w-3xl">
-                    <h2 className="mb-12 text-center text-sm font-black uppercase tracking-[0.3em] text-neutral-400">
+                    <h2 className="mb-10 md:mb-12 text-center text-sm font-black uppercase tracking-[0.3em] text-neutral-400">
                         {content.title}
                     </h2>
                     <div className="space-y-6">
                         {content.items.map((item, idx) => (
-                            <div key={idx} className="rounded-2xl border border-neutral-100 bg-white p-6 shadow-sm">
+                            <div key={idx} className="rounded-2xl border border-neutral-100 bg-white p-5 md:p-6 shadow-sm">
                                 <h4 className="mb-3 text-base font-bold tracking-tight text-neutral-900 flex items-center justify-between">
                                     {item.question}
                                     <ChevronDown size={16} className="text-neutral-300" />
@@ -447,8 +447,8 @@ export function GlobalContactFaqBlock({ content, className }: { content: FaqCont
 export function GlobalContactSecondaryCtaBlock({ content, className }: { content: SecondaryCtaContent, className?: string }) {
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="mb-20 md:mb-32">
-                <CardBase className="bg-neutral-900 p-10 text-center text-white md:p-16">
+            <ContentContainer className="mb-12 md:mb-24 lg:mb-32">
+                <CardBase className="bg-neutral-900 p-8 md:p-12 lg:p-16 text-center text-white">
                     <div className="mx-auto max-w-2xl">
                         <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
                             {content.title}

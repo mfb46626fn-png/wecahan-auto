@@ -43,17 +43,17 @@ export function GlobalUseCasesHeroBlock({ content, className }: { content: any, 
     const { eyebrow, title, description, primaryCta, secondaryCta, helperBullets } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="pt-24 pb-16 md:pt-32 md:pb-24">
+            <ContentContainer className="pt-16 pb-12 md:pt-32 md:pb-24 lg:pt-32 lg:pb-32">
                 <div className="max-w-4xl">
                     <SectionEyebrow className="mb-4 text-neutral-400">{eyebrow}</SectionEyebrow>
-                    <SectionTitle size="lg" className="mb-8 tracking-tight leading-[1.1] max-w-3xl">
+                    <SectionTitle size="lg" className="mb-6 md:mb-8 tracking-tight leading-[1.1] max-w-3xl">
                         {title}
                     </SectionTitle>
-                    <SectionDescription className="mb-12 text-neutral-500 text-lg md:text-xl leading-relaxed max-w-2xl">
+                    <SectionDescription className="mb-10 md:mb-12 text-neutral-500 text-lg md:text-xl leading-relaxed max-w-2xl">
                         {description}
                     </SectionDescription>
                     
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10 md:mb-12">
                         <Link href={resolveCtaHref(primaryCta)} className="w-full sm:w-auto">
                             <PrimaryButton className="w-full sm:w-auto min-w-[220px] !px-8 !py-4 font-bold uppercase tracking-tight shadow-xl shadow-black/5">
                                 {resolveCtaLabel(primaryCta)}
@@ -67,7 +67,7 @@ export function GlobalUseCasesHeroBlock({ content, className }: { content: any, 
                     </div>
 
                     {helperBullets && (
-                        <div className="flex flex-wrap gap-x-8 gap-y-4 pt-10 border-t border-neutral-100">
+                        <div className="flex flex-wrap gap-x-8 gap-y-4 pt-8 md:pt-10 border-t border-neutral-100">
                             {helperBullets.map((bullet: string, idx: number) => (
                                 <div key={idx} className="flex items-center gap-2">
                                     <div className="h-1 w-1 rounded-full bg-neutral-300" />
@@ -87,11 +87,11 @@ export function GlobalUseCasesWhyItMattersBlock({ content, className }: { conten
     const { title, description, items } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/50 ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} description={description} align="left" className="mb-16" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} description={description} align="left" className="mb-10 md:mb-16" />
                 <div className="grid gap-6 md:grid-cols-3">
                     {items.map((item: any, idx: number) => (
-                        <CardBase key={idx} className="p-8 bg-white border-neutral-100 shadow-sm rounded-3xl group hover:border-neutral-200 transition-colors">
+                        <CardBase key={idx} className="p-6 md:p-8 bg-white border-neutral-100 shadow-sm rounded-3xl group hover:border-neutral-200 transition-colors">
                             <div className="mb-6 h-10 w-10 rounded-2xl bg-neutral-900 flex items-center justify-center text-white">
                                 {idx === 0 && <Target size={18} />}
                                 {idx === 1 && <Workflow size={18} />}
@@ -112,7 +112,7 @@ export function GlobalUseCasesCategoryNavigationBlock({ content, className }: { 
     const { title, categories } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-12 border-b border-neutral-100">
+            <ContentContainer className="py-8 md:py-12 border-b border-neutral-100">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <h2 className="text-sm font-black uppercase tracking-[0.2em] text-neutral-400">{title}</h2>
                     <div className="flex flex-wrap gap-2">
@@ -140,20 +140,20 @@ export function GlobalUseCasesAccountingCasesBlock({ content, className }: { con
     const { title, intro, items } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} description={intro} align="left" className="mb-20" />
-                <div className="space-y-24 md:space-y-32">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} description={intro} align="left" className="mb-12 md:mb-20" />
+                <div className="space-y-16 md:space-y-24 lg:space-y-32">
                     {items.map((item: any, idx: number) => (
                         <div key={idx} className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
                             <div>
                                 <div className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mb-4">
                                     Case Study {String(idx + 1).padStart(2, '0')}
                                 </div>
-                                <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-6 tracking-tight leading-tight">
+                                <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4 md:mb-6 tracking-tight leading-tight">
                                     {item.title}
                                 </h3>
-                                <div className="space-y-8">
-                                    <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-100">
+                                <div className="space-y-6 md:space-y-8">
+                                    <div className="p-5 md:p-6 rounded-2xl bg-neutral-50 border border-neutral-100">
                                         <h4 className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-3">The Context</h4>
                                         <p className="text-sm text-neutral-700 font-medium leading-relaxed italic">"{item.context}"</p>
                                     </div>
@@ -172,7 +172,7 @@ export function GlobalUseCasesAccountingCasesBlock({ content, className }: { con
                                             ))}
                                         </ul>
                                     </div>
-                                    <div className="pt-6 border-t border-neutral-100">
+                                    <div className="pt-5 md:pt-6 border-t border-neutral-100">
                                         <Link href={resolveCtaHref(item.cta)}>
                                             <button className="group flex items-center gap-2 text-sm font-bold text-neutral-900 tracking-tight hover:text-neutral-500 transition-colors">
                                                 {resolveCtaLabel(item.cta)}
@@ -183,10 +183,10 @@ export function GlobalUseCasesAccountingCasesBlock({ content, className }: { con
                                 </div>
                             </div>
                             
-                            <CardBase className="p-8 md:p-12 bg-white border-neutral-100 shadow-sm rounded-[3rem] relative overflow-hidden">
+                            <CardBase className="p-6 md:p-10 lg:p-12 bg-white border-neutral-100 shadow-sm rounded-[3rem] relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-neutral-50 -mr-16 -mt-16 rounded-full blur-3xl opacity-50" />
                                 <div className="relative z-10">
-                                    <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-400 mb-10 text-center">Example Workflow Structure</h4>
+                                    <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-400 mb-6 md:mb-10 text-center">Example Workflow Structure</h4>
                                     <div className="space-y-4">
                                         {item.workflow.map((step: string, sIdx: number) => (
                                             <div key={sIdx} className="flex items-center gap-4 group">
@@ -201,7 +201,7 @@ export function GlobalUseCasesAccountingCasesBlock({ content, className }: { con
                                         ))}
                                     </div>
                                     
-                                    <div className="mt-16 pt-10 border-t border-neutral-50">
+                                    <div className="mt-12 pt-8 md:mt-16 md:pt-10 border-t border-neutral-50">
                                         <h4 className="text-[10px] font-black uppercase tracking-widest text-neutral-300 mb-6 text-center italic">Best Fit For</h4>
                                         <div className="flex flex-wrap justify-center gap-3">
                                             {item.bestFit.map((fit: string, fIdx: number) => (
@@ -226,11 +226,11 @@ export function GlobalUseCasesAdjacentCasesBlock({ content, className }: { conte
     const { title, intro, items } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/30 ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} description={intro} align="left" className="mb-16" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} description={intro} align="left" className="mb-10 md:mb-16" />
                 <div className="grid gap-8 md:grid-cols-2">
                     {items.map((item: any, idx: number) => (
-                        <CardBase key={idx} className="p-10 bg-white border-neutral-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
+                        <CardBase key={idx} className="p-6 md:p-10 bg-white border-neutral-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
                             <h3 className="text-xl font-bold text-neutral-900 mb-6 tracking-tight">{item.title}</h3>
                             <div className="space-y-6">
                                 <p className="text-sm text-neutral-500 font-medium leading-relaxed italic">"{item.context}"</p>
@@ -266,11 +266,11 @@ export function GlobalUseCasesMeaningBlock({ content, className }: { content: an
     const { title, items } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} align="center" className="mb-16" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} align="center" className="mb-10 md:mb-16" />
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {items.map((item: any, idx: number) => (
-                        <CardBase key={idx} className="p-8 border-neutral-100 rounded-3xl group hover:bg-neutral-50 transition-colors">
+                        <CardBase key={idx} className="p-6 md:p-8 border-neutral-100 rounded-3xl group hover:bg-neutral-50 transition-colors">
                             <h3 className="text-[15px] font-bold text-neutral-900 mb-3 tracking-tight">{item.title}</h3>
                             <p className="text-[13px] text-neutral-500 leading-relaxed font-medium">{item.description}</p>
                         </CardBase>
@@ -286,10 +286,10 @@ export function GlobalUseCasesFitAdaptationBlock({ content, className }: { conte
     const { goodFit, adaptationNote } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/50 ${className}`}>
-            <ContentContainer className="py-24 md:py-32">
+            <ContentContainer className="py-16 md:py-24 lg:py-32">
                 <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                     <div>
-                        <div className="flex items-center gap-3 mb-8">
+                        <div className="flex items-center gap-3 mb-6 md:mb-8">
                             <div className="h-8 w-8 rounded-full bg-neutral-900 flex items-center justify-center text-white">
                                 <Check size={16} />
                             </div>
@@ -306,7 +306,7 @@ export function GlobalUseCasesFitAdaptationBlock({ content, className }: { conte
                     </div>
 
                     <div>
-                        <div className="flex items-center gap-3 mb-8">
+                        <div className="flex items-center gap-3 mb-6 md:mb-8">
                             <div className="h-8 w-8 rounded-full bg-neutral-50 flex items-center justify-center text-neutral-400">
                                 <Info size={16} />
                             </div>
@@ -332,16 +332,16 @@ export function GlobalUseCasesFinalCtaBlock({ content, className }: { content: a
     const { title, description, primaryCta, secondaryCta, secondaryLinks, helperNotes } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <CardBase className="p-16 md:p-24 bg-neutral-900 rounded-[4rem] text-center max-w-5xl mx-auto border-none shadow-2xl relative overflow-hidden">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <CardBase className="p-10 md:p-20 lg:p-24 bg-neutral-900 rounded-[4rem] text-center max-w-5xl mx-auto border-none shadow-2xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none" />
                     <div className="relative z-10">
-                        <SectionTitle size="md" className="text-white mb-6 tracking-tight max-w-2xl mx-auto leading-tight">{title}</SectionTitle>
-                        <SectionDescription className="text-neutral-500 mb-12 max-w-xl mx-auto font-medium leading-relaxed">
+                        <SectionTitle size="md" className="text-white mb-4 md:mb-6 tracking-tight max-w-2xl mx-auto leading-tight">{title}</SectionTitle>
+                        <SectionDescription className="text-neutral-500 mb-10 md:mb-12 max-w-xl mx-auto font-medium leading-relaxed">
                             {description}
                         </SectionDescription>
                         
-                        <div className="flex flex-col items-center gap-12">
+                        <div className="flex flex-col items-center gap-10 md:gap-12">
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
                                 <Link href={resolveCtaHref(primaryCta)} className="w-full sm:w-auto">
                                     <PrimaryButton className="w-full sm:w-auto min-w-[260px] !py-5 font-bold uppercase tracking-tight bg-white text-neutral-900 hover:bg-neutral-200">
@@ -366,7 +366,7 @@ export function GlobalUseCasesFinalCtaBlock({ content, className }: { content: a
                             )}
                             
                             {secondaryLinks && (
-                                <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 pt-12 border-t border-neutral-800/50 w-full max-w-2xl mx-auto">
+                                <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 pt-10 md:pt-12 border-t border-neutral-800/50 w-full max-w-2xl mx-auto">
                                     {secondaryLinks.map((link: any, idx: number) => (
                                         <Link key={idx} href={link.href} className="group flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-neutral-500 hover:text-white transition-colors">
                                             {link.label}

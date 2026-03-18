@@ -74,7 +74,7 @@ export function HeroBlockGlobal({ content, className }: HeroBlockGlobalProps) {
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="flex flex-col items-center text-center py-12 md:py-16 lg:py-20">
+            <ContentContainer className="flex flex-col items-center text-center py-8 md:py-16 lg:py-20">
                 {eyebrow && (
                     <SectionEyebrow className="mb-4">
                         {eyebrow}
@@ -82,13 +82,13 @@ export function HeroBlockGlobal({ content, className }: HeroBlockGlobalProps) {
                 )}
                 
                 {title && (
-                    <SectionTitle size="lg" className="mb-6 max-w-4xl tracking-tight leading-[1.1]">
+                    <SectionTitle size="lg" className="mb-4 md:mb-6 max-w-4xl tracking-tight leading-[1.1]">
                         {title}
                     </SectionTitle>
                 )}
                 
                 {description && (
-                    <SectionDescription maxWidth="lg" className="mb-10 max-w-2xl text-neutral-600 text-lg leading-relaxed">
+                    <SectionDescription maxWidth="lg" className="mb-8 md:mb-10 max-w-2xl text-neutral-600 text-lg leading-relaxed">
                         {description}
                     </SectionDescription>
                 )}
@@ -112,13 +112,13 @@ export function HeroBlockGlobal({ content, className }: HeroBlockGlobalProps) {
                 </div>
 
                 {helperText && (
-                    <p className="mt-8 text-sm font-semibold text-neutral-400 tracking-widest uppercase">
+                    <p className="mt-6 md:mt-8 text-sm font-semibold text-neutral-400 tracking-widest uppercase">
                         {helperText}
                     </p>
                 )}
 
                 {/* Operational Outcome Strip */}
-                <div className="mt-20 lg:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-12 w-full max-w-5xl border-t border-neutral-100 pt-12">
+                <div className="mt-10 md:mt-20 lg:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-12 w-full max-w-5xl border-t border-neutral-100 pt-6 md:pt-12">
                     {outcomeItems.map((item, idx) => (
                         <div key={idx} className="flex items-center justify-center gap-3">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-50 border border-neutral-100 text-neutral-400">
@@ -163,10 +163,10 @@ export function GlobalServicesBlock({ content, frictionsContent, className }: Gl
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-8 md:py-12">
+            <ContentContainer className="py-6 md:py-12">
                 {/* 1. Core Operational Frictions Section */}
                 {frictions && (
-                    <div className="mb-16 lg:mb-24">
+                    <div className="mb-10 md:mb-16 lg:mb-24">
                         <SectionHeader
                             align="center"
                             eyebrow={frictions.eyebrow}
@@ -174,7 +174,7 @@ export function GlobalServicesBlock({ content, frictionsContent, className }: Gl
                             description={frictions.description}
                         />
 
-                        <div className="mt-12 md:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        <div className="mt-6 md:mt-12 lg:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {frictions.items.map((item, index) => (
                                 <CardBase 
                                     key={index} 
@@ -196,7 +196,7 @@ export function GlobalServicesBlock({ content, frictionsContent, className }: Gl
                 )}
 
                 {/* 2. Service Pillars Section */}
-                <div className="border-t border-neutral-100 pt-16 md:pt-20 text-center">
+                <div className="border-t border-neutral-100 pt-10 md:pt-16 lg:pt-20 text-center">
                     <SectionHeader
                         align="center"
                         eyebrow={services.eyebrow}
@@ -204,7 +204,7 @@ export function GlobalServicesBlock({ content, frictionsContent, className }: Gl
                         description={services.description}
                     />
 
-                    <div className="mt-12 md:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="mt-6 md:mt-12 lg:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {services.items.map((item, index) => (
                             <CardBase 
                                 key={index} 
@@ -273,11 +273,11 @@ export function GlobalWorkflowBlock({ content, benefitsContent, className }: Glo
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-12 md:py-16 border-t border-neutral-100 bg-neutral-50/50">
+            <ContentContainer className="py-8 md:py-16 border-t border-neutral-100 bg-neutral-50/50">
                 
                 {/* 1. Why This Model Works Section */}
                 {benefits && (
-                    <div className="mb-16 lg:mb-24">
+                    <div className="mb-10 md:mb-16 lg:mb-24">
                         <SectionHeader
                             align="center"
                             eyebrow={benefits.eyebrow}
@@ -285,7 +285,7 @@ export function GlobalWorkflowBlock({ content, benefitsContent, className }: Glo
                             description={benefits.description}
                         />
 
-                        <div className="mt-12 md:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        <div className="mt-6 md:mt-12 lg:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {benefits.items.map((item, index) => (
                                 <CardBase 
                                     key={index} 
@@ -307,7 +307,7 @@ export function GlobalWorkflowBlock({ content, benefitsContent, className }: Glo
                 )}
 
                 {/* 2. How We Work Section */}
-                <div className="pt-16 lg:pt-20 border-t border-neutral-200/60">
+                <div className="pt-10 md:pt-16 lg:pt-20 border-t border-neutral-200/60">
                     <SectionHeader
                         align="center"
                         eyebrow={workflow.eyebrow}
@@ -315,7 +315,7 @@ export function GlobalWorkflowBlock({ content, benefitsContent, className }: Glo
                         description={workflow.description}
                     />
 
-                    <div className="mt-12 md:mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="mt-6 md:mt-12 lg:mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                         {workflow.items.map((item, index) => (
                             <div key={index} className="relative flex flex-col items-center text-center group">
                                 {/* Connector Line (Desktop Only) */}
@@ -323,7 +323,7 @@ export function GlobalWorkflowBlock({ content, benefitsContent, className }: Glo
                                     <div className="hidden lg:block absolute top-10 left-[calc(50%+2.5rem)] w-[calc(100%-3rem)] h-px bg-neutral-200 z-0" />
                                 )}
                                 
-                                <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white border border-neutral-200 text-2xl font-black text-neutral-900 shadow-sm group-hover:border-neutral-900 group-hover:bg-neutral-900 group-hover:text-white transition-all duration-300">
+                                <div className="mb-6 md:mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-white border border-neutral-200 text-2xl font-black text-neutral-900 shadow-sm group-hover:border-neutral-900 group-hover:bg-neutral-900 group-hover:text-white transition-all duration-300">
                                     {item.step}
                                 </div>
                                 <h3 className="mb-3 text-lg font-bold text-neutral-900">
@@ -336,7 +336,7 @@ export function GlobalWorkflowBlock({ content, benefitsContent, className }: Glo
                         ))}
                     </div>
 
-                    <div className="mt-16 flex justify-center">
+                    <div className="mt-12 md:mt-16 flex justify-center">
                         <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-300">
                             <span>Analysis</span>
                             <ArrowRight size={10} />
@@ -506,9 +506,9 @@ export function GlobalBriefFormBlock({
 
     return (
         <SectionWrapper>
-            <ContentContainer className="py-16 md:py-24">
-                <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-                    <div className="space-y-12">
+            <ContentContainer className="py-10 md:py-24">
+                <div className="grid gap-8 md:gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+                    <div className="space-y-10 md:space-y-12">
                         <SectionHeader
                             eyebrow={content.eyebrow}
                             title={content.title}
@@ -519,7 +519,7 @@ export function GlobalBriefFormBlock({
 
                         <div className="space-y-10">
                             <div>
-                                <h3 className="mb-6 text-sm font-black uppercase tracking-[0.2em] text-neutral-900 border-b border-neutral-100 pb-4">
+                                <h3 className="mb-4 md:mb-6 text-sm font-black uppercase tracking-[0.2em] text-neutral-900 border-b border-neutral-100 pb-3 md:pb-4">
                                     Define Your Next Step
                                 </h3>
                                 <div className="space-y-6">
@@ -549,7 +549,7 @@ export function GlobalBriefFormBlock({
                             </div>
 
                             <div>
-                                <h3 className="mb-6 text-sm font-black uppercase tracking-[0.2em] text-neutral-900 border-b border-neutral-100 pb-4">
+                                <h3 className="mb-4 md:mb-6 text-sm font-black uppercase tracking-[0.2em] text-neutral-900 border-b border-neutral-100 pb-3 md:pb-4">
                                     Ideal Fit for This Step
                                 </h3>
                                 <div className="space-y-4">
@@ -574,9 +574,9 @@ export function GlobalBriefFormBlock({
                         
                         <form
                             onSubmit={handleSubmit}
-                            className="relative z-10 space-y-6 rounded-[2rem] border border-neutral-200 bg-white p-8 shadow-xl shadow-black/[0.02] sm:p-10"
+                            className="relative z-10 space-y-6 rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-xl shadow-black/[0.02] sm:p-10"
                         >
-                            <div className="mb-8 border-b border-neutral-50 pb-8">
+                            <div className="mb-6 md:mb-8 border-b border-neutral-50 pb-6 md:pb-8">
                                 <h3 className="text-xl font-bold tracking-tight text-neutral-900 uppercase flex items-center gap-3">
                                     Submit Workflow Brief
                                     <ArrowRight size={20} className="text-neutral-300" />
@@ -777,13 +777,13 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
 
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-16 md:py-24">
-                <div className="relative overflow-hidden flex flex-col p-10 md:p-16 bg-[#0A0A0A] border border-white/10 shadow-3xl rounded-[2.5rem]">
+            <ContentContainer className="py-10 md:py-24">
+                <div className="relative overflow-hidden flex flex-col p-5 md:p-16 bg-[#0A0A0A] border border-white/10 shadow-3xl rounded-[2.5rem]">
                     {/* Decorative Gradient Overlay */}
                     <div className="absolute top-0 right-0 -mr-20 -mt-20 h-96 w-96 rounded-full bg-white/[0.03] blur-[100px] pointer-events-none" />
                     <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-80 w-80 rounded-full bg-black blur-[80px] pointer-events-none" />
                     
-                    <div className="relative z-10 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                    <div className="relative z-10 grid gap-10 md:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                         <div className="space-y-6">
                             <SectionTitle
                                 size="lg"
@@ -803,7 +803,7 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
                         <div className="flex flex-col gap-4 p-3 bg-white/[0.04] rounded-[2.5rem] border border-white/10 backdrop-blur-2xl">
                             <Link 
                                 href="/book-a-call"
-                                className="group flex items-center justify-between p-7 rounded-[1.8rem] bg-white transition-all hover:scale-[1.01] active:scale-[0.99] shadow-xl shadow-black/20"
+                                className="group flex items-center justify-between p-6 md:p-7 rounded-[1.8rem] bg-white transition-all hover:scale-[1.01] active:scale-[0.99] shadow-xl shadow-black/20"
                             >
                                 <div className="flex items-center gap-5">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-900 text-white shadow-lg shadow-black/10">
@@ -824,7 +824,7 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
                             {secondaryCta && (
                                 <Link 
                                     href="/contact"
-                                    className="group flex items-center justify-between p-7 rounded-[1.8rem] bg-white/[0.03] border border-white/10 transition-all hover:bg-white/[0.07] hover:border-white/20"
+                                    className="group flex items-center justify-between p-6 md:p-7 rounded-[1.8rem] bg-white/[0.03] border border-white/10 transition-all hover:bg-white/[0.07] hover:border-white/20"
                                 >
                                     <div className="flex items-center gap-5">
                                         <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-neutral-300 border border-white/10 group-hover:bg-white/10 group-hover:text-white transition-all">
@@ -844,7 +844,7 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
                     </div>
 
                     {helperText && (
-                        <div className="mt-14 pt-8 border-t border-white/10 relative z-10 flex items-center justify-between">
+                        <div className="mt-10 pt-6 md:mt-14 md:pt-8 border-t border-white/10 relative z-10 flex items-center justify-between">
                             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-500/80">
                                 {helperText}
                             </p>

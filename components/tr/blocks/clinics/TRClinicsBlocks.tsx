@@ -44,7 +44,7 @@ export function TRClinicsHeroBlock() {
 
     return (
         <SectionWrapper className="overflow-hidden bg-neutral-50/50">
-            <ContentContainer className="py-16 md:py-24 lg:py-32">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
                 <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                     <div className="flex flex-col items-start text-left">
                         {hero.eyebrow && (
@@ -140,7 +140,7 @@ export function TRClinicsPainPointsBlock() {
                     description={painPoints.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-20"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -183,7 +183,7 @@ export function TRClinicsWhatWeHelpImproveBlock() {
                     description={improvements.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-20"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -235,7 +235,7 @@ export function TRClinicsFlagshipPackageBlock() {
                     description={flagshipPackage.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="max-w-4xl mx-auto">
@@ -318,7 +318,7 @@ export function TRClinicsSolutionModulesBlock() {
                     description={solutionModules.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-20"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-6 md:grid-cols-2 lg:gap-8 lg:max-w-6xl lg:mx-auto">
@@ -371,7 +371,7 @@ export function TRClinicsSetupLevelsBlock() {
                     description={setupLevels.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-20"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-8 lg:grid-cols-3">
@@ -447,7 +447,7 @@ export function TRClinicsMaintenanceLevelsBlock() {
                     description={maintenanceLevels.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-20"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-8 lg:grid-cols-3">
@@ -526,7 +526,7 @@ export function TRClinicsIncludedScopeBlock() {
                     description={whatsIncluded.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-8 lg:grid-cols-2 lg:max-w-5xl lg:mx-auto">
@@ -613,7 +613,7 @@ export function TRClinicsExampleWorkflowBlock() {
                     description={exampleWorkflows.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-20"
+                    className="mb-10 md:mb-16 text-2xl md:text-3xl lg:text-4xl"
                 />
 
                 <div className="grid gap-8 lg:grid-cols-2 lg:max-w-6xl lg:mx-auto">
@@ -673,7 +673,7 @@ export function TRClinicsPricingLogicBlock() {
                     description={pricingLogic.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="max-w-4xl mx-auto">
@@ -741,7 +741,7 @@ export function TRClinicsFitCheckBlock() {
                     description={fitNotFit.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-8 lg:grid-cols-2 lg:max-w-5xl lg:mx-auto">

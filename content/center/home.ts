@@ -121,6 +121,16 @@ interface LegacyBriefFormContent {
     successMessage: string;
     helperText: string;
     privacyNote?: string;
+    labels: {
+        fullName: string;
+        workEmail: string;
+        company: string;
+        inquiryType: string;
+        message: string;
+    };
+    submitButtonLoading: string;
+    consentRequiredError: string;
+    genericError: string;
 }
 
 interface LegacyFinalCtaContent {
@@ -139,6 +149,20 @@ export interface CenterHomeContent {
     workflow: LegacyWorkflowContent;
     briefForm: LegacyBriefFormContent;
     finalCta: LegacyFinalCtaContent;
+
+    labels: {
+        phaseLabel: string;
+        scenarioLabel: string;
+        problemLabel: string;
+        logicLabel: string;
+        flowStepLabel: string;
+        operationalDesignLabel: string;
+        outcomeLabel: string;
+        contextualProblemLabel: string;
+        appliedLogicLabel: string;
+        expectedOutcomeLabel: string;
+        customLayoutsNote: string;
+    };
 
     // Future-Proof Brand Sections (Requested for Center)
     whatWeAutomate: WhatWeAutomateContent;
@@ -362,6 +386,16 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             successMessage: 'Brief received. We will review it and get back to you shortly.',
             helperText: 'No long documents required. Just a few lines to start the conversation.',
             privacyNote: 'Your information is processed according to our security and privacy standards.',
+            labels: {
+                fullName: 'Full name',
+                workEmail: 'Work email',
+                company: 'Company',
+                inquiryType: 'Project type',
+                message: 'Brief',
+            },
+            submitButtonLoading: 'Sending...',
+            consentRequiredError: 'You must agree before submitting this brief.',
+            genericError: 'Something went wrong while submitting the brief.',
         },
         finalCta: {
             title: 'Ready for a cleaner operational process?',
@@ -369,6 +403,19 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             primaryCta: 'Contact Us',
             secondaryCta: 'Process Brief',
             helperText: 'Focused on clarity and coordination.',
+        },
+        labels: {
+            phaseLabel: 'Phase',
+            scenarioLabel: 'Scenario',
+            problemLabel: 'Problem',
+            logicLabel: 'Automation Logic',
+            flowStepLabel: 'Step',
+            operationalDesignLabel: 'Operational Flow Design',
+            outcomeLabel: 'Operational Outcome',
+            contextualProblemLabel: 'Contextual Problem',
+            appliedLogicLabel: 'Applied Logic',
+            expectedOutcomeLabel: 'Expected Outcome',
+            customLayoutsNote: 'Custom layouts available for unique operational workflows',
         },
     },
     tr: {
@@ -583,6 +630,16 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             successMessage: 'Özet alındı. İnceleyip en kısa sürede size döneceğiz.',
             helperText: 'Uzun belgeler gerekmez. Görüşmeyi başlatmak için birkaç satır yeterlidir.',
             privacyNote: 'Bilgileriniz güvenlik ve gizlilik standartlarımıza göre işlenir.',
+            labels: {
+                fullName: 'Ad Soyad',
+                workEmail: 'İş E-postası',
+                company: 'Şirket',
+                inquiryType: 'Proje Türü',
+                message: 'Özet',
+            },
+            submitButtonLoading: 'Gönderiliyor...',
+            consentRequiredError: 'Bu özeti göndermeden önce onay vermelisiniz.',
+            genericError: 'Özet gönderilirken bir hata oluştu.',
         },
         finalCta: {
             title: 'Daha temiz bir operasyonel sürece hazır mısınız?',
@@ -590,6 +647,19 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             primaryCta: 'Bize Ulaşın',
             secondaryCta: 'Süreç Özeti',
             helperText: 'Netlik ve koordinasyona odaklanmıştır.',
+        },
+        labels: {
+            phaseLabel: 'Faz',
+            scenarioLabel: 'Senaryo',
+            problemLabel: 'Problem',
+            logicLabel: 'Otomasyon Mantığı',
+            flowStepLabel: 'Adım',
+            operationalDesignLabel: 'Operasyonel Akış Tasarımı',
+            outcomeLabel: 'Operasyonel Sonuç',
+            contextualProblemLabel: 'Bağlamsal Problem',
+            appliedLogicLabel: 'Uygulanan Mantık',
+            expectedOutcomeLabel: 'Beklenen Sonuç',
+            customLayoutsNote: 'Benzersiz operasyonel iş akışları için özel düzenler mevcuttur',
         },
     },
 };

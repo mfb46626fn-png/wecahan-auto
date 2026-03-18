@@ -22,15 +22,15 @@ export function CenterContactHeroBlock({ content, className }: CenterContactHero
     const { title, description, trustPoint } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="relative py-24 md:py-32">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-slate-100/50 rounded-full blur-[100px] -z-10 pointer-events-none" />
+            <ContentContainer className="relative py-12 md:py-24">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-slate-100/50 rounded-full blur-[80px] md:blur-[100px] -z-10 pointer-events-none" />
                 
                 <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-                    <SectionEyebrow className="mb-6 !text-slate-400 font-bold tracking-[0.2em] uppercase">
-                        Discovery phase
+                    <SectionEyebrow className="mb-4 md:mb-6 !text-slate-400 font-bold tracking-[0.2em] uppercase">
+                        {content.eyebrow}
                     </SectionEyebrow>
                     
-                    <SectionTitle size="lg" className="mb-8 leading-[1.1] !text-slate-900 font-black tracking-tight">
+                    <SectionTitle size="lg" className="mb-6 md:mb-8 leading-[1.1] !text-slate-900 font-black tracking-tight text-3xl md:text-5xl lg:text-6xl">
                         {title}
                     </SectionTitle>
                     
@@ -62,13 +62,13 @@ export function CenterContactWhatToShareBlock({ content, className }: CenterCont
     const { title, description, topics } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title={title}
                     description={description}
                     align="center"
                     maxWidth="lg"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-16"
                 />
                 
                 <div className="grid gap-6 md:gap-8 lg:grid-cols-3">
@@ -107,13 +107,13 @@ export function CenterContactNextStepsBlock({ content, className }: CenterContac
     const { title, description, steps } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32 bg-slate-50/50 rounded-[3rem] border border-slate-100">
+            <ContentContainer className="py-12 md:py-24 bg-slate-50/50 rounded-[2.5rem] md:rounded-[3rem] border border-slate-100">
                 <SectionHeader
                     title={title}
                     description={description}
                     align="center"
                     maxWidth="lg"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-16"
                 />
                 
                 <div className="grid gap-8 md:gap-x-12 lg:grid-cols-3 max-w-5xl mx-auto">
@@ -154,8 +154,8 @@ export function CenterContactExpectationNoteBlock({ content, className }: Center
     const { title, notes } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <div className="max-w-4xl mx-auto bg-slate-900 rounded-[3rem] p-10 md:p-16 text-white relative overflow-hidden">
+            <ContentContainer className="py-12 md:py-24 px-4 md:px-0">
+                <div className="max-w-4xl mx-auto bg-slate-900 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 text-white relative overflow-hidden">
                     <div className="absolute top-0 right-0 p-8 opacity-10">
                         <Zap className="h-32 w-32" />
                     </div>
@@ -194,13 +194,13 @@ export function CenterContactBriefFormBlock({ content, className, children }: Ce
     const { title, description } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
+            <ContentContainer className="py-12 md:py-24 px-4 md:px-0">
                 <div className="max-w-3xl mx-auto">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-10 md:mb-16">
                         <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-50 text-slate-400 mb-6">
                             <Inbox className="h-6 w-6" />
                         </div>
-                        <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 tracking-tight">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 mb-4 md:mb-6 tracking-tight">
                             {title}
                         </h2>
                         <SectionDescription maxWidth="lg" className="mx-auto text-center">
@@ -208,7 +208,7 @@ export function CenterContactBriefFormBlock({ content, className, children }: Ce
                         </SectionDescription>
                     </div>
 
-                    <div className="bg-white border border-slate-100 shadow-2xl shadow-slate-200/50 rounded-[2.5rem] p-8 md:p-12 relative">
+                    <div className="bg-white border border-slate-100 shadow-2xl shadow-slate-200/50 rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-12 relative">
                         {/* Slot for the actual form component */}
                         {children || (
                             <div className="h-64 flex flex-col items-center justify-center border-2 border-dashed border-slate-100 rounded-3xl text-slate-300">

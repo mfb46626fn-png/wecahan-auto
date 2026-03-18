@@ -36,11 +36,11 @@ export function GlobalBookCallHeroBlock({ content, className }: { content: any, 
     const { eyebrow, title, description, primaryCta, secondaryCta } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="pt-24 pb-16 md:pt-32 md:pb-24">
+            <ContentContainer className="pt-16 pb-12 md:pt-32 md:pb-24 lg:pt-32 lg:pb-32">
                 <div className="max-w-4xl mx-auto text-center">
                     <SectionEyebrow className="mb-4 text-neutral-400">{eyebrow}</SectionEyebrow>
-                    <SectionTitle size="lg" className="mb-8 tracking-tight leading-[1.1]">{title}</SectionTitle>
-                    <SectionDescription className="mb-12 text-neutral-500 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+                    <SectionTitle size="lg" className="mb-6 md:mb-8 tracking-tight leading-[1.1]">{title}</SectionTitle>
+                    <SectionDescription className="mb-10 md:mb-12 text-neutral-500 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
                         {description}
                     </SectionDescription>
                     
@@ -57,7 +57,7 @@ export function GlobalBookCallHeroBlock({ content, className }: { content: any, 
                         </Link>
                     </div>
 
-                    <div className="mt-16 pt-12 border-t border-neutral-100 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div className="mt-12 pt-8 md:mt-16 md:pt-12 border-t border-neutral-100 grid grid-cols-2 md:grid-cols-4 gap-8">
                         <div className="flex flex-col items-center">
                             <span className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Duration</span>
                             <span className="text-sm font-bold text-neutral-900">15-20 Min</span>
@@ -86,11 +86,11 @@ export function GlobalBookCallPurposeBlock({ content, className }: { content: an
     const { title, items } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/50 ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} align="left" className="mb-16" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} align="left" className="mb-10 md:mb-16" />
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                     {items.map((item: any, idx: number) => (
-                        <CardBase key={idx} className="p-8 bg-white border-neutral-100 shadow-sm rounded-3xl hover:shadow-md transition-shadow">
+                        <CardBase key={idx} className="p-6 md:p-8 bg-white border-neutral-100 shadow-sm rounded-3xl hover:shadow-md transition-shadow">
                             <div className="mb-6 h-10 w-10 rounded-2xl bg-neutral-900 flex items-center justify-center text-white">
                                 {idx === 0 && <Target size={20} />}
                                 {idx === 1 && <ShieldCheck size={20} />}
@@ -112,8 +112,8 @@ export function GlobalBookCallBestFitBlock({ content, className }: { content: an
     const { title, items } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32 border-b border-neutral-100">
-                <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-16 lg:items-start">
+            <ContentContainer className="py-12 md:py-24 lg:py-32 border-b border-neutral-100">
+                <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 md:gap-16 lg:items-start">
                     <div>
                         <SectionEyebrow className="mb-4 text-neutral-400">Target Audience</SectionEyebrow>
                         <SectionTitle size="md" className="mb-6 tracking-tight leading-tight">{title}</SectionTitle>
@@ -123,7 +123,7 @@ export function GlobalBookCallBestFitBlock({ content, className }: { content: an
                     </div>
                     <div className="grid gap-4">
                         {items.map((item: any, idx: number) => (
-                            <CardBase key={idx} className="p-6 md:p-8 bg-white border-neutral-100 rounded-3xl flex items-start gap-6 group hover:border-neutral-200 transition-colors">
+                            <CardBase key={idx} className="p-5 md:p-8 bg-white border-neutral-100 rounded-3xl flex items-start gap-6 group hover:border-neutral-200 transition-colors">
                                 <div className="mt-1 h-6 w-6 rounded-full bg-neutral-900 flex items-center justify-center text-white flex-shrink-0">
                                     <Check size={14} />
                                 </div>
@@ -145,12 +145,12 @@ export function GlobalBookCallNotFitBlock({ content, className }: { content: any
     const { title, items } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/30 ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
                 <div className="max-w-4xl mx-auto">
-                    <SectionHeader title={title} align="center" className="mb-16" />
+                    <SectionHeader title={title} align="center" className="mb-10 md:mb-16" />
                     <div className="grid gap-6 md:grid-cols-2">
                         {items.map((item: any, idx: number) => (
-                            <div key={idx} className="flex items-start gap-4 p-6 rounded-2xl border border-neutral-200/50 bg-white/50">
+                            <div key={idx} className="flex items-start gap-4 p-5 md:p-6 rounded-2xl border border-neutral-200/50 bg-white/50">
                                 <X size={18} className="mt-1 text-neutral-300 flex-shrink-0" />
                                 <div>
                                     <h4 className="text-sm font-bold text-neutral-900 mb-1 tracking-tight">{item.title}</h4>
@@ -170,8 +170,8 @@ export function GlobalBookCallCoverageBlock({ content, className }: { content: a
     const { title, items } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} align="center" className="mb-20 md:mb-28" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} align="center" className="mb-12 md:mb-20 lg:mb-28" />
                 <div className="max-w-5xl mx-auto relative">
                     <div className="absolute top-1/2 left-0 w-full h-px bg-neutral-100 -translate-y-1/2 hidden md:block" />
                     <div className="grid md:grid-cols-4 gap-12 md:gap-8 relative z-10">
@@ -196,8 +196,8 @@ export function GlobalBookCallAfterCallBlock({ content, className }: { content: 
     const { title, items } = content;
     return (
         <SectionWrapper className={`bg-neutral-900 text-white ${className}`}>
-            <ContentContainer className="py-24 md:py-32">
-                <div className="grid lg:grid-cols-[1fr_1.5fr] gap-16 lg:items-center">
+            <ContentContainer className="py-16 md:py-24 lg:py-32">
+                <div className="grid lg:grid-cols-[1fr_1.5fr] gap-10 md:gap-16 lg:items-center">
                     <div>
                         <SectionEyebrow className="mb-4 text-neutral-500">Post-Call Process</SectionEyebrow>
                         <SectionTitle size="md" className="mb-8 text-white tracking-tight">{title}</SectionTitle>
@@ -207,7 +207,7 @@ export function GlobalBookCallAfterCallBlock({ content, className }: { content: 
                     </div>
                     <div className="space-y-6">
                         {items.map((item: any, idx: number) => (
-                            <div key={idx} className="p-8 rounded-[2rem] bg-neutral-800/50 border border-neutral-700/30 backdrop-blur-sm group hover:bg-neutral-800 transition-colors">
+                            <div key={idx} className="p-6 md:p-8 rounded-[2rem] bg-neutral-800/50 border border-neutral-700/30 backdrop-blur-sm group hover:bg-neutral-800 transition-colors">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="h-2 w-2 rounded-full bg-neutral-500 group-hover:bg-white transition-colors" />
                                     <h4 className="text-base font-bold tracking-tight">{item.title}</h4>
@@ -227,11 +227,11 @@ export function GlobalBookCallComparisonBlock({ content, className }: { content:
     const { title, call, brief } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <SectionHeader title={title} align="center" className="mb-16 md:mb-24" />
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <SectionHeader title={title} align="center" className="mb-10 md:mb-16 lg:mb-24" />
                 <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     {/* Call Card */}
-                    <CardBase className="p-10 md:p-12 bg-white border-neutral-100 shadow-sm rounded-[2.5rem] flex flex-col">
+                    <CardBase className="p-6 md:p-10 lg:p-12 bg-white border-neutral-100 shadow-sm rounded-[2.5rem] flex flex-col">
                         <div className="mb-8">
                             <span className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-3 block">Option A</span>
                             <h3 className="text-2xl font-bold text-neutral-900 tracking-tight mb-4">{call.title}</h3>
@@ -250,7 +250,7 @@ export function GlobalBookCallComparisonBlock({ content, className }: { content:
                     </CardBase>
 
                     {/* Brief Card */}
-                    <CardBase className="p-10 md:p-12 bg-neutral-50/50 border-neutral-200/50 shadow-sm rounded-[2.5rem] flex flex-col">
+                    <CardBase className="p-6 md:p-10 lg:p-12 bg-neutral-50/50 border-neutral-200/50 shadow-sm rounded-[2.5rem] flex flex-col">
                         <div className="mb-8">
                             <span className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-3 block">Option B</span>
                             <h3 className="text-2xl font-bold text-neutral-900 tracking-tight mb-4">{brief.title}</h3>
@@ -278,9 +278,9 @@ export function GlobalBookCallSchedulingBlock({ content, className }: { content:
     const { title, description, qualificationNote, helperItems } = content;
     return (
         <SectionWrapper className={`bg-neutral-50/30 ${className}`}>
-            <ContentContainer className="py-20 md:py-32">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
                 <div id="scheduling" className="scroll-mt-24">
-                    <SectionHeader title={title} description={description} align="center" className="mb-16 md:mb-24" />
+                    <SectionHeader title={title} description={description} align="center" className="mb-10 md:mb-16 lg:mb-24" />
                     <div className="grid lg:grid-cols-[1fr_0.4fr] gap-12 lg:items-start max-w-6xl mx-auto">
                         {/* Embed Placeholder Slot */}
                         <div className="w-full min-h-[600px] bg-white border border-neutral-100 rounded-[2.5rem] shadow-sm flex items-center justify-center relative overflow-hidden">
@@ -293,7 +293,7 @@ export function GlobalBookCallSchedulingBlock({ content, className }: { content:
 
                         {/* Helper Notes */}
                         <div className="space-y-6 lg:sticky lg:top-32">
-                            <CardBase className="p-8 bg-neutral-900 text-white border-none rounded-[2rem] shadow-xl">
+                            <CardBase className="p-6 md:p-8 bg-neutral-900 text-white border-none rounded-[2rem] shadow-xl">
                                 <h4 className="text-[11px] font-black uppercase tracking-widest text-neutral-500 mb-6">Discovery Prep</h4>
                                 <div className="space-y-8">
                                     {helperItems.map((item: any, idx: number) => (
@@ -327,8 +327,8 @@ export function GlobalBookCallSecondaryCtaBlock({ content, className }: { conten
     const { title, description, primaryCta, secondaryLinks } = content;
     return (
         <SectionWrapper className={className}>
-            <ContentContainer className="py-20 md:py-32">
-                <CardBase className="relative overflow-hidden p-12 md:p-20 bg-neutral-50 border-neutral-200/50 rounded-[3rem] text-center max-w-5xl mx-auto">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
+                <CardBase className="relative overflow-hidden p-8 md:p-16 lg:p-20 bg-neutral-50 border-neutral-200/50 rounded-[3rem] text-center max-w-5xl mx-auto">
                     <div className="absolute top-0 left-0 -ml-16 -mt-16 h-48 w-48 rounded-full bg-white blur-3xl opacity-50" />
                     <div className="relative z-10">
                         <SectionTitle size="md" className="mb-6 tracking-tight">{title}</SectionTitle>
@@ -343,7 +343,7 @@ export function GlobalBookCallSecondaryCtaBlock({ content, className }: { conten
                                 </PrimaryButton>
                             </Link>
                             
-                            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 pt-10 border-t border-neutral-200/60 w-full max-w-2xl mx-auto">
+                            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 pt-8 md:pt-10 border-t border-neutral-200/60 w-full max-w-2xl mx-auto">
                                 {secondaryLinks.map((link: any, idx: number) => (
                                     <Link key={idx} href={link.href} className="group flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-neutral-400 hover:text-neutral-900 transition-colors">
                                         {link.label}

@@ -3,12 +3,27 @@ export type InquiryOption = {
     label: string;
 };
 
-export const centerInquiryOptions = [
+export const centerInquiryOptionsEn = [
     { value: "automation-audit", label: "Automation Audit" },
     { value: "lead-flow-setup", label: "Lead Flow Setup" },
     { value: "internal-ops-automation", label: "Internal Ops Automation" },
     { value: "custom-workflow-build", label: "Custom Workflow Build" },
 ] as const;
+
+export const centerInquiryOptionsTr = [
+    { value: "automation-audit", label: "Otomasyon Denetimi" },
+    { value: "lead-flow-setup", label: "Aday Akışı Kurulumu" },
+    { value: "internal-ops-automation", label: "İç Operasyon Otomasyonu" },
+    { value: "custom-workflow-build", label: "Özel İş Akışı İnşası" },
+] as const;
+
+export const centerInquiryOptionsBilingual = {
+    en: centerInquiryOptionsEn,
+    tr: centerInquiryOptionsTr,
+} as const;
+
+/** @deprecated Use centerInquiryOptionsBilingual */
+export const centerInquiryOptions = centerInquiryOptionsEn;
 
 export const trInquiryOptions = [
     { value: "klinik-lead-takibi", label: "Klinik Lead Takibi" },

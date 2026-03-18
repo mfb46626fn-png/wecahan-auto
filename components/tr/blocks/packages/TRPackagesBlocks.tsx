@@ -36,7 +36,7 @@ export function TRPackagesHeroBlock() {
 
     return (
         <SectionWrapper className="overflow-hidden bg-white">
-            <ContentContainer className="py-16 md:py-24 lg:py-32">
+            <ContentContainer className="py-12 md:py-24 lg:py-32">
                 <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                     <div className="flex flex-col items-start text-left">
                         {hero.eyebrow && (
@@ -141,7 +141,7 @@ export function TRPackagesServiceModelOverviewBlock() {
                     title={serviceModelOverview.title}
                     description={serviceModelOverview.description}
                     align="center"
-                    className="mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -211,7 +211,7 @@ export function TRPackagesAutomationAnalysisBlock() {
                     title={automationAnalysis.title}
                     description={automationAnalysis.description}
                     align="center"
-                    className="mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
@@ -219,7 +219,7 @@ export function TRPackagesAutomationAnalysisBlock() {
                         <CardBase
                             key={sectionIdx}
                             size="lg"
-                            className="bg-neutral-50/50 border-neutral-100 p-8 md:p-10 flex flex-col h-full"
+                            className="bg-neutral-50/50 border-neutral-100 p-6 md:p-8 lg:p-10 flex flex-col h-full"
                         >
                             <h4 className="text-sm font-bold text-neutral-900 uppercase tracking-wider mb-8 flex items-center gap-3">
                                 <span className={`w-2 h-2 rounded-full ${section.dotColor}`} />
@@ -266,13 +266,13 @@ export function TRPackagesSetupPackagesBlock() {
 
     return (
         <SectionWrapper className="bg-white">
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     eyebrow="Aşama 2"
                     title={setupPackages.title}
                     description={setupPackages.description}
                     align="center"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-20"
                 />
 
                 <div className="grid gap-8 lg:grid-cols-3 lg:items-stretch">
@@ -399,13 +399,13 @@ export function TRPackagesMaintenancePackagesBlock() {
 
     return (
         <SectionWrapper className="bg-neutral-50/50">
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     eyebrow="Aşama 3"
                     title={maintenancePackages.title}
                     description={maintenancePackages.description}
                     align="center"
-                    className="mb-16 md:mb-24"
+                    className="mb-10 md:mb-20"
                 />
 
                 <div className="grid gap-8 lg:grid-cols-3 lg:items-stretch">
@@ -522,13 +522,13 @@ export function TRPackagesAdditionalDevelopmentBlock() {
 
     return (
         <SectionWrapper className="bg-white">
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-12 md:py-20 lg:py-24">
                 <SectionHeader
                     title={additionalDevelopment.title}
                     description={additionalDevelopment.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-20"
+                    className="mb-10 md:mb-16 lg:mb-20"
                 />
 
                 <div className="max-w-4xl mx-auto">
@@ -660,13 +660,13 @@ export function TRPackagesNotIncludedBlock() {
 
     return (
         <SectionWrapper className="bg-white">
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title={notIncluded.title}
                     description={notIncluded.description}
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <CardBase
@@ -723,13 +723,13 @@ export function TRPackagesDeliverablesAndClientContributionBlock() {
 
     return (
         <SectionWrapper className="bg-white">
-            <ContentContainer className="py-16 md:py-24">
+            <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title="Teslimatlar ve Katkı Süreci"
                     description="Şeffaf bir iş birliği için neleri teslim edeceğimizi ve hangi noktalarda sizin desteğinize ihtiyaç duyacağımızı netleştiriyoruz."
                     align="center"
                     maxWidth="md"
-                    className="mb-12 md:mb-16"
+                    className="mb-10 md:mb-16"
                 />
 
                 <div className="grid gap-8 lg:grid-cols-2 lg:max-w-5xl lg:mx-auto">
