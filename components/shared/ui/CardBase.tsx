@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 type CardBaseProps = React.PropsWithChildren<{
     className?: string;
@@ -11,10 +11,6 @@ const paddingMap: Record<NonNullable<CardBaseProps['size']>, string> = {
     lg: 'p-6 md:p-8',
 };
 
-function mergeClasses(...classes: Array<string | false | null | undefined>) {
-    return classes.filter(Boolean).join(' ');
-}
-
 export function CardBase({
     children,
     className,
@@ -22,7 +18,7 @@ export function CardBase({
 }: CardBaseProps) {
     return (
         <div
-            className={mergeClasses(
+            className={twMerge(
                 'rounded-2xl border border-gray-200 bg-white',
                 paddingMap[size],
                 className,
