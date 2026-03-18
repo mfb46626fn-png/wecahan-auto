@@ -499,12 +499,12 @@ export function GlobalAccountingFinalCtaBlock({ content, className }: { content:
     return (
         <SectionWrapper className={className}>
             <ContentContainer className="py-20 md:py-32">
-                <CardBase className="relative overflow-hidden flex flex-col p-10 md:p-16 bg-neutral-900 border-none shadow-2xl rounded-[2.5rem]">
-                    <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-neutral-800/50 blur-3xl" />
+                <CardBase className="relative overflow-hidden flex flex-col p-10 md:p-16 bg-black border-none shadow-2xl rounded-[2.5rem]">
+                    <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-neutral-800/30 blur-3xl" />
                     <div className="relative z-10 grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:items-center">
                         <div>
                             <SectionTitle size="lg" className="mb-6 text-white max-w-2xl tracking-tight leading-[1.1]">{title}</SectionTitle>
-                            <SectionDescription className="mb-0 text-neutral-400 max-w-xl leading-relaxed text-lg">{description}</SectionDescription>
+                            <SectionDescription className="mb-0 text-neutral-300 max-w-xl leading-relaxed text-lg">{description}</SectionDescription>
                             
                             <div className="mt-10 flex items-center gap-6">
                                 <div className="flex -space-x-2">
@@ -512,14 +512,14 @@ export function GlobalAccountingFinalCtaBlock({ content, className }: { content:
                                         <div key={i} className="h-10 w-10 rounded-full border-2 border-neutral-900 bg-neutral-800" />
                                     ))}
                                 </div>
-                                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-500">Trusted Operational Partners</p>
+                                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-400">Trusted Operational Partners</p>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-5 p-2 bg-neutral-800/30 rounded-[2rem] border border-neutral-700/30 backdrop-blur-sm">
                             <Link href={resolveCtaHref(primaryCta)} className="group flex items-center justify-between p-6 rounded-2xl bg-white transition-all hover:bg-neutral-50">
                                 <div className="flex items-center gap-4">
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-neutral-900 text-white">
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black text-white">
                                         <PhoneCall size={20} />
                                     </div>
                                     <div>
@@ -546,7 +546,7 @@ export function GlobalAccountingFinalCtaBlock({ content, className }: { content:
                     </div>
                     {helperText && (
                         <div className="mt-12 pt-8 border-t border-neutral-800/50 relative z-10">
-                            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-600">{helperText}</p>
+                            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-400">{helperText}</p>
                         </div>
                     )}
                 </CardBase>
