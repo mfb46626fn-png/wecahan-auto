@@ -778,88 +778,79 @@ export function GlobalFinalCtaBlock({ content, className }: GlobalFinalCtaBlockP
     return (
         <SectionWrapper className={className}>
             <ContentContainer className="py-16 md:py-24">
-                <CardBase className="relative overflow-hidden flex flex-col p-10 md:p-16 bg-[#0A0A0A] border border-white/5 shadow-2xl rounded-[2.5rem]">
-                    <div className="absolute top-0 right-0 -mr-16 -mt-16 h-80 w-80 rounded-full bg-white/[0.02] blur-3xl" />
+                <div className="relative overflow-hidden flex flex-col p-10 md:p-16 bg-[#0A0A0A] border border-white/10 shadow-3xl rounded-[2.5rem]">
+                    {/* Decorative Gradient Overlay */}
+                    <div className="absolute top-0 right-0 -mr-20 -mt-20 h-96 w-96 rounded-full bg-white/[0.03] blur-[100px] pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-80 w-80 rounded-full bg-black blur-[80px] pointer-events-none" />
                     
                     <div className="relative z-10 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-                        <div>
+                        <div className="space-y-6">
                             <SectionTitle
                                 size="lg"
-                                className="mb-6 text-white max-w-2xl tracking-tight leading-[1.1]"
+                                className="text-white max-w-2xl tracking-tight leading-[1.05] font-bold"
                             >
                                 {title}
                             </SectionTitle>
                             
                             <SectionDescription
                                 maxWidth="lg"
-                                className="mb-0 text-neutral-400 max-w-xl leading-relaxed text-lg"
+                                className="mb-0 text-neutral-400 max-w-xl leading-relaxed text-lg font-medium opacity-90"
                             >
                                 {description}
                             </SectionDescription>
-                            
-                            <div className="mt-10 flex items-center gap-6">
-                                <div className="flex -space-x-2">
-                                    {[1, 2, 3].map((i) => (
-                                        <div key={i} className="h-10 w-10 rounded-full border-2 border-[#0A0A0A] bg-neutral-800" />
-                                    ))}
-                                </div>
-                                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-500">
-                                    Trusted by Forward-Thinking Firms
-                                </p>
-                            </div>
                         </div>
 
-                        <div className="flex flex-col gap-4 p-3 bg-white/[0.03] rounded-[2.5rem] border border-white/5 backdrop-blur-xl">
+                        <div className="flex flex-col gap-4 p-3 bg-white/[0.04] rounded-[2.5rem] border border-white/10 backdrop-blur-2xl">
                             <Link 
                                 href="/book-a-call"
-                                className="group flex items-center justify-between p-6 rounded-3xl bg-white transition-all hover:scale-[1.02] active:scale-[0.98]"
+                                className="group flex items-center justify-between p-7 rounded-[1.8rem] bg-white transition-all hover:scale-[1.01] active:scale-[0.99] shadow-xl shadow-black/20"
                             >
-                                <div className="flex items-center gap-4">
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-900 text-white shadow-xl shadow-black/10">
-                                        <PhoneCall size={20} />
+                                <div className="flex items-center gap-5">
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-900 text-white shadow-lg shadow-black/10">
+                                        <PhoneCall size={22} />
                                     </div>
                                     <div>
-                                        <h4 className="text-[13px] font-bold text-neutral-900">
+                                        <h4 className="text-[14px] font-bold text-neutral-900 tracking-tight">
                                             {resolveCtaLabel(primaryCta)}
                                         </h4>
-                                        <p className="text-[11px] text-neutral-500 mt-0.5 font-medium">Structured 15-min consultation</p>
+                                        <p className="text-[11px] text-neutral-500 mt-1 font-semibold uppercase tracking-wider">Structured 15-min consultation</p>
                                     </div>
                                 </div>
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-50 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
-                                    <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+                                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-50 group-hover:bg-neutral-900 group-hover:text-white transition-all">
+                                    <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
                                 </div>
                             </Link>
 
                             {secondaryCta && (
                                 <Link 
                                     href="/contact"
-                                    className="group flex items-center justify-between p-6 rounded-3xl bg-transparent border border-white/10 transition-all hover:bg-white/5 hover:border-white/20"
+                                    className="group flex items-center justify-between p-7 rounded-[1.8rem] bg-white/[0.03] border border-white/10 transition-all hover:bg-white/[0.07] hover:border-white/20"
                                 >
-                                    <div className="flex items-center gap-4">
-                                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-neutral-400 border border-white/10 group-hover:border-white/20 transition-colors">
-                                            <FileText size={20} />
+                                    <div className="flex items-center gap-5">
+                                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-neutral-300 border border-white/10 group-hover:bg-white/10 group-hover:text-white transition-all">
+                                            <FileText size={22} />
                                         </div>
                                         <div>
-                                            <h4 className="text-[13px] font-bold text-neutral-200">
+                                            <h4 className="text-[14px] font-bold text-white tracking-tight">
                                                 {resolveCtaLabel(secondaryCta)}
                                             </h4>
-                                            <p className="text-[11px] text-neutral-500 mt-0.5 font-medium">Submit your operational pain points</p>
+                                            <p className="text-[11px] text-neutral-400 mt-1 font-semibold uppercase tracking-wider opacity-80">Submit your operational brief</p>
                                         </div>
                                     </div>
-                                    <ArrowRight size={18} className="text-neutral-600 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                                    <ArrowRight size={20} className="text-white/20 group-hover:text-white group-hover:translate-x-1 transition-all" />
                                 </Link>
                             )}
                         </div>
                     </div>
 
                     {helperText && (
-                        <div className="mt-12 pt-8 border-t border-white/5 relative z-10">
-                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-600">
+                        <div className="mt-14 pt-8 border-t border-white/10 relative z-10 flex items-center justify-between">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-500/80">
                                 {helperText}
                             </p>
                         </div>
                     )}
-                </CardBase>
+                </div>
             </ContentContainer>
         </SectionWrapper>
     );
