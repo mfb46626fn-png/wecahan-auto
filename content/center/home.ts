@@ -82,6 +82,10 @@ interface SelectedUseCasesContent {
     title: string;
     description: string;
     useCases: UseCaseCard[];
+    contextualProblemLabel?: string;
+    appliedLogicLabel?: string;
+    expectedOutcomeLabel?: string;
+    customLayoutsNote?: string;
 }
 
 interface ContactBriefContent {
@@ -321,10 +325,15 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             ],
         },
         selectedUseCases: {
-            title: 'Selected Use-Case Examples',
-            description: 'Applying operational logic to specific business contexts.',
+            title: 'Selected Use Case Examples',
+            description: 'Application of operational logic to specific business contexts.',
+            contextualProblemLabel: 'Contextual Problem',
+            appliedLogicLabel: 'Applied Logic',
+            expectedOutcomeLabel: 'Expected Outcome',
+            customLayoutsNote: 'Custom layouts available for unique operational workflows',
             useCases: [
-                {
+// Broadway
+               {
                     context: 'Clinic Inquiry Handling',
                     problem: 'Scattered intake from WhatsApp and forms leading to inconsistent follow-up.',
                     logic: 'Clean intake and routing layer to improve visibility before the appointment stage.',
@@ -574,8 +583,13 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
         selectedUseCases: {
             title: 'Seçili Kullanım Örnekleri',
             description: 'Operasyonel mantığın belirli iş bağlamlarına uygulanması.',
+            contextualProblemLabel: 'Bağlamsal Problem',
+            appliedLogicLabel: 'Uygulanan Mantık',
+            expectedOutcomeLabel: 'Beklenen Sonuç',
+            customLayoutsNote: 'Benzersiz operasyonel iş akışları için özel tasarımlar mevcuttur',
             useCases: [
-                {
+// Broadway
+               {
                     context: 'Klinik Talep Yönetimi',
                     problem: 'WhatsApp ve formlardan gelen dağınık taleplerin tutarsız takibe yol açması.',
                     logic: 'Randevu aşamasından önce görünürlüğü artırmak için temiz bir giriş ve yönlendirme katmanı.',
