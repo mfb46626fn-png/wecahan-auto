@@ -268,14 +268,14 @@ export function CenterHomeHowWeWorkBlock({ content, className }: CenterHomeHowWe
                     className="mb-10 md:mb-16"
                 />
 
-                <div className="grid gap-4 md:gap-8 lg:grid-cols-3 max-w-6xl mx-auto">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
                     {steps.map((item, index) => (
                         <div key={index} className="relative group">
                             <CardBase 
                                 size="lg" 
-                                className="flex flex-col h-full bg-white border-slate-100 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500 rounded-[2.5rem] p-8"
+                                className="flex flex-col h-full bg-white border-slate-100 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500 rounded-[2.5rem] p-5 md:p-8"
                             >
-                                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-sm font-black text-white shadow-lg shadow-black/10 transition-transform group-hover:scale-110">
+                                <div className="mb-6 flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-2xl bg-slate-900 text-xs md:text-sm font-black text-white shadow-lg shadow-black/10 transition-transform group-hover:scale-110">
                                     {item.step}
                                 </div>
                                 
