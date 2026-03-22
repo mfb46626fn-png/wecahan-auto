@@ -189,7 +189,7 @@ export const centerContactBilingualContent: Record<CenterLocale, ContactContent>
         },
         hero: {
             eyebrow: 'Keşif aşaması',
-            title: 'Bağlamla başlayalım',
+            title: 'Sürecinizden bahsedin',
             description: 'Operasyonel netliğe giden ilk adım, basit bir özettir. Sayfalarca dokümana gerek yok; sürecinizin nerede tıkandığını birkaç satırla anlatmanız yeterli.',
             trustPoint: 'Baskısız inceleme. Net sınırlar.',
         },
@@ -220,7 +220,7 @@ export const centerContactBilingualContent: Record<CenterLocale, ContactContent>
                     description: 'Özetinizi operasyonel uyum ve teknik uygulanabilirlik açısından analiz ediyoruz.',
                 },
                 {
-                    title: 'Bağlamsal Dönüş',
+                    title: 'Sürece Özel Yanıt',
                     description: 'Size net bir perspektifle dönüyoruz; ya bir sonraki adımı öneriyoruz ya da dürüstçe "uygun değil" notu paylaşıyoruz.',
                 },
                 {
@@ -263,7 +263,7 @@ export const centerContactBilingualContent: Record<CenterLocale, ContactContent>
             submitLabel: 'Özeti Gönder',
             successState: {
                 title: 'Özet alındı',
-                description: 'Bağlamınızı inceleyip en kısa sürede size döneceğiz.',
+                description: 'Paylaştığınız detayları inceleyip en kısa sürede size döneceğiz.',
             },
             errorState: {
                 title: 'Bir sorun oluştu',
