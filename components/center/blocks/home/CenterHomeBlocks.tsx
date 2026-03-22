@@ -65,6 +65,27 @@ export interface CenterHomeHeroBlockProps {
     className?: string;
 }
 
+const handleAnchorClick = (e: React.MouseEvent, href: string) => {
+    if (href.startsWith('#')) {
+        e.preventDefault();
+        const id = href.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+            const navHeight = 80; // Approximate navbar height
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+            
+            // Update hash without jumping
+            window.history.pushState(null, '', href);
+        }
+    }
+};
+
 export function CenterHomeHeroBlock({ content, className }: CenterHomeHeroBlockProps) {
     const {
         eyebrow,
@@ -110,7 +131,11 @@ export function CenterHomeHeroBlock({ content, className }: CenterHomeHeroBlockP
                     
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                         {primary && (
-                            <Link href={primary.href} className="w-full sm:w-auto">
+                            <Link 
+                                href={primary.href} 
+                                className="w-full sm:w-auto"
+                                onClick={(e) => handleAnchorClick(e, primary.href)}
+                            >
                                 <PrimaryButton className="w-full sm:w-auto min-w-[200px] !px-8 !py-3">
                                     {primary.label}
                                 </PrimaryButton>
@@ -118,7 +143,11 @@ export function CenterHomeHeroBlock({ content, className }: CenterHomeHeroBlockP
                         )}
                         
                         {secondary && (
-                            <Link href={secondary.href} className="w-full sm:w-auto">
+                            <Link 
+                                href={secondary.href} 
+                                className="w-full sm:w-auto"
+                                onClick={(e) => handleAnchorClick(e, secondary.href)}
+                            >
                                 <SecondaryButton className="w-full sm:w-auto min-w-[200px] !px-8 !py-3">
                                     {secondary.label}
                                 </SecondaryButton>
@@ -603,7 +632,11 @@ export function CenterHomeContactBriefSectionBlock({ content, className }: Cente
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
                             {primary && (
-                                <Link href={primary.href} className="w-full sm:w-auto">
+                                <Link 
+                                    href={primary.href} 
+                                    className="w-full sm:w-auto"
+                                    onClick={(e) => handleAnchorClick(e, primary.href)}
+                                >
                                     <PrimaryButton className="w-full sm:w-auto !px-12 !py-4 font-bold uppercase tracking-tight shadow-xl shadow-slate-200">
                                         {primary.label}
                                     </PrimaryButton>
@@ -611,7 +644,11 @@ export function CenterHomeContactBriefSectionBlock({ content, className }: Cente
                             )}
                             
                             {secondary && (
-                                <Link href={secondary.href} className="w-full sm:w-auto">
+                                <Link 
+                                    href={secondary.href} 
+                                    className="w-full sm:w-auto"
+                                    onClick={(e) => handleAnchorClick(e, secondary.href)}
+                                >
                                     <SecondaryButton className="w-full sm:w-auto !px-12 !py-4 font-bold uppercase tracking-tight border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors">
                                         {secondary.label}
                                     </SecondaryButton>
@@ -1218,16 +1255,23 @@ export function CenterFinalCtaBlock({ content, className }: CenterFinalCtaBlockP
                     >
                         {description}
                     </SectionDescription>
-
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                        <Link href={typeof primaryCta === 'string' ? '/contact' : primaryCta.href} className="w-full sm:w-auto">
+                        <Link 
+                            href={typeof primaryCta === 'string' ? '/contact' : primaryCta.href} 
+                            className="w-full sm:w-auto"
+                            onClick={(e) => handleAnchorClick(e, typeof primaryCta === 'string' ? '/contact' : primaryCta.href)}
+                        >
                             <PrimaryButton className="w-full sm:w-auto min-w-[200px]">
                                 {resolveCtaLabel(primaryCta)}
                             </PrimaryButton>
                         </Link>
 
                         {secondaryCta && (
-                            <Link href={typeof secondaryCta === 'string' ? '#brief' : secondaryCta.href} className="w-full sm:w-auto">
+                            <Link 
+                                href={typeof secondaryCta === 'string' ? '#brief' : secondaryCta.href} 
+                                className="w-full sm:w-auto"
+                                onClick={(e) => handleAnchorClick(e, typeof secondaryCta === 'string' ? '#brief' : secondaryCta.href)}
+                            >
                                 <SecondaryButton className="w-full sm:w-auto min-w-[200px]">
                                     {resolveCtaLabel(secondaryCta)}
                                 </SecondaryButton>
