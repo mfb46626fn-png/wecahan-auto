@@ -287,7 +287,7 @@ export function CenterHomeHowWeWorkBlock({ content, className }: CenterHomeHowWe
                                     {item.description}
                                 </BodyText>
                                 
-                                <div className="mt-8 pt-6 border-t border-slate-50 flex items-center gap-2">
+                                <div className="mt-auto pt-8 border-t border-slate-50 flex items-center gap-2">
                                     <div className="h-1 w-1 rounded-full bg-slate-300" />
                                     <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">
                                         {(content as any).phaseLabel || "Phase"} {item.step}
