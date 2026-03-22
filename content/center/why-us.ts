@@ -205,7 +205,6 @@ export const centerWhyUsBilingualContent: Record<CenterLocale, WhyUsContent> = {
             title: 'Ready for a more structured process?',
             description: 'The first step is a simple review of your current manual workflow. No pressure, just clarity.',
             primaryCta: 'Contact Us',
-            secondaryCta: 'View Samples',
         },
     },
     tr: {
@@ -325,7 +324,6 @@ export const centerWhyUsBilingualContent: Record<CenterLocale, WhyUsContent> = {
             title: 'Daha yapılandırılmış bir sürece hazır mısınız?',
             description: 'İlk adım, mevcut manuel iş akışınızın basit bir incelemesidir. Baskı yok, sadece netlik.',
             primaryCta: 'Bize Ulaşın',
-            secondaryCta: 'Örnekleri İnceleyin',
         },
     },
 };
