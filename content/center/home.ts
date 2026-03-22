@@ -401,7 +401,6 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             title: 'Ready for a cleaner operational process?',
             description: 'Contact us to discuss your specific workflow needs and how we can automate them.',
             primaryCta: { label: 'Contact Us', href: '/contact' },
-            secondaryCta: { label: 'Process Brief', href: '#brief' },
             helperText: 'Focused on clarity and coordination.',
         },
         labels: {
@@ -645,7 +644,6 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             title: 'Daha temiz bir operasyonel sürece hazır mısınız?',
             description: 'Özel iş akışı ihtiyaçlarınızı ve bunları nasıl otomatikleştirebileceğimizi görüşmek için bize ulaşın.',
             primaryCta: { label: 'Bize Ulaşın', href: '/iletisim' },
-            secondaryCta: { label: 'Süreç Özeti', href: '#brief' },
             helperText: 'Netlik ve koordinasyona odaklanmıştır.',
         },
         labels: {
