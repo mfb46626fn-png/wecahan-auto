@@ -68,6 +68,7 @@ interface WhyStructureWorksContent {
     title: string;
     description: string;
     benefits: BenefitCard[];
+    outcomeLabel?: string;
 }
 
 interface UseCaseCard {
@@ -297,9 +298,11 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
         },
         whyStructureWorks: {
             title: 'Why This Structure Works',
-            description: 'Operational automation is about outcome, not just technology.',
+            description: 'Operational automation is about the outcome, not just the technology.',
+            outcomeLabel: 'Operational Outcome',
             benefits: [
-                {
+// Broadway
+               {
                     title: 'Less scattered follow-up',
                     description: 'Centralized intake ensures nothing is left to memory or buried in individual inboxes.',
                 },
@@ -547,8 +550,10 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
         whyStructureWorks: {
             title: 'Bu Yapı Neden İşe Yarıyor?',
             description: 'Operasyonel otomasyon sadece teknolojiyle değil, sonuçla ilgilidir.',
+            outcomeLabel: 'Operasyonel Sonuç',
             benefits: [
-                {
+// Broadway
+               {
                     title: 'Daha az dağınık takip',
                     description: 'Merkezi giriş sistemi, hiçbir şeyin hafızaya bırakılmamasını veya bireysel kutularda kaybolmamasını sağlar.',
                 },
