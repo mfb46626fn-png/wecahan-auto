@@ -44,13 +44,13 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
     };
 
     return (
-        <header
+        <div
             className={mergeClasses(
-                'w-full border-b border-gray-100 bg-white/80 backdrop-blur-md sticky top-0 z-50',
+                'w-full',
                 className,
             )}
         >
-            <ContentContainer size="xl">
+           <ContentContainer size="xl">
                 <nav className="relative flex h-20 items-center justify-between">
                     {/* Brand */}
                     <Link href="/" className="relative z-10 transition-opacity hover:opacity-90">
@@ -134,6 +134,6 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
                     </div>
                 </nav>
             </ContentContainer>
-        </header>
+        </div>
     );
 }

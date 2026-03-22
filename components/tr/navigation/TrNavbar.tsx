@@ -41,13 +41,13 @@ export function TrNavbar({ className }: TrNavbarProps) {
     ];
 
     return (
-        <header
+        <div
             className={mergeClasses(
-                'w-full border-b border-gray-100 bg-white/80 backdrop-blur-md sticky top-0 z-50',
+                'w-full',
                 className,
             )}
         >
-            <ContentContainer size="xl">
+           <ContentContainer size="xl">
                 <nav className="relative flex h-20 items-center justify-between">
                     {/* Brand */}
                     <Link href="/" className="transition-opacity hover:opacity-90 relative z-10">
@@ -141,6 +141,6 @@ export function TrNavbar({ className }: TrNavbarProps) {
                     </div>
                 </nav>
             </ContentContainer>
-        </header>
+        </div>
     );
 }

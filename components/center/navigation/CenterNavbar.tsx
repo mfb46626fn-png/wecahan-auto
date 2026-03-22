@@ -83,13 +83,13 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
     const t = translations[locale];
 
     return (
-        <header
+        <div
             className={mergeClasses(
-                'w-full border-b border-gray-100 bg-white/80 backdrop-blur-md sticky top-0 z-50',
+                'w-full',
                 className,
             )}
         >
-            <ContentContainer size="xl">
+           <ContentContainer size="xl">
                 <nav className="relative flex h-20 items-center justify-between">
                     {/* Brand */}
                     <a href="/" className="transition-opacity hover:opacity-80 z-10">
@@ -237,6 +237,6 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
                     </div>
                 </nav>
             </ContentContainer>
-        </header>
+        </div>
     );
 }

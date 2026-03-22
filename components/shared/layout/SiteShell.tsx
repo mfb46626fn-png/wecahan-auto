@@ -20,7 +20,11 @@ export function SiteShell({
 }: SiteShellProps) {
     return (
         <div className={mergeClasses('flex min-h-screen flex-col bg-slate-50', className)}>
-            {header && <header className="sticky top-0 z-50 w-full">{header}</header>}
+            {header && (
+                <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
+                    {header}
+                </header>
+            )}
             
             <main className={mergeClasses('flex-1', mainClassName)}>
                 {children}
