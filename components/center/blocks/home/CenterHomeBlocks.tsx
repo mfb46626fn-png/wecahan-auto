@@ -555,8 +555,8 @@ export function CenterHomeSelectedUseCaseExamplesBlock({ content, className }: C
                                     </BodyText>
                                 </div>
 
-                                <div className="mt-8 pt-8 border-t border-slate-100/50">
-                                    <div className="flex items-center gap-2 mb-3">
+                                <div className="mt-auto pt-8 border-t border-slate-100/50">
+                                   <div className="flex items-center gap-2 mb-3">
                                         <CheckCircle2 size={16} className="text-slate-900" />
                                         <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-900">{(content as any).expectedOutcomeLabel || "Expected Outcome"}</h4>
                                     </div>
