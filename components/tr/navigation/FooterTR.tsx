@@ -1,5 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
+import { Logo } from '../../shared/ui/Logo';
+import { BrandingSignature } from '../../shared/ui/BrandingSignature';
 import { ContentContainer } from '../../shared/layout/ContentContainer';
 
 type FooterTRProps = {
@@ -24,13 +26,8 @@ export function FooterTR({ className }: FooterTRProps) {
                 <div className="grid gap-12 md:grid-cols-4 lg:gap-16">
                     {/* Brand & Mission Area */}
                     <div className="md:col-span-1">
-                        <Link href="/" className="flex items-center gap-2 mb-6 group">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-black text-white font-bold text-sm shadow-xl shadow-black/10 group-hover:scale-105 transition-transform duration-500">
-                                W
-                            </div>
-                            <span className="text-2xl font-black tracking-tighter text-gray-900">
-                                WeCaHan
-                            </span>
+                        <Link href="/" className="mb-6 group inline-block">
+                            <Logo variant="footer" />
                         </Link>
                         <p className="max-w-xs text-sm leading-relaxed text-gray-500 font-medium">
                             Sağlık ve finans profesyonelleri için operasyonel mükemmellik.
@@ -126,11 +123,14 @@ export function FooterTR({ className }: FooterTRProps) {
                     <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">
                         &copy; {currentYear} WeCaHan Auto. Tüm hakları saklıdır.
                     </p>
-                    <div className="flex items-center gap-2">
-                        <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
-                        <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">
-                            Türkiye Geneli Operasyon Analizi
-                        </span>
+                    <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+                        <div className="flex items-center gap-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+                            <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">
+                                Türkiye Geneli Operasyon Analizi
+                            </span>
+                        </div>
+                        <BrandingSignature />
                     </div>
                 </div>
             </ContentContainer>

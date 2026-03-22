@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { ContentContainer } from '../../shared/layout/ContentContainer';
 import Link from 'next/link';
+import { Logo } from '../../shared/ui/Logo';
+import { BrandingSignature } from '../../shared/ui/BrandingSignature';
 
 type FooterGlobalProps = {
     className?: string;
@@ -24,13 +26,8 @@ export function FooterGlobal({ className }: FooterGlobalProps) {
                 <div className="grid gap-12 md:grid-cols-4 lg:gap-16">
                     {/* Brand & Mission Area */}
                     <div className="md:col-span-1 lg:col-span-2">
-                        <Link href="/" className="flex items-center gap-2 mb-6 group">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-black text-white font-bold text-sm shadow-xl shadow-black/10 group-hover:scale-105 transition-transform duration-500">
-                                W
-                            </div>
-                            <span className="text-2xl font-black tracking-tighter text-neutral-900">
-                                WeCaHan
-                            </span>
+                        <Link href="/" className="mb-6 group inline-block">
+                            <Logo variant="footer" />
                         </Link>
                         <p className="max-w-xs text-sm leading-relaxed text-neutral-500 font-medium">
                             Operational automation for accounting firms. We reduce admin drag through structured workflow systems and specialized implementation logic.
@@ -120,11 +117,14 @@ export function FooterGlobal({ className }: FooterGlobalProps) {
                     <p className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest">
                         &copy; {currentYear} WeCaHan Auto. All rights reserved.
                     </p>
-                    <div className="flex items-center gap-2">
-                        <div className="h-1 w-1 rounded-full bg-blue-500 animate-pulse" />
-                        <span className="text-[9px] font-black text-neutral-400 uppercase tracking-[0.2em]">
-                            Global Operational Analysis
-                        </span>
+                    <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+                        <div className="flex items-center gap-2">
+                            <div className="h-1 w-1 rounded-full bg-blue-500 animate-pulse" />
+                            <span className="text-[9px] font-black text-neutral-400 uppercase tracking-[0.2em]">
+                                Global Operational Analysis
+                            </span>
+                        </div>
+                        <BrandingSignature />
                     </div>
                 </div>
             </ContentContainer>

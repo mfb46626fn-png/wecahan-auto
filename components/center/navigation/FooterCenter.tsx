@@ -1,5 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
+import { Logo } from '../../shared/ui/Logo';
+import { BrandingSignature } from '../../shared/ui/BrandingSignature';
 import { ContentContainer } from '../../shared/layout/ContentContainer';
 import { getCenterLocale } from '../../../lib/site/get-center-locale';
 
@@ -72,13 +74,8 @@ export async function FooterCenter({ className }: FooterCenterProps) {
                 <div className="grid gap-12 md:grid-cols-4 lg:gap-16">
                     {/* Brand Area */}
                     <div className="md:col-span-2">
-                        <div className="flex items-center gap-2 mb-6">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white font-black text-xs">
-                                W
-                            </div>
-                            <span className="text-xl font-bold tracking-tight text-slate-900">
-                                WeCaHan <span className="text-slate-400 font-medium">Auto</span>
-                            </span>
+                        <div className="mb-6">
+                            <Logo variant="footer" />
                         </div>
                         <p className="max-w-xs text-sm leading-relaxed text-slate-500 font-medium">
                             {t.description}
@@ -125,10 +122,11 @@ export async function FooterCenter({ className }: FooterCenterProps) {
                 </div>
 
                 {/* Copyright Line */}
-                <div className="mt-16 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="mt-16 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-8">
                     <p className="text-[11px] font-bold text-slate-300 uppercase tracking-widest">
                         &copy; {currentYear} {t.copyrightLabel}
                     </p>
+                    <BrandingSignature />
                 </div>
             </ContentContainer>
         </footer>

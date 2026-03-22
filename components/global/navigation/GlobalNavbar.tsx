@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import { Logo } from '../../shared/ui/Logo';
 import { PrimaryButton } from '../../shared/ui/PrimaryButton';
 import { ContentContainer } from '../../shared/layout/ContentContainer';
 
@@ -52,13 +53,8 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
             <ContentContainer size="xl">
                 <nav className="relative flex h-20 items-center justify-between">
                     {/* Brand */}
-                    <Link href="/" className="flex items-center gap-2 relative z-10 transition-opacity hover:opacity-90">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white font-bold text-xs">
-                            W
-                        </div>
-                        <span className="text-xl font-bold tracking-tight text-gray-900">
-                            WeCaHan
-                        </span>
+                    <Link href="/" className="relative z-10 transition-opacity hover:opacity-90">
+                        <Logo variant="navbar" />
                     </Link>
 
                     {/* Desktop Navigation Links - Centered Like TR */}
@@ -99,13 +95,8 @@ export function GlobalNavbar({ className }: GlobalNavbarProps) {
                     )}>
                         {/* Drawer Header */}
                         <div className="flex h-20 items-center justify-between px-6 border-b border-neutral-50">
-                            <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
-                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white font-bold text-xs">
-                                    W
-                                </div>
-                                <span className="text-xl font-bold tracking-tight text-gray-900">
-                                    WeCaHan
-                                </span>
+                            <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                                <Logo variant="navbar" />
                             </Link>
                             <button 
                                 className="p-2 text-neutral-600 hover:text-neutral-900 transition-colors focus:outline-none"
