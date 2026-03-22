@@ -39,6 +39,7 @@ interface HowWeWorkContent {
     title: string;
     description: string;
     steps: ProcessStep[];
+    phaseLabel?: string;
 }
 
 interface WorkflowScenario {
@@ -52,6 +53,7 @@ interface ExampleWorkflowsContent {
     title: string;
     description: string;
     scenarios: WorkflowScenario[];
+    scenarioLabel?: string;
 }
 
 interface BenefitCard {
@@ -457,13 +459,14 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
                 {
                     title: 'İçerik Destekli Süreçler',
                     description: 'Tekrarlayan dokümantasyon ihtiyaçları için yapılandırılmış şablonlardan ve tetikleyicilerden yararlanın.',
-                    examples: ['Brief oluşturma', 'Teklif tetikleyicileri', 'Operasyonel SOP teslimi'],
+                    examples: ['Özet hazırlama', 'Teklif tetikleyicileri', 'Operasyonel SOP teslimi'],
                 },
             ],
         },
         howWeWork: {
             title: 'Nasıl Çalışıyoruz?',
             description: 'Sürdürülebilir operasyonel otomasyon oluşturmak için 4 adımlı sistematik bir yaklaşım.',
+            phaseLabel: 'Aşama',
             steps: [
                 {
                     step: '01',
@@ -488,8 +491,9 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             ],
         },
         exampleWorkflows: {
-            title: 'Örnek İş Akışı Senaryoları',
+            title: 'Örnek İş Akışı Uygulamaları',
             description: 'Operasyonel mantığın manuel yönetimin yerini nasıl aldığına dair pratik bir bakış.',
+            scenarioLabel: 'Uygulama',
             scenarios: [
                 {
                     title: 'Gelen Aday Yönlendirme',
@@ -647,8 +651,8 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             helperText: 'Netlik ve koordinasyona odaklanmıştır.',
         },
         labels: {
-            phaseLabel: 'Faz',
-            scenarioLabel: 'Senaryo',
+            phaseLabel: 'Aşama',
+            scenarioLabel: 'Süreç',
             problemLabel: 'Problem',
             logicLabel: 'Otomasyon Mantığı',
             flowStepLabel: 'Adım',
