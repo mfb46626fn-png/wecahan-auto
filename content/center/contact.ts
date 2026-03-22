@@ -95,7 +95,7 @@ export const centerContactBilingualContent: Record<CenterLocale, ContactContent>
         },
         hero: {
             eyebrow: 'Discovery phase',
-            title: 'Let’s start with context',
+            title: 'Brief your process',
             description: 'The first step to operational clarity is a simple brief. We don\'t need pages of documentation; just a few lines about where your process currently stalls.',
             trustPoint: 'No-pressure review. Clear boundaries.',
         },
@@ -126,7 +126,7 @@ export const centerContactBilingualContent: Record<CenterLocale, ContactContent>
                     description: 'We analyze your brief for operational fit and technical feasibility.',
                 },
                 {
-                    title: 'Contextual Response',
+                    title: 'Focused Review Response',
                     description: 'We get back to you with a clear perspective—either a next step or a honest "not a fit" note.',
                 },
                 {
@@ -169,7 +169,7 @@ export const centerContactBilingualContent: Record<CenterLocale, ContactContent>
             submitLabel: 'Send Brief',
             successState: {
                 title: 'Brief received',
-                description: 'We will review your context and get back to you shortly.',
+                description: 'We will review your brief and get back to you shortly.',
             },
             errorState: {
                 title: 'Something went wrong',
