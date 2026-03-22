@@ -192,7 +192,7 @@ export function CenterHomeWhatWeAutomateBlock({ content, className }: CenterHome
     const { title, description, categories } = content;
 
     return (
-        <SectionWrapper className={className}>
+        <SectionWrapper id="what-we-automate" className={className}>
             <ContentContainer className="py-12 md:py-24">
                 <SectionHeader
                     title={title}

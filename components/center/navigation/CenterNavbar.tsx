@@ -80,6 +80,20 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
         window.location.reload();
     };
 
+    const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (!href.startsWith('/#')) return;
+        
+        const id = href.split('#')[1];
+        if (!id) return;
+
+        const element = document.getElementById(id);
+        if (element) {
+            e.preventDefault();
+            element.scrollIntoView({ behavior: 'smooth' });
+            window.history.pushState(null, '', href);
+        }
+    };
+
     const t = translations[locale];
 
     return (
@@ -98,10 +112,14 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
 
                     {/* Desktop Navigation Links - Centered */}
                     <div className="hidden items-center gap-8 md:flex absolute left-1/2 -translate-x-1/2">
-                        <a href="/#what-we-automate" className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900">
+                        <a 
+                            href="/#what-we-automate" 
+                            onClick={(e) => handleAnchorClick(e, '/#what-we-automate')}
+                            className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+                        >
                             {t.services}
                         </a>
-                        <a href="/why-us" className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900">
+                       <a href="/why-us" className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900">
                             {t.whyUs}
                         </a>
                         <a href="/contact" className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900">
@@ -178,12 +196,15 @@ export function CenterNavbar({ className }: CenterNavbarProps) {
                         <div className="flex-1 overflow-y-auto px-6 py-10 flex flex-col gap-8">
                             <a 
                                 href="/#what-we-automate" 
-                                onClick={() => setIsMenuOpen(false)} 
+                                onClick={(e) => {
+                                    setIsMenuOpen(false);
+                                    handleAnchorClick(e, '/#what-we-automate');
+                                }} 
                                 className="text-3xl font-bold text-gray-900 tracking-tight"
                             >
                                 {t.services}
                             </a>
-                            <a 
+                           <a 
                                 href="/why-us" 
                                 onClick={() => setIsMenuOpen(false)} 
                                 className="text-3xl font-bold text-gray-900 tracking-tight"
