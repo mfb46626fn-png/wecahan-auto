@@ -56,8 +56,9 @@ interface ExampleWorkflowsContent {
     scenarioLabel?: string;
     problemLabel?: string;
     logicLabel?: string;
+    operationalDesignLabel?: string;
 }
-
+// Broadway
 interface BenefitCard {
     title: string;
     description: string;
@@ -253,8 +254,10 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             description: 'A practical look at how operational logic replaces manual management.',
             problemLabel: 'Problem',
             logicLabel: 'Automation Logic',
+            operationalDesignLabel: 'Operational Flow Design',
             scenarios: [
-                {
+// Broadway
+               {
                     title: 'Inbound Lead Routing',
                     problem: 'Requests from multiple channels get lost or answered inconsistently.',
                     logic: 'Unified intake and automated routing based on basic classification.',
@@ -500,8 +503,10 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             scenarioLabel: 'Uygulama',
             problemLabel: 'Problem',
             logicLabel: 'Otomasyon Mantığı',
+            operationalDesignLabel: 'Operasyonel Akış Tasarımı',
             scenarios: [
-                {
+// Broadway
+               {
                     title: 'Gelen Aday Yönlendirme',
                     problem: 'Birden fazla kanaldan gelen talepler kayboluyor veya tutarsız yanıtlanıyor.',
                     logic: 'Birleştirilmiş giriş ve temel sınıflandırmaya dayalı otomatik yönlendirme.',
