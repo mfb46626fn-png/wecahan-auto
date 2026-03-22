@@ -54,6 +54,8 @@ interface ExampleWorkflowsContent {
     description: string;
     scenarios: WorkflowScenario[];
     scenarioLabel?: string;
+    problemLabel?: string;
+    logicLabel?: string;
 }
 
 interface BenefitCard {
@@ -249,6 +251,8 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
         exampleWorkflows: {
             title: 'Example Workflow Scenarios',
             description: 'A practical look at how operational logic replaces manual management.',
+            problemLabel: 'Problem',
+            logicLabel: 'Automation Logic',
             scenarios: [
                 {
                     title: 'Inbound Lead Routing',
@@ -494,6 +498,8 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             title: 'Örnek İş Akışı Uygulamaları',
             description: 'Operasyonel mantığın manuel yönetimin yerini nasıl aldığına dair pratik bir bakış.',
             scenarioLabel: 'Uygulama',
+            problemLabel: 'Problem',
+            logicLabel: 'Otomasyon Mantığı',
             scenarios: [
                 {
                     title: 'Gelen Aday Yönlendirme',
