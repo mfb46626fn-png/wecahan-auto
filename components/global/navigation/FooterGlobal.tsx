@@ -41,11 +41,6 @@ export function FooterGlobal({ className }: FooterGlobalProps) {
                         </h3>
                         <ul className="flex flex-col gap-4">
                             <li>
-                                <Link href="/" className="text-[13px] font-bold text-neutral-600 transition-colors hover:text-neutral-900">
-                                    Home
-                                </Link>
-                            </li>
-                            <li>
                                 <Link href="/accounting-firms" className="text-[13px] font-bold text-neutral-600 transition-colors hover:text-neutral-900">
                                     Accounting Firms
                                 </Link>

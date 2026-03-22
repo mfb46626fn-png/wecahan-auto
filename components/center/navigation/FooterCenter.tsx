@@ -20,7 +20,6 @@ const translations = {
             navigation: {
                 title: "Navigasyon",
                 links: [
-                    { label: "Ana Sayfa", href: "/" },
                     { label: "Neden Biz?", href: "/why-us" },
                     { label: "İletişim", href: "/contact" }
                 ]
@@ -41,7 +40,6 @@ const translations = {
             navigation: {
                 title: "Navigation",
                 links: [
-                    { label: "Home", href: "/" },
                     { label: "Why Us", href: "/why-us" },
                     { label: "Contact", href: "/contact" }
                 ]
