@@ -584,7 +584,7 @@ export function CenterHomeContactBriefSectionBlock({ content, className }: Cente
     const secondary = resolveCta(secondaryCta, '#brief');
 
     return (
-        <SectionWrapper className={className}>
+        <SectionWrapper id="brief" className={className}>
             <ContentContainer className="py-16 md:py-24 lg:py-28">
                 <div className="max-w-4xl mx-auto">
                     <CardBase 
@@ -1017,7 +1017,7 @@ export function CenterBriefFormBlock({
     }
 
     return (
-        <SectionWrapper>
+        <SectionWrapper id="brief">
             <ContentContainer>
                 <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                     <SectionHeader
@@ -1220,14 +1220,18 @@ export function CenterFinalCtaBlock({ content, className }: CenterFinalCtaBlockP
                     </SectionDescription>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                        <PrimaryButton className="w-full sm:w-auto min-w-[200px]">
-                            {resolveCtaLabel(primaryCta)}
-                        </PrimaryButton>
+                        <Link href={typeof primaryCta === 'string' ? '/contact' : primaryCta.href} className="w-full sm:w-auto">
+                            <PrimaryButton className="w-full sm:w-auto min-w-[200px]">
+                                {resolveCtaLabel(primaryCta)}
+                            </PrimaryButton>
+                        </Link>
 
                         {secondaryCta && (
-                            <SecondaryButton className="w-full sm:w-auto min-w-[200px]">
-                                {resolveCtaLabel(secondaryCta)}
-                            </SecondaryButton>
+                            <Link href={typeof secondaryCta === 'string' ? '#brief' : secondaryCta.href} className="w-full sm:w-auto">
+                                <SecondaryButton className="w-full sm:w-auto min-w-[200px]">
+                                    {resolveCtaLabel(secondaryCta)}
+                                </SecondaryButton>
+                            </Link>
                         )}
                     </div>
 

@@ -183,8 +183,8 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             eyebrow: 'Better Operational Flow',
             title: 'Operational automation systems for service businesses',
             description: 'Clearer workflows. Less manual friction. We design and build the automation layer that keeps your processes moving without constant repetitive effort.',
-            primaryCta: 'Contact Us',
-            secondaryCta: 'Brief Your Process',
+            primaryCta: { label: 'Contact Us', href: '/contact' },
+            secondaryCta: { label: 'Brief Your Process', href: '#brief' },
             trustLine: 'Lead handling, communications, and internal operations.',
         },
         whatWeAutomate: {
@@ -329,8 +329,8 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
         contactBrief: {
             title: 'Let’s understand your process first',
             description: 'No need for a long document. A short outline of your current process is enough for an initial review. We check for fit before proposing next steps.',
-            primaryCta: 'Contact Us',
-            secondaryCta: 'Share a Brief',
+            primaryCta: { label: 'Contact Us', href: '/contact' },
+            secondaryCta: { label: 'Share a Brief', href: '#brief' },
             helperText: 'A short 5-minute brief is usually enough to start.',
         },
         // Legacy Mappings
@@ -400,8 +400,8 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
         finalCta: {
             title: 'Ready for a cleaner operational process?',
             description: 'Contact us to discuss your specific workflow needs and how we can automate them.',
-            primaryCta: 'Contact Us',
-            secondaryCta: 'Process Brief',
+            primaryCta: { label: 'Contact Us', href: '/contact' },
+            secondaryCta: { label: 'Process Brief', href: '#brief' },
             helperText: 'Focused on clarity and coordination.',
         },
         labels: {
@@ -427,8 +427,8 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
             eyebrow: 'Daha İyi Operasyonel Akış',
             title: 'Hizmet işletmeleri için operasyonel otomasyon sistemleri',
             description: 'Daha net iş akışları. Daha az manuel yük. Süreçlerinizin sürekli tekrarlayan çaba gerektirmeden ilerlemesini sağlayan otomasyon katmanını tasarlıyor ve kuruyoruz.',
-            primaryCta: 'Bize Ulaşın',
-            secondaryCta: 'Sürecinizi Özetleyin',
+            primaryCta: { label: 'Bize Ulaşın', href: '/iletisim' },
+            secondaryCta: { label: 'Sürecinizi Özetleyin', href: '#brief' },
             trustLine: 'Aday takibi, iletişim akışları ve iç operasyonlar.',
         },
         whatWeAutomate: {
@@ -573,8 +573,8 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
         contactBrief: {
             title: 'Önce sürecinizi anlayalım',
             description: 'Uzun belgelere gerek yok. Mevcut sürecinizin kısa bir taslağı ilk inceleme için yeterlidir. Bir sonraki adımı önermeden önce uygunluğu kontrol ederiz.',
-            primaryCta: 'Bize Ulaşın',
-            secondaryCta: 'Özet Paylaşın',
+            primaryCta: { label: 'Bize Ulaşın', href: '/iletisim' },
+            secondaryCta: { label: 'Özet Paylaşın', href: '#brief' },
             helperText: 'Başlamak için genellikle 5 dakikalık bir özet yeterlidir.',
         },
         // Legacy Mappings
@@ -644,8 +644,8 @@ export const centerHomeBilingualContent: Record<CenterLocale, CenterHomeContent>
         finalCta: {
             title: 'Daha temiz bir operasyonel sürece hazır mısınız?',
             description: 'Özel iş akışı ihtiyaçlarınızı ve bunları nasıl otomatikleştirebileceğimizi görüşmek için bize ulaşın.',
-            primaryCta: 'Bize Ulaşın',
-            secondaryCta: 'Süreç Özeti',
+            primaryCta: { label: 'Bize Ulaşın', href: '/iletisim' },
+            secondaryCta: { label: 'Süreç Özeti', href: '#brief' },
             helperText: 'Netlik ve koordinasyona odaklanmıştır.',
         },
         labels: {

@@ -26,7 +26,8 @@ import {
     CenterHomeExampleWorkflowScenariosBlock,
     CenterHomeWhyThisStructureWorksBlock,
     CenterHomeSelectedUseCaseExamplesBlock,
-    CenterHomeContactBriefSectionBlock 
+    CenterBriefFormBlock,
+    CenterFinalCtaBlock 
 } from "../components/center/blocks/home/CenterHomeBlocks";
 import { CenterSiteShell } from "../components/center/layout/CenterSiteShell";
 
@@ -118,7 +119,8 @@ export default async function HomePage() {
             <CenterHomeExampleWorkflowScenariosBlock content={centerHomeContent.exampleWorkflows} />
             <CenterHomeWhyThisStructureWorksBlock content={centerHomeContent.whyStructureWorks} />
             <CenterHomeSelectedUseCaseExamplesBlock content={centerHomeContent.selectedUseCases} />
-            <CenterHomeContactBriefSectionBlock content={centerHomeContent.contactBrief} />
+            <CenterBriefFormBlock content={centerHomeContent.briefForm} />
+            <CenterFinalCtaBlock content={centerHomeContent.finalCta} />
         </CenterSiteShell>
     );
 }
